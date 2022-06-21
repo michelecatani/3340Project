@@ -24,5 +24,6 @@ class User(db.Model, UserMixin):
     country = db.Column(db.String(150))
     credit = db.Column(db.String(16))
     expiry = post_date = db.Column(db.DateTime)
+    goodstanding = db.Column(db.Boolean, unique=False, default=True)
     #items = db.relationship('Item')
     #watchlist = db.relationship('Watchlist')
