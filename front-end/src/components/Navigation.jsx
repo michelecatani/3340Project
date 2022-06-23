@@ -16,20 +16,11 @@ function Navigation() {
                   Home
                   <span className="sr-only">(current)</span>
                 </NavLink>
-              </li>
-              <li className="nav-item">
+                </li>
+                <li>
                 <NavLink className="nav-link" to="/about">
                   About
-                </NavLink>
-              </li>
-              <li className="nav-item">
-                <NavLink className="nav-link" to="/contact">
-                  Contact
-                </NavLink>
-              </li>
-              <li className="nav-item">
-                <NavLink className="nav-link" to="/blog">
-                  Blog
+                  <span className="sr-only">(current)</span>
                 </NavLink>
               </li>
             </ul>
