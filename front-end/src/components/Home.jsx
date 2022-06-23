@@ -1,3 +1,5 @@
+/* This is our home page. Accessible with the route '/'*/
+
 import React from "react";
 
 function Home() {

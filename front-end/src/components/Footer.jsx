@@ -1,3 +1,5 @@
+/* This is our footer.  Needs to be swagged out more. */
+
 import React from "react";
 
 function Footer() {
@@ -6,7 +8,7 @@ function Footer() {
       <footer class="py-5 bg-dark fixed-bottom">
         <div class="container">
           <p class="m-0 text-center text-white">
-            Copyright &copy; Your Website 2020
+            Copyright &copy; The Squad 2022
           </p>
         </div>
       </footer>
