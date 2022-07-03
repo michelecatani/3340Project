@@ -4,30 +4,13 @@ root.render() function. We also do all of our necessary imports, including our s
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import "./index.css";
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import  Home  from "./components/Home"
-import Navigation from "./components/Navigation"
-import Footer from "./components/Footer"
-import About from "./components/About"
-import Items from "./components/Items"
+import App from './App';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-
-  // Router allows us to have routes.
-  // Include our nav bar, our routes, then our footer.
-
-  <Router>
-    <Navigation />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/items" element={<Items />} />
-      </Routes>
-    <Footer />
-  </Router>,
-
-  document.getElementById("root")
+  <React.StrictMode>
+    <App />
+  </React.StrictMode>
 );
 
 // If you want to start measuring performance in your app, pass a function
