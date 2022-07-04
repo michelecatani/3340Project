@@ -3,6 +3,7 @@ from flask_jwt_extended import JWTManager
 from flask_sqlalchemy import SQLAlchemy
 from os import path
 from flask_login import LoginManager
+from flask_cors import CORS
 
 db = SQLAlchemy()
 DB_NAME = "database.db"
@@ -13,6 +14,7 @@ def create_app():
     app.config['SECRET_KEY'] = 'hjshjhdjah kjshkjdhjs'
     app.config['SQLALCHEMY_DATABASE_URI'] = f'sqlite:///{DB_NAME}'
     app.config["JWT_SECRET_KEY"] = "please-remember-to-change-me"
+    CORS(app)
     jwt = JWTManager(app)
     db.init_app(app)
 
