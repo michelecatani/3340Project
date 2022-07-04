@@ -1,4 +1,5 @@
 from flask import Flask
+from flask_jwt_extended import JWTManager
 from flask_sqlalchemy import SQLAlchemy
 from os import path
 from flask_login import LoginManager
@@ -11,6 +12,8 @@ def create_app():
     # make sure we configure this to use enviornment variables
     app.config['SECRET_KEY'] = 'hjshjhdjah kjshkjdhjs'
     app.config['SQLALCHEMY_DATABASE_URI'] = f'sqlite:///{DB_NAME}'
+    app.config["JWT_SECRET_KEY"] = "please-remember-to-change-me"
+    jwt = JWTManager(app)
     db.init_app(app)
 
     from .views import views
