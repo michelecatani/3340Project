@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import { Box, Button, TextField, Typography } from "@mui/material";
 
-export default function LoginPage() {
+export default function RegisterPage() {
 
   const [loginForm, setloginForm] = useState({
     email: "",
@@ -12,7 +12,7 @@ export default function LoginPage() {
   function handleLoginSubmission(event) {
     axios({
       method: "POST",
-      url: `${process.env.NEXT_PUBLIC_API_HOST}/token`,
+      url: `${process.env.NEXT_PUBLIC_API_HOST}/register`,
       data: {
         email: loginForm.email,
         password: loginForm.password,
@@ -86,7 +86,7 @@ export default function LoginPage() {
               onClick={handleLoginSubmission}
               fullWidth
             >
-              Login
+              Register
             </Button>
           </Box>
         </Box>
@@ -94,4 +94,3 @@ export default function LoginPage() {
     </Box>
   );
 }
-
