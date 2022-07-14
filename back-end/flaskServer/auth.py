@@ -42,13 +42,4 @@ def my_profile():
 
     return response_body
 
-## these next two routes are not to be kept in the final app and were just to test the endpoint configuration
-
-@auth.route('/ourNames', methods=['GET', 'POST'])
-def ourNames():
-    return {"ourNames": ["Dylan", "Danielle", "Najia", "Deepali", "Mike", "Jason"]}
-
-@auth.route('/items', methods=['GET', 'POST'])
-def items():
-    return {"items": ["Milk", "Honey", "The King James Bible", "Tim Horton's Dark Roast", "Boxing Gloves", "IDFK man"]}
 
