@@ -5,8 +5,12 @@ from os import path
 from flask_login import LoginManager
 from flask_cors import CORS
 
+## create our database.
+
 db = SQLAlchemy()
 DB_NAME = "database.db"
+
+## this function creates our app, and it is called in run.py in the parent directory
 
 def create_app():
     app = Flask(__name__)
@@ -18,11 +22,13 @@ def create_app():
     jwt = JWTManager(app)
     db.init_app(app)
 
-    from .views import views
-    from .auth import auth
+    ## register our blueprints
 
-    app.register_blueprint(views, url_prefix='/')
+    from .auth import auth
+    from .items import items
+
     app.register_blueprint(auth, url_prefix='/')
+    app.register_blueprint(items, url_prefix='/')
 
     from .models import User
 
@@ -37,7 +43,6 @@ def create_app():
         return User.query.get(int(id))
 
     return app
-
 
 def create_database(app):
     if not path.exists('website/' + DB_NAME):

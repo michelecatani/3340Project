@@ -1,7 +1,9 @@
+from dataclasses import dataclass
 from . import db
 from flask_login import UserMixin
 from sqlalchemy.sql import func
 
+import json
 
 """class Item (db.Model):
     id = db.Column(db.Integer, primary_key=True)
@@ -12,6 +14,7 @@ from sqlalchemy.sql import func
 
 ## here will be all of our database classes. User is commented out for simplicity
 
+@dataclass
 class User(db.Model, UserMixin):
     id = db.Column(db.Integer, primary_key=True)
     email = db.Column(db.String(150), unique=True)
@@ -28,3 +31,12 @@ class User(db.Model, UserMixin):
     #goodstanding = db.Column(db.Boolean, unique=False, default=True)
     #items = db.relationship('Item')
     #watchlist = db.relationship('Watchlist')
+
+## expand below class
+@dataclass
+class Item(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    name = db.Column(db.String(150), unique= True)
+    ## price, inStock (bool), ... etc 
+    def as_dict(self):
+        return {}
