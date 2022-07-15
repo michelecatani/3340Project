@@ -4,18 +4,39 @@ import { Box, Button, TextField, Typography } from "@mui/material";
 
 export default function RegisterPage() {
 
-  const [loginForm, setloginForm] = useState({
+  const [registrationForm, setRegistrationForm] = useState({
     email: "",
     password: "",
+    username:"",
+    first_name: "",
+    last_name: "",
+    address: "",
+    phone:"",
+    state:"",
+    country:"",
+    credit:"",
+    expiry: "",
+
   });
 
-  function handleLoginSubmission(event) {
+
+
+  function handleRegistrationSubmission(event) {
     axios({
       method: "POST",
       url: `${process.env.NEXT_PUBLIC_API_HOST}/register`,
       data: {
-        email: loginForm.email,
-        password: loginForm.password,
+        email: registrationForm.email,
+        password: registrationForm.password,
+        username: registrationForm.username,
+        firstName: registrationForm.first_name,
+        lastName: registrationForm.last_name,
+        address: registrationForm.address,
+        phone: registrationForm.phone,
+        state: registrationForm.state,
+        country:registrationForm.country,
+        credit: registrationForm.credit,
+        expiry: registrationForm.expiry,
       },
     })
       .then((response) => {
@@ -29,9 +50,18 @@ export default function RegisterPage() {
         }
       });
 
-    setloginForm({
+    setRegistrationForm({
       email: "",
       password: "",
+      username:"",
+      firstName: "",
+      lastName: "",
+      address: "",
+      phone:"",
+      state:"",
+      country:"",
+      credit:"",
+      expiry: "",
     });
 
     event.preventDefault();
@@ -39,7 +69,7 @@ export default function RegisterPage() {
 
   function handleChange(event) {
     const { value, name } = event.target;
-    setloginForm((prevNote) => ({
+    setRegistrationForm((prevNote) => ({
       ...prevNote,
       [name]: value,
     }));
@@ -67,7 +97,7 @@ export default function RegisterPage() {
             label="Email"
             type="email"
             name="email"
-            value={loginForm.email}
+            value={registrationForm.email}
             margin="dense"
             onChange={handleChange}
           />
@@ -76,14 +106,91 @@ export default function RegisterPage() {
             type="password"
             name="password"
             placeholder="**********"
-            value={loginForm.password}
+            value={registrationForm.password}
+            margin="dense"
+            onChange={handleChange}
+          />
+          <TextField
+            label="Username"
+            
+            name="username"
+            value={registrationForm.username}
+            margin="dense"
+            onChange={handleChange}
+          />
+          
+          <TextField
+            label="First Name"
+            
+            name="firstName"
+            value={registrationForm.firstName}
+            margin="dense"
+            onChange={handleChange}
+          />
+          <TextField
+            label="Last Name"
+            
+            name="lastName"
+           
+            value={registrationForm.lastName}
+            margin="dense"
+            onChange={handleChange}
+          />
+          <TextField
+            label="Address"
+           
+            name="address"
+            value={registrationForm.address}
+            margin="dense"
+            onChange={handleChange}
+          />
+          <TextField
+            label="Phone"
+            type="tel"
+            name="phone"
+            
+            value={registrationForm.phone}
+            margin="dense"
+            onChange={handleChange}
+          />
+          <TextField
+            label="State"
+            
+            name="state"
+            value={registrationForm.state}
+            margin="dense"
+            onChange={handleChange}
+          />
+          <TextField
+            label="Country"
+            
+            name="country"
+            
+            value={registrationForm.country}
+            margin="dense"
+            onChange={handleChange}
+          />
+          <TextField
+            label="Credit"
+            type="number"
+            name="credit"
+            value={registrationForm.credit}
+            margin="dense"
+            onChange={handleChange}
+          />
+          <TextField
+            label="Expiry"
+            type="date"
+            name="expiry"
+            
+            value={registrationForm.expiry}
             margin="dense"
             onChange={handleChange}
           />
           <Box sx={{ mt: 2 }}>
             <Button
               variant="contained"
-              onClick={handleLoginSubmission}
+              onClick={handleRegistrationSubmission}
               fullWidth
             >
               Register
