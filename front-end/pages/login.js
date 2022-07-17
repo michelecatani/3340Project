@@ -3,7 +3,6 @@ import axios from "axios";
 import { Box, Button, TextField, Typography } from "@mui/material";
 
 export default function LoginPage() {
-
   const [loginForm, setloginForm] = useState({
     email: "",
     password: "",
@@ -52,11 +51,13 @@ export default function LoginPage() {
         justifyContent: "center",
         alignItems: "center",
         flex: 1,
-        height: "100vh",
+        height: "50vh",
       }}
     >
       <Box sx={{ maxWidth: 500, width: "100%" }}>
-        <Typography>NeoBay</Typography>
+        <Typography variant="h4" align="center">
+          NeoBay
+        </Typography>
         <Box
           sx={{
             display: "flex",
@@ -80,13 +81,23 @@ export default function LoginPage() {
             margin="dense"
             onChange={handleChange}
           />
-          <Box sx={{ mt: 2 }}>
+          <Box display="flex" justifyContent="space-between" sx={{ mt: 2 }}>
             <Button
               variant="contained"
               onClick={handleLoginSubmission}
+              sx={{ mr: 1 }}
               fullWidth
             >
               Login
+            </Button>
+
+            <Button
+              variant="contained"
+              href="register"
+              sx={{ ml: 1 }}
+              fullWidth
+            >
+              Register
             </Button>
           </Box>
         </Box>
@@ -94,4 +105,3 @@ export default function LoginPage() {
     </Box>
   );
 }
-

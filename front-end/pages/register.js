@@ -3,23 +3,19 @@ import axios from "axios";
 import { Box, Button, TextField, Typography } from "@mui/material";
 
 export default function RegisterPage() {
-
   const [registrationForm, setRegistrationForm] = useState({
     email: "",
     password: "",
-    username:"",
+    username: "",
     first_name: "",
     last_name: "",
     address: "",
-    phone:"",
-    state:"",
-    country:"",
-    credit:"",
+    phone: "",
+    state: "",
+    country: "",
+    credit: "",
     expiry: "",
-
   });
-
-
 
   function handleRegistrationSubmission(event) {
     axios({
@@ -34,7 +30,7 @@ export default function RegisterPage() {
         address: registrationForm.address,
         phone: registrationForm.phone,
         state: registrationForm.state,
-        country:registrationForm.country,
+        country: registrationForm.country,
         credit: registrationForm.credit,
         expiry: registrationForm.expiry,
       },
@@ -53,14 +49,14 @@ export default function RegisterPage() {
     setRegistrationForm({
       email: "",
       password: "",
-      username:"",
+      username: "",
       firstName: "",
       lastName: "",
       address: "",
-      phone:"",
-      state:"",
-      country:"",
-      credit:"",
+      phone: "",
+      state: "",
+      country: "",
+      credit: "",
       expiry: "",
     });
 
@@ -86,7 +82,9 @@ export default function RegisterPage() {
       }}
     >
       <Box sx={{ maxWidth: 500, width: "100%" }}>
-        <Typography>NeoBay</Typography>
+        <Typography variant="h4" align="center">
+          NeoBay
+        </Typography>
         <Box
           sx={{
             display: "flex",
@@ -112,16 +110,14 @@ export default function RegisterPage() {
           />
           <TextField
             label="Username"
-            
             name="username"
             value={registrationForm.username}
             margin="dense"
             onChange={handleChange}
           />
-          
+
           <TextField
             label="First Name"
-            
             name="firstName"
             value={registrationForm.firstName}
             margin="dense"
@@ -129,16 +125,13 @@ export default function RegisterPage() {
           />
           <TextField
             label="Last Name"
-            
             name="lastName"
-           
             value={registrationForm.lastName}
             margin="dense"
             onChange={handleChange}
           />
           <TextField
             label="Address"
-           
             name="address"
             value={registrationForm.address}
             margin="dense"
@@ -148,14 +141,12 @@ export default function RegisterPage() {
             label="Phone"
             type="tel"
             name="phone"
-            
             value={registrationForm.phone}
             margin="dense"
             onChange={handleChange}
           />
           <TextField
             label="State"
-            
             name="state"
             value={registrationForm.state}
             margin="dense"
@@ -163,9 +154,7 @@ export default function RegisterPage() {
           />
           <TextField
             label="Country"
-            
             name="country"
-            
             value={registrationForm.country}
             margin="dense"
             onChange={handleChange}
@@ -182,7 +171,6 @@ export default function RegisterPage() {
             label="Expiry"
             type="date"
             name="expiry"
-            
             value={registrationForm.expiry}
             margin="dense"
             onChange={handleChange}
