@@ -1059,3 +1059,4 @@ AttributeError: 'NoneType' object has no attribute 'as_dict'
 127.0.0.1 - - [17/Jul/2022 17:26:26] "GET /items/seeItem?id=1 HTTP/1.1" 200 -
 127.0.0.1 - - [17/Jul/2022 17:26:28] "GET /items/items HTTP/1.1" 200 -
 127.0.0.1 - - [17/Jul/2022 17:26:28] "GET /items/items HTTP/1.1" 200 -
+^C[1m[7m%[27m[1m[0m                                                      [0m[27m[24m[Jmichelecatani@MacBook-Pro back-end % [K[?2004h
