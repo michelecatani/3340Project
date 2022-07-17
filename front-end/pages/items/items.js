@@ -3,6 +3,7 @@ Right now it's attached to an endpoint that just returns basic items, but that o
 
 import React from "react";
 import { useState, useEffect } from "react";
+import Button from "@mui/material/Button";
 
 function Items() {
   const [data, setData] = useState([{}]);
@@ -22,10 +23,18 @@ function Items() {
   */
   return (
     <div>
+      <h1> All of our items!</h1>
       {typeof data === "undefined" ?  (
         <p>Loading...</p>
       ) : (
-        data.map((name, i) => <p key={i}>{name.name}</p>)
+        data.map((item, i) => 
+          <>
+            <p key={i}>{item.name}</p>
+            <Button href={`/items/${item.id}`}>
+              See here
+            </Button>
+          </>
+        )
       )}
     </div>
   );

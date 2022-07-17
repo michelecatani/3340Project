@@ -14,7 +14,6 @@ import json
 
 # here will be all of our database classes. User is commented out for simplicity
 
-
 @dataclass
 class User(db.Model, UserMixin):
     id = db.Column(db.Integer, primary_key=True)

@@ -89,10 +89,10 @@ export default function PrimarySearchAppBar() {
             <Button sx={({ mr: 2 }, { ml: 2 })} color="inherit" href="/">
               Home
             </Button>
-            <Button sx={({ mr: 2 }, { ml: 2 })} color="inherit" href="about">
+            <Button sx={({ mr: 2 }, { ml: 2 })} color="inherit" href="/about">
               About
             </Button>
-            <Button sx={({ mr: 2 }, { ml: 2 })} color="inherit" href="items">
+            <Button sx={({ mr: 2 }, { ml: 2 })} color="inherit" href="items/items">
               Items
             </Button>
             <Button

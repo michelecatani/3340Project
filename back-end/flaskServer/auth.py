@@ -65,10 +65,10 @@ def my_profile():
 def ourNames():
     ourNames = {
         "ourNames": [
-            "Bob",
-            "Dylan's",
-            "Great-grandfather"
+            "Khabib",
+            "Nurmagomedov's",
+            "Bear"
         ]
     }
-
+    
     return ourNames

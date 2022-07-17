@@ -145,3 +145,917 @@ Created Database!
 127.0.0.1 - - [17/Jul/2022 16:10:45] "GET /items/items HTTP/1.1" 200 -
 127.0.0.1 - - [17/Jul/2022 16:10:51] "GET /items/items HTTP/1.1" 200 -
 127.0.0.1 - - [17/Jul/2022 16:10:51] "GET /items/items HTTP/1.1" 200 -
+^C[1m[7m%[27m[1m[0m                                                      [0m[27m[24m[Jmichelecatani@MacBook-Pro back-end % [K[?2004heexport Flask         e  fflask run[?2004l
+ * Serving Flask app 'run.py' (lazy loading)
+ * Environment: development
+ * Debug mode: on
+/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask_sqlalchemy/__init__.py:872: FSADeprecationWarning: SQLALCHEMY_TRACK_MODIFICATIONS adds significant overhead and will be disabled by default in the future.  Set it to True or False to suppress this warning.
+  warnings.warn(FSADeprecationWarning(
+Created Database!
+ * Running on http://127.0.0.1:5000 (Press CTRL+C to quit)
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 371-262-178
+/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask_sqlalchemy/__init__.py:872: FSADeprecationWarning: SQLALCHEMY_TRACK_MODIFICATIONS adds significant overhead and will be disabled by default in the future.  Set it to True or False to suppress this warning.
+  warnings.warn(FSADeprecationWarning(
+Created Database!
+127.0.0.1 - - [17/Jul/2022 16:51:24] "[33mGET / HTTP/1.1[0m" 404 -
+127.0.0.1 - - [17/Jul/2022 16:51:24] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+127.0.0.1 - - [17/Jul/2022 16:51:39] "GET /auth/ourNames HTTP/1.1" 200 -
+127.0.0.1 - - [17/Jul/2022 16:51:39] "GET /auth/ourNames HTTP/1.1" 200 -
+127.0.0.1 - - [17/Jul/2022 16:56:29] "GET /items/items HTTP/1.1" 200 -
+127.0.0.1 - - [17/Jul/2022 16:56:29] "GET /items/items HTTP/1.1" 200 -
+127.0.0.1 - - [17/Jul/2022 16:56:32] "GET /items/items HTTP/1.1" 200 -
+127.0.0.1 - - [17/Jul/2022 16:56:35] "[35m[1mGET /items/seeItem?id=[object%20Object] HTTP/1.1[0m" 500 -
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/app.py", line 2095, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/app.py", line 2080, in wsgi_app
+    response = self.handle_exception(e)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask_cors/extension.py", line 165, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/app.py", line 2077, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/app.py", line 1525, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask_cors/extension.py", line 165, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/app.py", line 1523, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/app.py", line 1509, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "/Users/michelecatani/Desktop/school/4semCompSci/3340/project/3340Project/back-end/flaskServer/items.py", line 26, in seeItem
+    return jsonify(item.as_dict())
+AttributeError: 'NoneType' object has no attribute 'as_dict'
+127.0.0.1 - - [17/Jul/2022 16:56:40] "GET /items/items HTTP/1.1" 200 -
+127.0.0.1 - - [17/Jul/2022 16:56:40] "GET /items/items HTTP/1.1" 200 -
+127.0.0.1 - - [17/Jul/2022 16:56:41] "[35m[1mGET /items/seeItem?id=[object%20Object] HTTP/1.1[0m" 500 -
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/app.py", line 2095, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/app.py", line 2080, in wsgi_app
+    response = self.handle_exception(e)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask_cors/extension.py", line 165, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/app.py", line 2077, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/app.py", line 1525, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask_cors/extension.py", line 165, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/app.py", line 1523, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/app.py", line 1509, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "/Users/michelecatani/Desktop/school/4semCompSci/3340/project/3340Project/back-end/flaskServer/items.py", line 26, in seeItem
+    return jsonify(item.as_dict())
+AttributeError: 'NoneType' object has no attribute 'as_dict'
+127.0.0.1 - - [17/Jul/2022 16:56:42] "GET /items/items HTTP/1.1" 200 -
+127.0.0.1 - - [17/Jul/2022 16:56:42] "GET /items/items HTTP/1.1" 200 -
+127.0.0.1 - - [17/Jul/2022 16:57:01] "[35m[1mGET /items/seeItem?id=[object%20Object] HTTP/1.1[0m" 500 -
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/app.py", line 2095, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/app.py", line 2080, in wsgi_app
+    response = self.handle_exception(e)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask_cors/extension.py", line 165, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/app.py", line 2077, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/app.py", line 1525, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask_cors/extension.py", line 165, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/app.py", line 1523, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/app.py", line 1509, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "/Users/michelecatani/Desktop/school/4semCompSci/3340/project/3340Project/back-end/flaskServer/items.py", line 26, in seeItem
+    return jsonify(item.as_dict())
+AttributeError: 'NoneType' object has no attribute 'as_dict'
+127.0.0.1 - - [17/Jul/2022 16:57:04] "GET /items/items HTTP/1.1" 200 -
+127.0.0.1 - - [17/Jul/2022 16:57:04] "GET /items/items HTTP/1.1" 200 -
+127.0.0.1 - - [17/Jul/2022 16:57:15] "[35m[1mGET /items/seeItem?id=[object%20Object] HTTP/1.1[0m" 500 -
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/app.py", line 2095, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/app.py", line 2080, in wsgi_app
+    response = self.handle_exception(e)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask_cors/extension.py", line 165, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/app.py", line 2077, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/app.py", line 1525, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask_cors/extension.py", line 165, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/app.py", line 1523, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/app.py", line 1509, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "/Users/michelecatani/Desktop/school/4semCompSci/3340/project/3340Project/back-end/flaskServer/items.py", line 26, in seeItem
+    return jsonify(item.as_dict())
+AttributeError: 'NoneType' object has no attribute 'as_dict'
+127.0.0.1 - - [17/Jul/2022 16:58:44] "[35m[1mGET /items/seeItem?id=[object%20Object] HTTP/1.1[0m" 500 -
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/app.py", line 2095, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/app.py", line 2080, in wsgi_app
+    response = self.handle_exception(e)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask_cors/extension.py", line 165, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/app.py", line 2077, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/app.py", line 1525, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask_cors/extension.py", line 165, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/app.py", line 1523, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/app.py", line 1509, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "/Users/michelecatani/Desktop/school/4semCompSci/3340/project/3340Project/back-end/flaskServer/items.py", line 26, in seeItem
+    return jsonify(item.as_dict())
+AttributeError: 'NoneType' object has no attribute 'as_dict'
+127.0.0.1 - - [17/Jul/2022 16:58:47] "GET /items/items HTTP/1.1" 200 -
+127.0.0.1 - - [17/Jul/2022 16:58:47] "GET /items/items HTTP/1.1" 200 -
+127.0.0.1 - - [17/Jul/2022 16:58:49] "[35m[1mGET /items/seeItem?id=[object%20Object] HTTP/1.1[0m" 500 -
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/app.py", line 2095, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/app.py", line 2080, in wsgi_app
+    response = self.handle_exception(e)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask_cors/extension.py", line 165, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/app.py", line 2077, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/app.py", line 1525, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask_cors/extension.py", line 165, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/app.py", line 1523, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/app.py", line 1509, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "/Users/michelecatani/Desktop/school/4semCompSci/3340/project/3340Project/back-end/flaskServer/items.py", line 26, in seeItem
+    return jsonify(item.as_dict())
+AttributeError: 'NoneType' object has no attribute 'as_dict'
+127.0.0.1 - - [17/Jul/2022 16:59:50] "[35m[1mGET /items/seeItem?id=[object%20Object] HTTP/1.1[0m" 500 -
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/app.py", line 2095, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/app.py", line 2080, in wsgi_app
+    response = self.handle_exception(e)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask_cors/extension.py", line 165, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/app.py", line 2077, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/app.py", line 1525, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask_cors/extension.py", line 165, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/app.py", line 1523, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/app.py", line 1509, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "/Users/michelecatani/Desktop/school/4semCompSci/3340/project/3340Project/back-end/flaskServer/items.py", line 26, in seeItem
+    return jsonify(item.as_dict())
+AttributeError: 'NoneType' object has no attribute 'as_dict'
+127.0.0.1 - - [17/Jul/2022 16:59:50] "[35m[1mGET /items/seeItem?id=[object%20Object] HTTP/1.1[0m" 500 -
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/app.py", line 2095, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/app.py", line 2080, in wsgi_app
+    response = self.handle_exception(e)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask_cors/extension.py", line 165, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/app.py", line 2077, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/app.py", line 1525, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask_cors/extension.py", line 165, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/app.py", line 1523, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/app.py", line 1509, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "/Users/michelecatani/Desktop/school/4semCompSci/3340/project/3340Project/back-end/flaskServer/items.py", line 26, in seeItem
+    return jsonify(item.as_dict())
+AttributeError: 'NoneType' object has no attribute 'as_dict'
+127.0.0.1 - - [17/Jul/2022 16:59:50] "[35m[1mGET /items/seeItem?id=[object%20Object] HTTP/1.1[0m" 500 -
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/app.py", line 2095, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/app.py", line 2080, in wsgi_app
+    response = self.handle_exception(e)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask_cors/extension.py", line 165, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/app.py", line 2077, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/app.py", line 1525, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask_cors/extension.py", line 165, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/app.py", line 1523, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/app.py", line 1509, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "/Users/michelecatani/Desktop/school/4semCompSci/3340/project/3340Project/back-end/flaskServer/items.py", line 26, in seeItem
+    return jsonify(item.as_dict())
+AttributeError: 'NoneType' object has no attribute 'as_dict'
+127.0.0.1 - - [17/Jul/2022 16:59:52] "[35m[1mGET /items/seeItem?id=[object%20Object] HTTP/1.1[0m" 500 -
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/app.py", line 2095, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/app.py", line 2080, in wsgi_app
+    response = self.handle_exception(e)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask_cors/extension.py", line 165, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/app.py", line 2077, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/app.py", line 1525, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask_cors/extension.py", line 165, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/app.py", line 1523, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/app.py", line 1509, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "/Users/michelecatani/Desktop/school/4semCompSci/3340/project/3340Project/back-end/flaskServer/items.py", line 26, in seeItem
+    return jsonify(item.as_dict())
+AttributeError: 'NoneType' object has no attribute 'as_dict'
+127.0.0.1 - - [17/Jul/2022 16:59:56] "GET /items/items HTTP/1.1" 200 -
+127.0.0.1 - - [17/Jul/2022 16:59:56] "GET /items/items HTTP/1.1" 200 -
+127.0.0.1 - - [17/Jul/2022 16:59:58] "[35m[1mGET /items/seeItem?id=[object%20Object] HTTP/1.1[0m" 500 -
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/app.py", line 2095, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/app.py", line 2080, in wsgi_app
+    response = self.handle_exception(e)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask_cors/extension.py", line 165, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/app.py", line 2077, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/app.py", line 1525, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask_cors/extension.py", line 165, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/app.py", line 1523, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/app.py", line 1509, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "/Users/michelecatani/Desktop/school/4semCompSci/3340/project/3340Project/back-end/flaskServer/items.py", line 26, in seeItem
+    return jsonify(item.as_dict())
+AttributeError: 'NoneType' object has no attribute 'as_dict'
+127.0.0.1 - - [17/Jul/2022 17:00:06] "[35m[1mGET /items/seeItem?id=[object%20Object] HTTP/1.1[0m" 500 -
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/app.py", line 2095, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/app.py", line 2080, in wsgi_app
+    response = self.handle_exception(e)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask_cors/extension.py", line 165, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/app.py", line 2077, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/app.py", line 1525, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask_cors/extension.py", line 165, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/app.py", line 1523, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/app.py", line 1509, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "/Users/michelecatani/Desktop/school/4semCompSci/3340/project/3340Project/back-end/flaskServer/items.py", line 26, in seeItem
+    return jsonify(item.as_dict())
+AttributeError: 'NoneType' object has no attribute 'as_dict'
+127.0.0.1 - - [17/Jul/2022 17:00:06] "[35m[1mGET /items/seeItem?id=[object%20Object] HTTP/1.1[0m" 500 -
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/app.py", line 2095, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/app.py", line 2080, in wsgi_app
+    response = self.handle_exception(e)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask_cors/extension.py", line 165, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/app.py", line 2077, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/app.py", line 1525, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask_cors/extension.py", line 165, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/app.py", line 1523, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/app.py", line 1509, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "/Users/michelecatani/Desktop/school/4semCompSci/3340/project/3340Project/back-end/flaskServer/items.py", line 26, in seeItem
+    return jsonify(item.as_dict())
+AttributeError: 'NoneType' object has no attribute 'as_dict'
+127.0.0.1 - - [17/Jul/2022 17:00:09] "[35m[1mGET /items/seeItem?id=undefined HTTP/1.1[0m" 500 -
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/app.py", line 2095, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/app.py", line 2080, in wsgi_app
+    response = self.handle_exception(e)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask_cors/extension.py", line 165, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/app.py", line 2077, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/app.py", line 1525, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask_cors/extension.py", line 165, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/app.py", line 1523, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/app.py", line 1509, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "/Users/michelecatani/Desktop/school/4semCompSci/3340/project/3340Project/back-end/flaskServer/items.py", line 26, in seeItem
+    return jsonify(item.as_dict())
+AttributeError: 'NoneType' object has no attribute 'as_dict'
+127.0.0.1 - - [17/Jul/2022 17:00:09] "[35m[1mGET /items/seeItem?id=undefined HTTP/1.1[0m" 500 -
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/app.py", line 2095, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/app.py", line 2080, in wsgi_app
+    response = self.handle_exception(e)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask_cors/extension.py", line 165, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/app.py", line 2077, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/app.py", line 1525, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask_cors/extension.py", line 165, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/app.py", line 1523, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/app.py", line 1509, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "/Users/michelecatani/Desktop/school/4semCompSci/3340/project/3340Project/back-end/flaskServer/items.py", line 26, in seeItem
+    return jsonify(item.as_dict())
+AttributeError: 'NoneType' object has no attribute 'as_dict'
+127.0.0.1 - - [17/Jul/2022 17:00:12] "GET /items/items HTTP/1.1" 200 -
+127.0.0.1 - - [17/Jul/2022 17:00:12] "GET /items/items HTTP/1.1" 200 -
+127.0.0.1 - - [17/Jul/2022 17:00:13] "GET /items/items HTTP/1.1" 200 -
+127.0.0.1 - - [17/Jul/2022 17:00:13] "GET /items/items HTTP/1.1" 200 -
+127.0.0.1 - - [17/Jul/2022 17:00:14] "[35m[1mGET /items/seeItem?id=undefined HTTP/1.1[0m" 500 -
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/app.py", line 2095, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/app.py", line 2080, in wsgi_app
+    response = self.handle_exception(e)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask_cors/extension.py", line 165, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/app.py", line 2077, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/app.py", line 1525, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask_cors/extension.py", line 165, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/app.py", line 1523, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/app.py", line 1509, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "/Users/michelecatani/Desktop/school/4semCompSci/3340/project/3340Project/back-end/flaskServer/items.py", line 26, in seeItem
+    return jsonify(item.as_dict())
+AttributeError: 'NoneType' object has no attribute 'as_dict'
+127.0.0.1 - - [17/Jul/2022 17:00:27] "[35m[1mGET /items/seeItem?id=[object%20Object] HTTP/1.1[0m" 500 -
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/app.py", line 2095, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/app.py", line 2080, in wsgi_app
+    response = self.handle_exception(e)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask_cors/extension.py", line 165, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/app.py", line 2077, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/app.py", line 1525, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask_cors/extension.py", line 165, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/app.py", line 1523, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/app.py", line 1509, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "/Users/michelecatani/Desktop/school/4semCompSci/3340/project/3340Project/back-end/flaskServer/items.py", line 26, in seeItem
+    return jsonify(item.as_dict())
+AttributeError: 'NoneType' object has no attribute 'as_dict'
+127.0.0.1 - - [17/Jul/2022 17:00:27] "[35m[1mGET /items/seeItem?id=[object%20Object] HTTP/1.1[0m" 500 -
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/app.py", line 2095, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/app.py", line 2080, in wsgi_app
+    response = self.handle_exception(e)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask_cors/extension.py", line 165, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/app.py", line 2077, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/app.py", line 1525, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask_cors/extension.py", line 165, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/app.py", line 1523, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/app.py", line 1509, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "/Users/michelecatani/Desktop/school/4semCompSci/3340/project/3340Project/back-end/flaskServer/items.py", line 26, in seeItem
+    return jsonify(item.as_dict())
+AttributeError: 'NoneType' object has no attribute 'as_dict'
+127.0.0.1 - - [17/Jul/2022 17:00:32] "[35m[1mGET /items/seeItem?id=[object%20Object] HTTP/1.1[0m" 500 -
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/app.py", line 2095, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/app.py", line 2080, in wsgi_app
+    response = self.handle_exception(e)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask_cors/extension.py", line 165, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/app.py", line 2077, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/app.py", line 1525, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask_cors/extension.py", line 165, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/app.py", line 1523, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/app.py", line 1509, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "/Users/michelecatani/Desktop/school/4semCompSci/3340/project/3340Project/back-end/flaskServer/items.py", line 26, in seeItem
+    return jsonify(item.as_dict())
+AttributeError: 'NoneType' object has no attribute 'as_dict'
+127.0.0.1 - - [17/Jul/2022 17:00:32] "[35m[1mGET /items/seeItem?id=[object%20Object] HTTP/1.1[0m" 500 -
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/app.py", line 2095, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/app.py", line 2080, in wsgi_app
+    response = self.handle_exception(e)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask_cors/extension.py", line 165, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/app.py", line 2077, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/app.py", line 1525, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask_cors/extension.py", line 165, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/app.py", line 1523, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/app.py", line 1509, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "/Users/michelecatani/Desktop/school/4semCompSci/3340/project/3340Project/back-end/flaskServer/items.py", line 26, in seeItem
+    return jsonify(item.as_dict())
+AttributeError: 'NoneType' object has no attribute 'as_dict'
+127.0.0.1 - - [17/Jul/2022 17:00:34] "[35m[1mGET /items/seeItem?id=[object%20Object] HTTP/1.1[0m" 500 -
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/app.py", line 2095, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/app.py", line 2080, in wsgi_app
+    response = self.handle_exception(e)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask_cors/extension.py", line 165, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/app.py", line 2077, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/app.py", line 1525, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask_cors/extension.py", line 165, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/app.py", line 1523, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/app.py", line 1509, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "/Users/michelecatani/Desktop/school/4semCompSci/3340/project/3340Project/back-end/flaskServer/items.py", line 26, in seeItem
+    return jsonify(item.as_dict())
+AttributeError: 'NoneType' object has no attribute 'as_dict'
+127.0.0.1 - - [17/Jul/2022 17:00:37] "GET /items/items HTTP/1.1" 200 -
+127.0.0.1 - - [17/Jul/2022 17:00:37] "GET /items/items HTTP/1.1" 200 -
+127.0.0.1 - - [17/Jul/2022 17:00:38] "GET /items/items HTTP/1.1" 200 -
+127.0.0.1 - - [17/Jul/2022 17:00:38] "GET /items/items HTTP/1.1" 200 -
+127.0.0.1 - - [17/Jul/2022 17:00:38] "[35m[1mGET /items/seeItem?id=[object%20Object] HTTP/1.1[0m" 500 -
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/app.py", line 2095, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/app.py", line 2080, in wsgi_app
+    response = self.handle_exception(e)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask_cors/extension.py", line 165, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/app.py", line 2077, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/app.py", line 1525, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask_cors/extension.py", line 165, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/app.py", line 1523, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/app.py", line 1509, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "/Users/michelecatani/Desktop/school/4semCompSci/3340/project/3340Project/back-end/flaskServer/items.py", line 26, in seeItem
+    return jsonify(item.as_dict())
+AttributeError: 'NoneType' object has no attribute 'as_dict'
+127.0.0.1 - - [17/Jul/2022 17:01:33] "GET /items/items HTTP/1.1" 200 -
+127.0.0.1 - - [17/Jul/2022 17:01:33] "GET /items/items HTTP/1.1" 200 -
+127.0.0.1 - - [17/Jul/2022 17:03:45] "GET /items/items HTTP/1.1" 200 -
+127.0.0.1 - - [17/Jul/2022 17:03:50] "GET /items/items HTTP/1.1" 200 -
+127.0.0.1 - - [17/Jul/2022 17:03:55] "GET /items/seeItem?id=1 HTTP/1.1" 200 -
+127.0.0.1 - - [17/Jul/2022 17:04:00] "GET /items/items HTTP/1.1" 200 -
+127.0.0.1 - - [17/Jul/2022 17:04:00] "GET /items/items HTTP/1.1" 200 -
+127.0.0.1 - - [17/Jul/2022 17:04:01] "GET /items/seeItem?id=1 HTTP/1.1" 200 -
+127.0.0.1 - - [17/Jul/2022 17:04:19] "GET /items/items HTTP/1.1" 200 -
+127.0.0.1 - - [17/Jul/2022 17:04:19] "GET /items/items HTTP/1.1" 200 -
+127.0.0.1 - - [17/Jul/2022 17:04:20] "GET /items/seeItem?id=1 HTTP/1.1" 200 -
+127.0.0.1 - - [17/Jul/2022 17:04:23] "GET /items/items HTTP/1.1" 200 -
+127.0.0.1 - - [17/Jul/2022 17:04:23] "GET /items/items HTTP/1.1" 200 -
+127.0.0.1 - - [17/Jul/2022 17:05:13] "GET /items/seeItem?id=1 HTTP/1.1" 200 -
+127.0.0.1 - - [17/Jul/2022 17:05:15] "GET /items/items HTTP/1.1" 200 -
+127.0.0.1 - - [17/Jul/2022 17:05:15] "GET /items/items HTTP/1.1" 200 -
+127.0.0.1 - - [17/Jul/2022 17:05:15] "GET /items/seeItem?id=1 HTTP/1.1" 200 -
+127.0.0.1 - - [17/Jul/2022 17:05:17] "GET /items/items HTTP/1.1" 200 -
+127.0.0.1 - - [17/Jul/2022 17:05:17] "GET /items/items HTTP/1.1" 200 -
+127.0.0.1 - - [17/Jul/2022 17:07:30] "GET /items/items HTTP/1.1" 200 -
+127.0.0.1 - - [17/Jul/2022 17:07:32] "GET /items/items HTTP/1.1" 200 -
+127.0.0.1 - - [17/Jul/2022 17:07:43] "GET /items/items HTTP/1.1" 200 -
+127.0.0.1 - - [17/Jul/2022 17:07:46] "GET /items/items HTTP/1.1" 200 -
+127.0.0.1 - - [17/Jul/2022 17:07:46] "GET /items/items HTTP/1.1" 200 -
+127.0.0.1 - - [17/Jul/2022 17:07:47] "[35m[1mGET /items/seeItem?id=[object%20Object] HTTP/1.1[0m" 500 -
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/app.py", line 2095, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/app.py", line 2080, in wsgi_app
+    response = self.handle_exception(e)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask_cors/extension.py", line 165, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/app.py", line 2077, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/app.py", line 1525, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask_cors/extension.py", line 165, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/app.py", line 1523, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/app.py", line 1509, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "/Users/michelecatani/Desktop/school/4semCompSci/3340/project/3340Project/back-end/flaskServer/items.py", line 26, in seeItem
+    return jsonify(item.as_dict())
+AttributeError: 'NoneType' object has no attribute 'as_dict'
+127.0.0.1 - - [17/Jul/2022 17:07:50] "GET /items/items HTTP/1.1" 200 -
+127.0.0.1 - - [17/Jul/2022 17:07:50] "GET /items/items HTTP/1.1" 200 -
+127.0.0.1 - - [17/Jul/2022 17:08:47] "GET /items/items HTTP/1.1" 200 -
+127.0.0.1 - - [17/Jul/2022 17:08:54] "GET /items/items HTTP/1.1" 200 -
+127.0.0.1 - - [17/Jul/2022 17:08:54] "GET /items/items HTTP/1.1" 200 -
+127.0.0.1 - - [17/Jul/2022 17:08:55] "[35m[1mGET /items/seeItem?id=[object%20Object] HTTP/1.1[0m" 500 -
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/app.py", line 2095, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/app.py", line 2080, in wsgi_app
+    response = self.handle_exception(e)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask_cors/extension.py", line 165, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/app.py", line 2077, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/app.py", line 1525, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask_cors/extension.py", line 165, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/app.py", line 1523, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/app.py", line 1509, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "/Users/michelecatani/Desktop/school/4semCompSci/3340/project/3340Project/back-end/flaskServer/items.py", line 26, in seeItem
+    return jsonify(item.as_dict())
+AttributeError: 'NoneType' object has no attribute 'as_dict'
+127.0.0.1 - - [17/Jul/2022 17:08:59] "GET /items/items HTTP/1.1" 200 -
+127.0.0.1 - - [17/Jul/2022 17:08:59] "GET /items/items HTTP/1.1" 200 -
+127.0.0.1 - - [17/Jul/2022 17:09:18] "[35m[1mGET /items/seeItem?id=[object%20Object] HTTP/1.1[0m" 500 -
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/app.py", line 2095, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/app.py", line 2080, in wsgi_app
+    response = self.handle_exception(e)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask_cors/extension.py", line 165, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/app.py", line 2077, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/app.py", line 1525, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask_cors/extension.py", line 165, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/app.py", line 1523, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/app.py", line 1509, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "/Users/michelecatani/Desktop/school/4semCompSci/3340/project/3340Project/back-end/flaskServer/items.py", line 26, in seeItem
+    return jsonify(item.as_dict())
+AttributeError: 'NoneType' object has no attribute 'as_dict'
+127.0.0.1 - - [17/Jul/2022 17:09:21] "GET /items/items HTTP/1.1" 200 -
+127.0.0.1 - - [17/Jul/2022 17:09:21] "GET /items/items HTTP/1.1" 200 -
+127.0.0.1 - - [17/Jul/2022 17:11:30] "[35m[1mGET /items/seeItem?id=[object%20Object] HTTP/1.1[0m" 500 -
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/app.py", line 2095, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/app.py", line 2080, in wsgi_app
+    response = self.handle_exception(e)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask_cors/extension.py", line 165, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/app.py", line 2077, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/app.py", line 1525, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask_cors/extension.py", line 165, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/app.py", line 1523, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/app.py", line 1509, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "/Users/michelecatani/Desktop/school/4semCompSci/3340/project/3340Project/back-end/flaskServer/items.py", line 26, in seeItem
+    return jsonify(item.as_dict())
+AttributeError: 'NoneType' object has no attribute 'as_dict'
+127.0.0.1 - - [17/Jul/2022 17:11:32] "GET /items/items HTTP/1.1" 200 -
+127.0.0.1 - - [17/Jul/2022 17:11:32] "GET /items/items HTTP/1.1" 200 -
+127.0.0.1 - - [17/Jul/2022 17:12:19] "[35m[1mGET /items/seeItem?id=[object%20Object] HTTP/1.1[0m" 500 -
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/app.py", line 2095, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/app.py", line 2080, in wsgi_app
+    response = self.handle_exception(e)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask_cors/extension.py", line 165, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/app.py", line 2077, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/app.py", line 1525, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask_cors/extension.py", line 165, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/app.py", line 1523, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/app.py", line 1509, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "/Users/michelecatani/Desktop/school/4semCompSci/3340/project/3340Project/back-end/flaskServer/items.py", line 26, in seeItem
+    return jsonify(item.as_dict())
+AttributeError: 'NoneType' object has no attribute 'as_dict'
+127.0.0.1 - - [17/Jul/2022 17:12:27] "GET /items/items HTTP/1.1" 200 -
+127.0.0.1 - - [17/Jul/2022 17:12:27] "GET /items/items HTTP/1.1" 200 -
+127.0.0.1 - - [17/Jul/2022 17:12:38] "[35m[1mGET /items/seeItem?id=[object%20Object] HTTP/1.1[0m" 500 -
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/app.py", line 2095, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/app.py", line 2080, in wsgi_app
+    response = self.handle_exception(e)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask_cors/extension.py", line 165, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/app.py", line 2077, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/app.py", line 1525, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask_cors/extension.py", line 165, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/app.py", line 1523, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/app.py", line 1509, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "/Users/michelecatani/Desktop/school/4semCompSci/3340/project/3340Project/back-end/flaskServer/items.py", line 26, in seeItem
+    return jsonify(item.as_dict())
+AttributeError: 'NoneType' object has no attribute 'as_dict'
+127.0.0.1 - - [17/Jul/2022 17:12:41] "GET /items/items HTTP/1.1" 200 -
+127.0.0.1 - - [17/Jul/2022 17:12:41] "GET /items/items HTTP/1.1" 200 -
+127.0.0.1 - - [17/Jul/2022 17:13:23] "GET /items/items HTTP/1.1" 200 -
+127.0.0.1 - - [17/Jul/2022 17:13:25] "GET /items/seeItem?id=1 HTTP/1.1" 200 -
+127.0.0.1 - - [17/Jul/2022 17:13:32] "GET /items/items HTTP/1.1" 200 -
+127.0.0.1 - - [17/Jul/2022 17:13:32] "GET /items/items HTTP/1.1" 200 -
+127.0.0.1 - - [17/Jul/2022 17:13:44] "GET /items/items HTTP/1.1" 200 -
+127.0.0.1 - - [17/Jul/2022 17:14:01] "GET /items/items HTTP/1.1" 200 -
+127.0.0.1 - - [17/Jul/2022 17:14:07] "GET /items/items HTTP/1.1" 200 -
+127.0.0.1 - - [17/Jul/2022 17:14:10] "[35m[1mGET /items/seeItem?id=[object%20Object] HTTP/1.1[0m" 500 -
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/app.py", line 2095, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/app.py", line 2080, in wsgi_app
+    response = self.handle_exception(e)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask_cors/extension.py", line 165, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/app.py", line 2077, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/app.py", line 1525, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask_cors/extension.py", line 165, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/app.py", line 1523, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/app.py", line 1509, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "/Users/michelecatani/Desktop/school/4semCompSci/3340/project/3340Project/back-end/flaskServer/items.py", line 26, in seeItem
+    return jsonify(item.as_dict())
+AttributeError: 'NoneType' object has no attribute 'as_dict'
+127.0.0.1 - - [17/Jul/2022 17:14:14] "GET /items/items HTTP/1.1" 200 -
+127.0.0.1 - - [17/Jul/2022 17:14:14] "GET /items/items HTTP/1.1" 200 -
+127.0.0.1 - - [17/Jul/2022 17:15:01] "GET /items/items HTTP/1.1" 200 -
+127.0.0.1 - - [17/Jul/2022 17:15:01] "GET /items/items HTTP/1.1" 200 -
+127.0.0.1 - - [17/Jul/2022 17:15:03] "[35m[1mGET /items/seeItem?id=[object%20Object] HTTP/1.1[0m" 500 -
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/app.py", line 2095, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/app.py", line 2080, in wsgi_app
+    response = self.handle_exception(e)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask_cors/extension.py", line 165, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/app.py", line 2077, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/app.py", line 1525, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask_cors/extension.py", line 165, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/app.py", line 1523, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/app.py", line 1509, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "/Users/michelecatani/Desktop/school/4semCompSci/3340/project/3340Project/back-end/flaskServer/items.py", line 26, in seeItem
+    return jsonify(item.as_dict())
+AttributeError: 'NoneType' object has no attribute 'as_dict'
+127.0.0.1 - - [17/Jul/2022 17:15:08] "GET /items/items HTTP/1.1" 200 -
+127.0.0.1 - - [17/Jul/2022 17:15:08] "GET /items/items HTTP/1.1" 200 -
+127.0.0.1 - - [17/Jul/2022 17:15:14] "GET /items/items HTTP/1.1" 200 -
+127.0.0.1 - - [17/Jul/2022 17:16:56] "GET /items/items HTTP/1.1" 200 -
+127.0.0.1 - - [17/Jul/2022 17:17:04] "GET /items/seeItem?id=1 HTTP/1.1" 200 -
+127.0.0.1 - - [17/Jul/2022 17:17:07] "GET /items/items HTTP/1.1" 200 -
+127.0.0.1 - - [17/Jul/2022 17:17:07] "GET /items/items HTTP/1.1" 200 -
+127.0.0.1 - - [17/Jul/2022 17:17:07] "GET /items/seeItem?id=14 HTTP/1.1" 200 -
+127.0.0.1 - - [17/Jul/2022 17:18:27] "GET /items/items HTTP/1.1" 200 -
+127.0.0.1 - - [17/Jul/2022 17:18:27] "GET /items/items HTTP/1.1" 200 -
+127.0.0.1 - - [17/Jul/2022 17:20:02] "GET /items/items HTTP/1.1" 200 -
+127.0.0.1 - - [17/Jul/2022 17:20:06] "GET /items/items HTTP/1.1" 200 -
+127.0.0.1 - - [17/Jul/2022 17:20:07] "GET /items/seeItem?id=1 HTTP/1.1" 200 -
+127.0.0.1 - - [17/Jul/2022 17:20:10] "GET /items/items HTTP/1.1" 200 -
+127.0.0.1 - - [17/Jul/2022 17:20:10] "GET /items/items HTTP/1.1" 200 -
+127.0.0.1 - - [17/Jul/2022 17:20:32] "GET /items/seeItem?id=1 HTTP/1.1" 200 -
+127.0.0.1 - - [17/Jul/2022 17:20:36] "GET /items/items HTTP/1.1" 200 -
+127.0.0.1 - - [17/Jul/2022 17:20:36] "GET /items/items HTTP/1.1" 200 -
+127.0.0.1 - - [17/Jul/2022 17:20:37] "GET /items/seeItem?id=14 HTTP/1.1" 200 -
+127.0.0.1 - - [17/Jul/2022 17:20:39] "GET /items/items HTTP/1.1" 200 -
+127.0.0.1 - - [17/Jul/2022 17:20:39] "GET /items/items HTTP/1.1" 200 -
+127.0.0.1 - - [17/Jul/2022 17:20:40] "GET /items/seeItem?id=1 HTTP/1.1" 200 -
+ * Detected change in '/Users/michelecatani/Desktop/school/4semCompSci/3340/project/3340Project/back-end/flaskServer/items.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 371-262-178
+/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask_sqlalchemy/__init__.py:872: FSADeprecationWarning: SQLALCHEMY_TRACK_MODIFICATIONS adds significant overhead and will be disabled by default in the future.  Set it to True or False to suppress this warning.
+  warnings.warn(FSADeprecationWarning(
+Created Database!
+ * Detected change in '/Users/michelecatani/Desktop/school/4semCompSci/3340/project/3340Project/back-end/flaskServer/items.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 371-262-178
+/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask_sqlalchemy/__init__.py:872: FSADeprecationWarning: SQLALCHEMY_TRACK_MODIFICATIONS adds significant overhead and will be disabled by default in the future.  Set it to True or False to suppress this warning.
+  warnings.warn(FSADeprecationWarning(
+Created Database!
+ * Detected change in '/Users/michelecatani/Desktop/school/4semCompSci/3340/project/3340Project/back-end/flaskServer/items.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 371-262-178
+/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask_sqlalchemy/__init__.py:872: FSADeprecationWarning: SQLALCHEMY_TRACK_MODIFICATIONS adds significant overhead and will be disabled by default in the future.  Set it to True or False to suppress this warning.
+  warnings.warn(FSADeprecationWarning(
+Created Database!
+ * Detected change in '/Users/michelecatani/Desktop/school/4semCompSci/3340/project/3340Project/back-end/flaskServer/items.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 371-262-178
+/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask_sqlalchemy/__init__.py:872: FSADeprecationWarning: SQLALCHEMY_TRACK_MODIFICATIONS adds significant overhead and will be disabled by default in the future.  Set it to True or False to suppress this warning.
+  warnings.warn(FSADeprecationWarning(
+Created Database!
+ * Detected change in '/Users/michelecatani/Desktop/school/4semCompSci/3340/project/3340Project/back-end/flaskServer/items.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 371-262-178
+/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask_sqlalchemy/__init__.py:872: FSADeprecationWarning: SQLALCHEMY_TRACK_MODIFICATIONS adds significant overhead and will be disabled by default in the future.  Set it to True or False to suppress this warning.
+  warnings.warn(FSADeprecationWarning(
+Created Database!
+127.0.0.1 - - [17/Jul/2022 17:22:37] "GET /items/items HTTP/1.1" 200 -
+127.0.0.1 - - [17/Jul/2022 17:22:37] "GET /items/items HTTP/1.1" 200 -
+127.0.0.1 - - [17/Jul/2022 17:22:42] "GET /items/seeItem?id=14 HTTP/1.1" 200 -
+127.0.0.1 - - [17/Jul/2022 17:22:44] "GET /items/items HTTP/1.1" 200 -
+127.0.0.1 - - [17/Jul/2022 17:22:44] "GET /items/items HTTP/1.1" 200 -
+127.0.0.1 - - [17/Jul/2022 17:22:44] "GET /items/seeItem?id=1 HTTP/1.1" 200 -
+127.0.0.1 - - [17/Jul/2022 17:22:45] "GET /items/items HTTP/1.1" 200 -
+127.0.0.1 - - [17/Jul/2022 17:22:45] "GET /items/items HTTP/1.1" 200 -
+127.0.0.1 - - [17/Jul/2022 17:23:45] "GET /items/seeItem?id=1 HTTP/1.1" 200 -
+127.0.0.1 - - [17/Jul/2022 17:23:48] "GET /items/items HTTP/1.1" 200 -
+127.0.0.1 - - [17/Jul/2022 17:23:48] "GET /items/items HTTP/1.1" 200 -
+127.0.0.1 - - [17/Jul/2022 17:23:48] "GET /items/seeItem?id=14 HTTP/1.1" 200 -
+127.0.0.1 - - [17/Jul/2022 17:23:52] "GET /items/items HTTP/1.1" 200 -
+127.0.0.1 - - [17/Jul/2022 17:23:52] "GET /items/items HTTP/1.1" 200 -
+127.0.0.1 - - [17/Jul/2022 17:23:53] "GET /items/seeItem?id=1 HTTP/1.1" 200 -
+127.0.0.1 - - [17/Jul/2022 17:23:54] "GET /items/items HTTP/1.1" 200 -
+127.0.0.1 - - [17/Jul/2022 17:23:54] "GET /items/items HTTP/1.1" 200 -
+127.0.0.1 - - [17/Jul/2022 17:23:55] "GET /items/seeItem?id=14 HTTP/1.1" 200 -
+127.0.0.1 - - [17/Jul/2022 17:24:00] "GET /items/items HTTP/1.1" 200 -
+127.0.0.1 - - [17/Jul/2022 17:24:00] "GET /items/items HTTP/1.1" 200 -
+127.0.0.1 - - [17/Jul/2022 17:24:01] "GET /items/seeItem?id=1 HTTP/1.1" 200 -
+127.0.0.1 - - [17/Jul/2022 17:24:03] "GET /items/items HTTP/1.1" 200 -
+127.0.0.1 - - [17/Jul/2022 17:24:03] "GET /items/items HTTP/1.1" 200 -
+127.0.0.1 - - [17/Jul/2022 17:24:03] "GET /items/seeItem?id=14 HTTP/1.1" 200 -
+ * Detected change in '/Users/michelecatani/Desktop/school/4semCompSci/3340/project/3340Project/back-end/flaskServer/models.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 371-262-178
+/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask_sqlalchemy/__init__.py:872: FSADeprecationWarning: SQLALCHEMY_TRACK_MODIFICATIONS adds significant overhead and will be disabled by default in the future.  Set it to True or False to suppress this warning.
+  warnings.warn(FSADeprecationWarning(
+Created Database!
+127.0.0.1 - - [17/Jul/2022 17:24:45] "[35m[1mGET /items/seeItem?id=about HTTP/1.1[0m" 500 -
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/app.py", line 2095, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/app.py", line 2080, in wsgi_app
+    response = self.handle_exception(e)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask_cors/extension.py", line 165, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/app.py", line 2077, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/app.py", line 1525, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask_cors/extension.py", line 165, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/app.py", line 1523, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/app.py", line 1509, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "/Users/michelecatani/Desktop/school/4semCompSci/3340/project/3340Project/back-end/flaskServer/items.py", line 29, in seeItem
+    return jsonify(item.as_dict())
+AttributeError: 'NoneType' object has no attribute 'as_dict'
+127.0.0.1 - - [17/Jul/2022 17:24:49] "GET /items/seeItem?id=14 HTTP/1.1" 200 -
+127.0.0.1 - - [17/Jul/2022 17:24:50] "[35m[1mGET /items/seeItem?id=about HTTP/1.1[0m" 500 -
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/app.py", line 2095, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/app.py", line 2080, in wsgi_app
+    response = self.handle_exception(e)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask_cors/extension.py", line 165, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/app.py", line 2077, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/app.py", line 1525, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask_cors/extension.py", line 165, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/app.py", line 1523, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/app.py", line 1509, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "/Users/michelecatani/Desktop/school/4semCompSci/3340/project/3340Project/back-end/flaskServer/items.py", line 29, in seeItem
+    return jsonify(item.as_dict())
+AttributeError: 'NoneType' object has no attribute 'as_dict'
+127.0.0.1 - - [17/Jul/2022 17:24:56] "GET /items/seeItem?id=14 HTTP/1.1" 200 -
+127.0.0.1 - - [17/Jul/2022 17:25:00] "GET /items/items HTTP/1.1" 200 -
+127.0.0.1 - - [17/Jul/2022 17:25:00] "GET /items/items HTTP/1.1" 200 -
+127.0.0.1 - - [17/Jul/2022 17:25:08] "GET /auth/ourNames HTTP/1.1" 200 -
+127.0.0.1 - - [17/Jul/2022 17:25:08] "GET /auth/ourNames HTTP/1.1" 200 -
+127.0.0.1 - - [17/Jul/2022 17:25:09] "GET /items/items HTTP/1.1" 200 -
+127.0.0.1 - - [17/Jul/2022 17:25:09] "GET /items/items HTTP/1.1" 200 -
+127.0.0.1 - - [17/Jul/2022 17:25:10] "[35m[1mGET /items/seeItem?id=about HTTP/1.1[0m" 500 -
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/app.py", line 2095, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/app.py", line 2080, in wsgi_app
+    response = self.handle_exception(e)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask_cors/extension.py", line 165, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/app.py", line 2077, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/app.py", line 1525, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask_cors/extension.py", line 165, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/app.py", line 1523, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/app.py", line 1509, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "/Users/michelecatani/Desktop/school/4semCompSci/3340/project/3340Project/back-end/flaskServer/items.py", line 29, in seeItem
+    return jsonify(item.as_dict())
+AttributeError: 'NoneType' object has no attribute 'as_dict'
+127.0.0.1 - - [17/Jul/2022 17:25:16] "GET /items/items HTTP/1.1" 200 -
+127.0.0.1 - - [17/Jul/2022 17:25:16] "GET /items/items HTTP/1.1" 200 -
+127.0.0.1 - - [17/Jul/2022 17:25:38] "[35m[1mGET /items/seeItem?id=about HTTP/1.1[0m" 500 -
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/app.py", line 2095, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/app.py", line 2080, in wsgi_app
+    response = self.handle_exception(e)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask_cors/extension.py", line 165, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/app.py", line 2077, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/app.py", line 1525, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask_cors/extension.py", line 165, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/app.py", line 1523, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/app.py", line 1509, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "/Users/michelecatani/Desktop/school/4semCompSci/3340/project/3340Project/back-end/flaskServer/items.py", line 29, in seeItem
+    return jsonify(item.as_dict())
+AttributeError: 'NoneType' object has no attribute 'as_dict'
+127.0.0.1 - - [17/Jul/2022 17:25:41] "GET /items/items HTTP/1.1" 200 -
+127.0.0.1 - - [17/Jul/2022 17:25:41] "GET /items/items HTTP/1.1" 200 -
+127.0.0.1 - - [17/Jul/2022 17:26:07] "GET /auth/ourNames HTTP/1.1" 200 -
+127.0.0.1 - - [17/Jul/2022 17:26:07] "GET /auth/ourNames HTTP/1.1" 200 -
+127.0.0.1 - - [17/Jul/2022 17:26:08] "GET /items/items HTTP/1.1" 200 -
+127.0.0.1 - - [17/Jul/2022 17:26:08] "GET /items/items HTTP/1.1" 200 -
+127.0.0.1 - - [17/Jul/2022 17:26:21] "GET /auth/ourNames HTTP/1.1" 200 -
+127.0.0.1 - - [17/Jul/2022 17:26:21] "GET /auth/ourNames HTTP/1.1" 200 -
+127.0.0.1 - - [17/Jul/2022 17:26:24] "GET /items/items HTTP/1.1" 200 -
+127.0.0.1 - - [17/Jul/2022 17:26:24] "GET /items/items HTTP/1.1" 200 -
+127.0.0.1 - - [17/Jul/2022 17:26:26] "GET /items/seeItem?id=1 HTTP/1.1" 200 -
+127.0.0.1 - - [17/Jul/2022 17:26:28] "GET /items/items HTTP/1.1" 200 -
+127.0.0.1 - - [17/Jul/2022 17:26:28] "GET /items/items HTTP/1.1" 200 -

@@ -19,4 +19,13 @@ def getItems():
         items[idx] = i.as_dict()
     return jsonify(items)
 
+## This function will return all the info on one item.
+## We parse the url parameter and query and find
+
+@items.route('/seeItem', methods=["GET"])
+def seeItem():
+    itemID = request.args.get('id')
+    item = Item.query.filter_by(id=itemID).first()
+    return jsonify(item.as_dict())
+
 ## create more item related routes/functions here
