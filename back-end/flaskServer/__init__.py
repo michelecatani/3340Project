@@ -27,8 +27,8 @@ def create_app():
     from .auth import auth
     from .items import items
 
-    app.register_blueprint(auth, url_prefix='/')
-    app.register_blueprint(items, url_prefix='/')
+    app.register_blueprint(auth, url_prefix='/auth/')
+    app.register_blueprint(items, url_prefix='/items/')
 
     from .models import User
 

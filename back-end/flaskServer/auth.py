@@ -39,7 +39,6 @@ def create_token():
 
 # this is our register route
 
-
 @auth.route('/register', methods=["POST"])
 def register():
     aDict = request.get_json()
@@ -54,10 +53,7 @@ def register():
     response = {"registered": "yes"}
     return response, 200
 
-
-auth.route('/profile')
-
-
+@auth.route('/profile')
 def my_profile():
     response_body = {
         "name": "Nagato",
@@ -65,3 +61,15 @@ def my_profile():
     }
 
     return response_body
+
+@auth.route('/ourNames')
+def ourNames():
+    ourNames = {
+        "ourNames": [
+            "Bob",
+            "Dylan's",
+            "Great-grandfather"
+        ]
+    }
+
+    return ourNames

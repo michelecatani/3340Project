@@ -8,7 +8,7 @@ function Items() {
   const [data, setData] = useState([{}]);
 
   useEffect(() => {
-    fetch(`${process.env.NEXT_PUBLIC_API_HOST}/items`).then((res) =>
+    fetch(`${process.env.NEXT_PUBLIC_API_HOST}/items/items`).then((res) =>
       res.json().then((data) => {
         setData(data);
         console.log(data);
@@ -16,12 +16,16 @@ function Items() {
     );
   }, []);
 
+  /* below, right now we're just returning all the items in our database.  This needs to be
+  clickable... material ui components can be used, basically just better looking and increased functionality.
+  
+  */
   return (
     <div>
-      {typeof data.items === "undefined" ? (
+      {typeof data === "undefined" ?  (
         <p>Loading...</p>
       ) : (
-        data.items.map((item, i) => <p key={i}>{item}</p>)
+        data.map((name, i) => <p key={i}>{name.name}</p>)
       )}
     </div>
   );

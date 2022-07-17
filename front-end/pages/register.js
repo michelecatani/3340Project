@@ -20,7 +20,7 @@ export default function RegisterPage() {
   function handleRegistrationSubmission(event) {
     axios({
       method: "POST",
-      url: `${process.env.NEXT_PUBLIC_API_HOST}/register`,
+      url: `${process.env.NEXT_PUBLIC_API_HOST}/auth/register`,
       data: {
         email: registrationForm.email,
         password: registrationForm.password,
@@ -78,7 +78,7 @@ export default function RegisterPage() {
         justifyContent: "center",
         alignItems: "center",
         flex: 1,
-        height: "100vh",
+        minHeight: 500
       }}
     >
       <Box sx={{ maxWidth: 500, width: "100%" }}>
