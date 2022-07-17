@@ -78,7 +78,7 @@ export default function RegisterPage() {
         justifyContent: "center",
         alignItems: "center",
         flex: 1,
-        minHeight: 500
+        height: "120vh",
       }}
     >
       <Box sx={{ maxWidth: 500, width: "100%" }}>

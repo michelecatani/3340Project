@@ -9,8 +9,16 @@ import InputBase from "@mui/material/InputBase";
 import MenuIcon from "@mui/icons-material/Menu";
 import SearchIcon from "@mui/icons-material/Search";
 import Button from "@mui/material/Button";
+import Divider from "@mui/material/Divider";
+import Drawer from "@mui/material/Drawer";
+
+// Icons
+import HomeIcon from "@mui/icons-material/Home";
+import StoreIcon from "@mui/icons-material/Store";
+import InfoIcon from "@mui/icons-material/Info";
 import LoginIcon from "@mui/icons-material/Login";
 
+// Search Bar
 const Search = styled("div")(({ theme }) => ({
   position: "relative",
   borderRadius: theme.shape.borderRadius,
@@ -51,25 +59,91 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
   },
 }));
 
-export default function PrimarySearchAppBar() {
+// SideMenu
+const drawerWidth = 240;
+
+export default function navbar(props) {
+  // New
+  const { window } = props;
+  const [mobileOpen, setMobileOpen] = React.useState(false);
+
+  const handleDrawerToggle = () => {
+    setMobileOpen(!mobileOpen);
+  };
+  const drawer = (
+    <Box
+      style={{ background: "#1D1B27" }}
+      onClick={handleDrawerToggle}
+      sx={{ textAlign: "center", height: "100vh" }}
+    >
+      <Typography color="white" variant="h5" sx={{ my: 2, fontWeight: "bold" }}>
+        NeoBay
+      </Typography>
+      <Button
+        style={{
+          color: "#D5D5D5",
+        }}
+        href="./"
+        startIcon={<HomeIcon />}
+      >
+        Home
+      </Button>
+      <Divider />
+      <Button
+        style={{
+          color: "#D5D5D5",
+        }}
+        startIcon={<InfoIcon />}
+        href="./about"
+      >
+        About
+      </Button>
+      <Divider />
+      <Button
+        style={{
+          color: "#D5D5D5",
+        }}
+        href="./items"
+        startIcon={<StoreIcon />}
+      >
+        Items
+      </Button>
+      <Divider />
+      <Button
+        style={{
+          color: "#D5D5D5",
+        }}
+        startIcon={<LoginIcon />}
+        href="./login"
+      >
+        Login
+      </Button>
+      <Divider />
+    </Box>
+  );
+  const container =
+    window !== undefined ? () => window().document.body : undefined;
+
+  //
+
   return (
     <Box sx={{ flexGrow: 1 }}>
       <AppBar position="static" style={{ background: "#1D1B27" }}>
         <Toolbar>
           <IconButton
-            size="large"
-            edge="start"
             color="inherit"
             aria-label="open drawer"
-            sx={{ mr: 2 }}
+            edge="start"
+            onClick={handleDrawerToggle}
+            sx={{ mr: 2, display: { sm: "none" } }}
           >
             <MenuIcon />
           </IconButton>
           <Typography
-            variant="h6"
+            variant="h5"
             noWrap
             component="div"
-            sx={{ display: { xs: "none", sm: "block" } }}
+            sx={{ display: { xs: "none", sm: "block", fontWeight: "bold" } }}
           >
             NeoBay
           </Typography>
@@ -84,15 +158,22 @@ export default function PrimarySearchAppBar() {
           </Search>
           <Box sx={{ flexGrow: 1 }} />
 
-          <Box sx={{ display: { xs: "none", md: "flex" } }}>
+          <Box sx={{ display: { xs: "none", sm: "block" } }}>
             {/* BUTTONS */}
-            <Button sx={({ mr: 2 }, { ml: 2 })} color="inherit" href="/">
+            <Button sx={({ mr: 2 }, { ml: 2 })} color="inherit" href="./">
               Home
             </Button>
+<<<<<<< HEAD
             <Button sx={({ mr: 2 }, { ml: 2 })} color="inherit" href="/about">
               About
             </Button>
             <Button sx={({ mr: 2 }, { ml: 2 })} color="inherit" href="items/items">
+=======
+            <Button sx={({ mr: 2 }, { ml: 2 })} color="inherit" href="./about">
+              About
+            </Button>
+            <Button sx={({ mr: 2 }, { ml: 2 })} color="inherit" href="./items">
+>>>>>>> e773056ddb74628584f47d97a44a0c9045e35ee8
               Items
             </Button>
             <Button
@@ -100,13 +181,34 @@ export default function PrimarySearchAppBar() {
               startIcon={<LoginIcon />}
               variant="contained"
               color="primary"
-              href="login"
+              href="./login"
             >
               Login
             </Button>
           </Box>
         </Toolbar>
       </AppBar>
+      {/* new */}
+      <Box component="nav">
+        <Drawer
+          container={container}
+          variant="temporary"
+          open={mobileOpen}
+          onClose={handleDrawerToggle}
+          ModalProps={{
+            keepMounted: true,
+          }}
+          sx={{
+            display: { xs: "block", sm: "none" },
+            "& .MuiDrawer-paper": {
+              boxSizing: "border-box",
+              width: drawerWidth,
+            },
+          }}
+        >
+          {drawer}
+        </Drawer>
+      </Box>
     </Box>
   );
 }
