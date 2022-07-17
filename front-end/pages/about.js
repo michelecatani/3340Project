@@ -8,13 +8,16 @@ function About() {
   const [data, setData] = useState([{}]);
 
   useEffect(() => {
-    fetch(`${process.env.NEXT_PUBLIC_API_HOST}/ourNames`).then((res) =>
+    fetch(`${process.env.NEXT_PUBLIC_API_HOST}/auth/ourNames`).then((res) =>
       res.json().then((data) => {
         setData(data);
         console.log(data);
       })
     );
   }, []);
+
+  // this below needs to be changed, it's just a sample from what we had when we were demonstrating 
+  // how to get stuff from BE to FE
 
   return (
     <div>

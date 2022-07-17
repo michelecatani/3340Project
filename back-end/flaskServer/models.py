@@ -33,6 +33,12 @@ class User(db.Model, UserMixin):
     #items = db.relationship('Item')
     #watchlist = db.relationship('Watchlist')
 
+    def as_dict(self):
+       return {c.name: getattr(self, c.name) for c in self.__table__.columns}
+
+    def __repr__(self):
+        return self.email
+
 # expand below class
 
 
@@ -43,4 +49,7 @@ class Item(db.Model):
     # price, inStock (bool), ... etc
 
     def as_dict(self):
-        return {}
+       return {c.name: getattr(self, c.name) for c in self.__table__.columns}
+
+    def __repr__(self):
+        return self.name

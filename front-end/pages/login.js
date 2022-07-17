@@ -11,7 +11,7 @@ export default function LoginPage() {
   function handleLoginSubmission(event) {
     axios({
       method: "POST",
-      url: `${process.env.NEXT_PUBLIC_API_HOST}/token`,
+      url: `${process.env.NEXT_PUBLIC_API_HOST}/auth/token`,
       data: {
         email: loginForm.email,
         password: loginForm.password,

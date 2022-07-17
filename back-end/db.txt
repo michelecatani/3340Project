@@ -1,0 +1,52 @@
+Script started on Sun Jul 17 13:29:20 2022
+[1m[7m%[27m[1m[0m                                                      [0m[27m[24m[Jmichelecatani@MacBook-Pro back-end % [K[?2004hppython3[?2004l
+Python 3.10.1 (v3.10.1:2cd268a3a9, Dec  6 2021, 14:28:59) [Clang 13.0.0 (clang-1300.0.29.3)] on darwin
+Type "help", "copyright", "credits" or "license" for more information.
+>>> from flaskServer import create_app, db
+>>> app = create_app()
+/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask_sqlalchemy/__init__.py:872: FSADeprecationWarning: SQLALCHEMY_TRACK_MODIFICATIONS adds significant overhead and will be disabled by default in the future.  Set it to True or False to suppress this warning.
+  warnings.warn(FSADeprecationWarning(
+Created Database!
+>>> app.app_context().push()
+>>> db.create_all()
+>>> from flaskServer.models.puy[K[K[K[K import User
+>>> users = User.query.all()
+>>> for i in uder[K[K[Kser:
+...     [K...[9Gprint(i.email)
+... 
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+NameError: name 'user' is not defined. Did you mean: 'User'?
+>>>     print(i.email)[K[K[K[K[K[K[K[K[K[K[K[K[K[Kfor i in users :
+...     [K...[9Gprint(i.email)
+... 
+hello
+dylan
+asdasd
+sefsdfsdfsdf
+
+heyMan
+dybourqu@gmail.com
+>>>     print(i.email)[5Gfor i in users:[K[5G    print(i.email)[5Gfor i in user:[K[5Gusers = User.query.all()[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[KItems[K.query.all()
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+NameError: name 'Item' is not defined. Did you mean: 'iter'?
+>>> from import [K[K[K[K[K[KflaskServer.models import Item
+>>> from flaskServer.models import Item[5Gusers = Item.query.all()[K[5G    print(i.email)[K[5Gusers = Item.query.all()
+>>> for i in users:
+...     [K...[9G[rint[K[K[K[K[Kprint(i.name)
+... 
+golfClub
+khabib
+>>> from flawk[K[KskServer.models import Item
+>>> from flaskServer.models import Item[5G    print(i.name)[K[5Gfor i in users:[K[5G[9P[10G = Item.query.all()[5Gfrom flaskServer.models import Item[5Gusers = Item.query.all()[K
+>>> pr[K[Kfor i int[K users:
+...     [K...[9Gprint(i)
+... 
+Item()
+Item()
+>>> 
+KeyboardInterrupt
+>>> 
+zsh: suspended  python3
+[1m[7m%[27m[1m[0m                                                      [0m[27m[24m[Jmichelecatani@MacBook-Pro back-end % [K[?2004h

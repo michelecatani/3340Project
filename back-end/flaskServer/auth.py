@@ -9,7 +9,6 @@ auth = Blueprint('auth', __name__)
 
 # this is our login route.  If the login is successful, it returns a token. Else, throws 401 error.
 
-
 @auth.route('/token', methods=["POST"])
 def create_token():
     email = request.json.get("email", None)
@@ -23,7 +22,6 @@ def create_token():
     return response
 
 # this is our register route
-
 
 @auth.route('/register', methods=["POST"])
 def register():
@@ -39,10 +37,7 @@ def register():
     response = {"registered": "yes"}
     return response, 200
 
-
-auth.route('/profile')
-
-
+@auth.route('/profile')
 def my_profile():
     response_body = {
         "name": "Nagato",
@@ -50,3 +45,15 @@ def my_profile():
     }
 
     return response_body
+
+@auth.route('/ourNames')
+def ourNames():
+    ourNames = {
+        "ourNames": [
+            "Bob",
+            "Dylan's",
+            "Great-grandfather"
+        ]
+    }
+
+    return ourNames
