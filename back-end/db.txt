@@ -49,4 +49,99 @@ Item()
 KeyboardInterrupt
 >>> 
 zsh: suspended  python3
-[1m[7m%[27m[1m[0m                                                      [0m[27m[24m[Jmichelecatani@MacBook-Pro back-end % [K[?2004h
+[1m[7m%[27m[1m[0m                                                      [0m[27m[24m[Jmichelecatani@MacBook-Pro back-end % [K[?2004heexport f FLASK_APP= [Krrun.  r [K[?2004l
+[1m[7m%[27m[1m[0m                                                      [0m[27m[24m[Jmichelecatani@MacBook-Pro back-end % [K[?2004heexport FLASK_APP= [Krrun.py[?2004l
+[1m[7m%[27m[1m[0m                                                      [0m[27m[24m[Jmichelecatani@MacBook-Pro back-end % [K[?2004heexport FLASK+ _APP= [K[K[?2004l
+[1m[7m%[27m[1m[0m                                                      [0m[27m[24m[Jmichelecatani@MacBook-Pro back-end % [K[?2004hfflask run[?2004l
+ * Serving Flask app '' (lazy loading)
+ * Environment: production
+[31m   WARNING: This is a development server. Do not use it in a production deployment.[0m
+[2m   Use a production WSGI server instead.[0m
+ * Debug mode: off
+Usage: flask run [OPTIONS]
+Try 'flask run --help' for help.
+
+Error: Could not locate a Flask application. You did not provide the "FLASK_APP" environment variable, and a "wsgi.py" or "app.py" module was not found in the current directory.
+[1m[7m%[27m[1m[0m                                                      [0m[27m[24m[Jmichelecatani@MacBook-Pro back-end % [K[?2004heexport FLASK_APP= [Krrun.py[?2004l
+[1m[7m%[27m[1m[0m                                                      [0m[27m[24m[Jmichelecatani@MacBook-Pro back-end % [K[?2004heexport FLASK_APP   DE  ENV= [Kddevelopment[?2004l
+[1m[7m%[27m[1m[0m                                                      [0m[27m[24m[Jmichelecatani@MacBook-Pro back-end % [K[?2004hfflask run[?2004l
+ * Serving Flask app 'run.py' (lazy loading)
+ * Environment: development
+ * Debug mode: on
+/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask_sqlalchemy/__init__.py:872: FSADeprecationWarning: SQLALCHEMY_TRACK_MODIFICATIONS adds significant overhead and will be disabled by default in the future.  Set it to True or False to suppress this warning.
+  warnings.warn(FSADeprecationWarning(
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.10/bin/flask", line 8, in <module>
+    sys.exit(main())
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/cli.py", line 988, in main
+    cli.main()
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/cli.py", line 579, in main
+    return super().main(*args, **kwargs)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/click/core.py", line 1055, in main
+    rv = self.invoke(ctx)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/click/core.py", line 1657, in invoke
+    return _process_result(sub_ctx.command.invoke(sub_ctx))
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/click/core.py", line 1404, in invoke
+    return ctx.invoke(self.callback, **ctx.params)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/click/core.py", line 760, in invoke
+    return __callback(*args, **kwargs)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/click/decorators.py", line 84, in new_func
+    return ctx.invoke(f, obj, *args, **kwargs)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/click/core.py", line 760, in invoke
+    return __callback(*args, **kwargs)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/cli.py", line 850, in run_command
+    app = DispatchingApp(info.load_app, use_eager_loading=eager_loading)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/cli.py", line 299, in __init__
+    self._load_unlocked()
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/cli.py", line 333, in _load_unlocked
+    self._app = rv = self.loader()
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/cli.py", line 389, in load_app
+    app = locate_app(import_name, name)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/cli.py", line 234, in locate_app
+    __import__(module_name)
+  File "/Users/michelecatani/Desktop/school/4semCompSci/3340/project/3340Project/back-end/run.py", line 3, in <module>
+    app = create_app()
+  File "/Users/michelecatani/Desktop/school/4semCompSci/3340/project/3340Project/back-end/flaskServer/__init__.py", line 30, in create_app
+    app.register_blueprint(auth, url_prefix='/auth/')
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/scaffold.py", line 56, in wrapper_func
+    return f(self, *args, **kwargs)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/app.py", line 1028, in register_blueprint
+    blueprint.register(self, options)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/blueprints.py", line 360, in register
+    deferred(state)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/blueprints.py", line 411, in <lambda>
+    lambda s: s.add_url_rule(
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/blueprints.py", line 103, in add_url_rule
+    self.app.add_url_rule(
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/scaffold.py", line 56, in wrapper_func
+    return f(self, *args, **kwargs)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/app.py", line 1090, in add_url_rule
+    raise AssertionError(
+AssertionError: View function mapping is overwriting an existing endpoint function: auth.create_token
+[1m[7m%[27m[1m[0m                                                      [0m[27m[24m[Jmichelecatani@MacBook-Pro back-end % [K[?2004hflask run[9Dexport FLASK_ENV=development[K[A[39CAPP[1Brun.py[K[A[31Cflask run[K[1B[K[A[46C[9Dexport FLASK_APP=run.py[K[A[44CENV[1Bdevelopment[A[39CAPP[1Brun.py     [?2004l
+[1m[7m%[27m[1m[0m                                                      [0m[27m[24m[Jmichelecatani@MacBook-Pro back-end % [K[?2004hexport FLASK_APP=run.py[K[A[31Cflask run[K[1B[K[A[46C[9Dexport FLASK_ENV=development[K[?2004l
+[1m[7m%[27m[1m[0m                                                      [0m[27m[24m[Jmichelecatani@MacBook-Pro back-end % [K[?2004hexport FLASK_ENV=development[K[A[39CAPP[1Brun.py[K[A[31Cflask run[K[1B[K[A[46C[?2004l[1B * Serving Flask app 'run.py' (lazy loading)
+ * Environment: development
+ * Debug mode: on
+/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask_sqlalchemy/__init__.py:872: FSADeprecationWarning: SQLALCHEMY_TRACK_MODIFICATIONS adds significant overhead and will be disabled by default in the future.  Set it to True or False to suppress this warning.
+  warnings.warn(FSADeprecationWarning(
+Created Database!
+ * Running on http://127.0.0.1:5000 (Press CTRL+C to quit)
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 371-262-178
+/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask_sqlalchemy/__init__.py:872: FSADeprecationWarning: SQLALCHEMY_TRACK_MODIFICATIONS adds significant overhead and will be disabled by default in the future.  Set it to True or False to suppress this warning.
+  warnings.warn(FSADeprecationWarning(
+Created Database!
+127.0.0.1 - - [17/Jul/2022 16:10:37] "GET /items/items HTTP/1.1" 200 -
+127.0.0.1 - - [17/Jul/2022 16:10:37] "GET /items/items HTTP/1.1" 200 -
+127.0.0.1 - - [17/Jul/2022 16:10:39] "GET /items/items HTTP/1.1" 200 -
+127.0.0.1 - - [17/Jul/2022 16:10:39] "GET /items/items HTTP/1.1" 200 -
+127.0.0.1 - - [17/Jul/2022 16:10:41] "GET /auth/ourNames HTTP/1.1" 200 -
+127.0.0.1 - - [17/Jul/2022 16:10:41] "GET /auth/ourNames HTTP/1.1" 200 -
+127.0.0.1 - - [17/Jul/2022 16:10:44] "GET /auth/ourNames HTTP/1.1" 200 -
+127.0.0.1 - - [17/Jul/2022 16:10:44] "GET /auth/ourNames HTTP/1.1" 200 -
+127.0.0.1 - - [17/Jul/2022 16:10:45] "GET /items/items HTTP/1.1" 200 -
+127.0.0.1 - - [17/Jul/2022 16:10:45] "GET /items/items HTTP/1.1" 200 -
+127.0.0.1 - - [17/Jul/2022 16:10:51] "GET /items/items HTTP/1.1" 200 -
+127.0.0.1 - - [17/Jul/2022 16:10:51] "GET /items/items HTTP/1.1" 200 -

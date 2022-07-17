@@ -9,7 +9,6 @@ auth = Blueprint('auth', __name__)
 
 # this is our login route.  If the login is successful, it returns a token. Else, throws 401 error.
 
-
 @auth.route('/login', methods=["POST"])
 def create_token():
     email = request.json.get("email", None)
@@ -26,7 +25,7 @@ def create_token():
 
 
 @auth.route('/admin', methods=["POST"])
-def create_token():
+def create_Admin_token():
     email = request.json.get("email", None)
     password = request.json.get("password", None)
     admin = Admin.query.filter_by(email=email).first()
