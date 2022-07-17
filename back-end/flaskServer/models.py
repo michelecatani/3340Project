@@ -44,3 +44,10 @@ class Item(db.Model):
 
     def as_dict(self):
         return {}
+
+
+@dataclass
+class Admin(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    email = db.Column(db.String(150), unique=True)
+    password = db.Column(db.String(150))

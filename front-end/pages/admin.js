@@ -2,19 +2,19 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import { Box, Button, TextField, Typography } from "@mui/material";
 
-export default function LoginPage() {
-  const [loginForm, setloginForm] = useState({
+export default function AdminPage() {
+  const [adminForm, setAdminForm] = useState({
     email: "",
     password: "",
   });
 
-  function handleLoginSubmission(event) {
+  function handleAdminSubmission(event) {
     axios({
       method: "POST",
-      url: `${process.env.NEXT_PUBLIC_API_HOST}/login`,
+      url: `${process.env.NEXT_PUBLIC_API_HOST}/admin`,
       data: {
-        email: loginForm.email,
-        password: loginForm.password,
+        email: adminForm.email,
+        password: adminForm.password,
       },
     })
       .then((response) => {
@@ -28,7 +28,7 @@ export default function LoginPage() {
         }
       });
 
-    setloginForm({
+    setAdminForm({
       email: "",
       password: "",
     });
@@ -38,7 +38,7 @@ export default function LoginPage() {
 
   function handleChange(event) {
     const { value, name } = event.target;
-    setloginForm((prevNote) => ({
+    setAdminForm((prevNote) => ({
       ...prevNote,
       [name]: value,
     }));
@@ -56,7 +56,7 @@ export default function LoginPage() {
     >
       <Box sx={{ maxWidth: 500, width: "100%" }}>
         <Typography variant="h4" align="center">
-          NeoBay
+          NeoBay Admin
         </Typography>
         <Box
           sx={{
@@ -68,7 +68,7 @@ export default function LoginPage() {
             label="Email"
             type="email"
             name="email"
-            value={loginForm.email}
+            value={adminForm.email}
             margin="dense"
             onChange={handleChange}
           />
@@ -77,28 +77,21 @@ export default function LoginPage() {
             type="password"
             name="password"
             placeholder="**********"
-            value={loginForm.password}
+            value={adminForm.password}
             margin="dense"
             onChange={handleChange}
           />
           <Box display="flex" justifyContent="space-between" sx={{ mt: 2 }}>
             <Button
               variant="contained"
-              onClick={handleLoginSubmission}
+              onClick={handleAdminSubmission}
               sx={{ mr: 1 }}
               fullWidth
             >
               Login
             </Button>
 
-            <Button
-              variant="contained"
-              href="register"
-              sx={{ ml: 1 }}
-              fullWidth
-            >
-              Register
-            </Button>
+           
           </Box>
         </Box>
       </Box>
