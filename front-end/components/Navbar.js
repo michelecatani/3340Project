@@ -163,17 +163,22 @@ export default function navbar(props) {
             <Button sx={({ mr: 2 }, { ml: 2 })} color="inherit" href="./">
               Home
             </Button>
-<<<<<<< HEAD
+
             <Button sx={({ mr: 2 }, { ml: 2 })} color="inherit" href="/about">
               About
             </Button>
-            <Button sx={({ mr: 2 }, { ml: 2 })} color="inherit" href="items/items">
-=======
+
+            {/* There was an error here */}
+            {/* <Button
+              sx={({ mr: 2 }, { ml: 2 })}
+              color="inherit"
+              href="items/items"
+            ></Button> */}
+
             <Button sx={({ mr: 2 }, { ml: 2 })} color="inherit" href="./about">
               About
             </Button>
             <Button sx={({ mr: 2 }, { ml: 2 })} color="inherit" href="./items">
->>>>>>> e773056ddb74628584f47d97a44a0c9045e35ee8
               Items
             </Button>
             <Button
