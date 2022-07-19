@@ -145,7 +145,7 @@ export default function navbar(props) {
             component="div"
             sx={{ display: { xs: "none", sm: "block", fontWeight: "bold" } }}
           >
-            NeoBay
+            <img src="/tpLogo.png" alt="NeoBay" width="200px"/>
           </Typography>
           <Search>
             <SearchIconWrapper>

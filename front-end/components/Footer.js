@@ -17,6 +17,8 @@ export default function footer() {
         <Grid item xs={12} sm={4}>
           <Box textAlign="center" color="white">
             Copyright &copy; The Squad 2022
+            <br/><a href="www.aboutus.com">About Us</a>
+            <br/><a href="www.contact.com">Contact Us</a>
           </Box>
         </Grid>
       </Container>

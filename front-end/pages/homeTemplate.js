@@ -430,8 +430,7 @@ export default function homeTemplate() {
 
 
       <br/>
-      <br/><a href="www.aboutus.com">About Us</a>
-      <br/><a href="www.contact.com">Contact Us</a>
+      
 
       <br/>
       <br/>

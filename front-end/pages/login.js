@@ -51,7 +51,7 @@ export default function LoginPage() {
         justifyContent: "center",
         alignItems: "center",
         flex: 1,
-        height: "100vh",
+        height: "75vh",
       }}
     >
       <Box sx={{ maxWidth: 500, width: "100%" }}>
