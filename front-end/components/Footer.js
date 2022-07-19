@@ -9,6 +9,9 @@ export default function footer() {
       py={{ xs: 3, sm: 5 }}
       bgcolor="text.primary"
       color="black"
+      position="fixed"
+      bottom="0"
+      width="100%"
     >
       <Container maxwidth="lg">
         <Grid item xs={12} sm={4}>
