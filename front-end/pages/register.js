@@ -83,7 +83,7 @@ export default function RegisterPage() {
     >
       <Box sx={{ maxWidth: 500, width: "100%" }}>
         <Typography variant="h4" align="center">
-          NeoBay
+          <img src="/neoBay-Logo.png" alt="NeoBay" width="500px"/>
         </Typography>
         <Box
           sx={{

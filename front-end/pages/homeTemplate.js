@@ -6,16 +6,27 @@ import Stack from '@mui/material/Stack';
 import Button from '@mui/material/Button';
 import Paper from '@mui/material/Paper';
 import Typography from '@mui/material/Typography';
-import { useTheme } from '@mui/material/styles';
 import MobileStepper from '@mui/material/MobileStepper';
 import KeyboardArrowLeft from '@mui/icons-material/KeyboardArrowLeft';
 import KeyboardArrowRight from '@mui/icons-material/KeyboardArrowRight';
 import SwipeableViews from 'react-swipeable-views';
 import { autoPlay } from 'react-swipeable-views-utils';
 
+// STYLES
+import { makeStyles } from "@material-ui/core/styles";
+import { useTheme } from '@mui/material/styles';
 
 // NEED TO ADD
 // - Change Links
+
+
+/*const styles = {
+   name: {
+      property:
+   }
+}
+
+const useStyles = makeStyles(styles);*/
 
 
 // CODE FOR IMAGE CAROUSEL
@@ -49,9 +60,10 @@ const images = [
 export default function homeTemplate() {
 
   const theme = useTheme();
+  const style = useStyles();
   const [activeStep, setActiveStep] = React.useState(0);
   const maxSteps = images.length;
-
+  
   const handleNext = () => {
     setActiveStep((prevActiveStep) => prevActiveStep + 1);
   };
@@ -74,7 +86,7 @@ export default function homeTemplate() {
           <TextField id="searchbar" label="Search NeoBay" variant="standard" />
       </Box>
 
-      <Container>
+      <Container align="center">
         <h2>Expand Your Technology!</h2>
         <Button class="homeitem" variant="outlined" href="#contained-buttons">TECH 1</Button>
         <Button class="homeitem" variant="outlined" href="#contained-buttons">TECH 2</Button>
@@ -83,6 +95,7 @@ export default function homeTemplate() {
         <Box sx={{ maxWidth: 400, flexGrow: 1 }}>
           
           <Paper
+            className={style.paper}
             square
             elevation={0}
             sx={{
@@ -163,7 +176,7 @@ export default function homeTemplate() {
       </Container>
 
             
-      <Container>
+      <Container align="center">
         <h2>Explore New Musical Tunes!</h2>
         <Button class="homeitem" variant="outlined" href="#contained-buttons">INSTRUMENT 1</Button>
         <Button class="homeitem" variant="outlined" href="#contained-buttons">INSTRUMENT 2</Button>
@@ -251,7 +264,7 @@ export default function homeTemplate() {
 
       </Container>
 
-      <Container>
+      <Container align="center">
         <h2>Choose a Memorable Collectible!</h2>
         <Button class="homeitem" variant="outlined" href="#contained-buttons">MEMORABILIA 1</Button>
         <Button class="homeitem" variant="outlined" href="#contained-buttons">MEMORABILIA 2</Button>
@@ -339,7 +352,7 @@ export default function homeTemplate() {
 
       </Container>
 
-      <Container>
+      <Container align="center">
         <h2>Find Your Style!</h2>
         <Button class="homeitem" variant="outlined" href="#contained-buttons">FASHION 1</Button>
         <Button class="homeitem" variant="outlined" href="#contained-buttons">FASHION 2</Button>
@@ -430,8 +443,6 @@ export default function homeTemplate() {
 
 
       <br/>
-      
-
       <br/>
       <br/>
 
