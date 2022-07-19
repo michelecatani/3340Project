@@ -5,7 +5,7 @@ import React from "react";
 import { useState, useEffect } from "react";
 import Button from "@mui/material/Button";
 
-function Items() {
+export default function Items() {
   const [data, setData] = useState([{}]);
 
   useEffect(() => {
@@ -19,7 +19,6 @@ function Items() {
 
   /* below, right now we're just returning all the items in our database.  This needs to be
   clickable... material ui components can be used, basically just better looking and increased functionality.
-  
   */
   return (
     <div>
@@ -39,5 +38,3 @@ function Items() {
     </div>
   );
 }
-
-export default Items;

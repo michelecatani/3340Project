@@ -15,8 +15,10 @@ import { autoPlay } from 'react-swipeable-views-utils';
 
 
 // NEED TO ADD
-// - Navigation Bar
 // - Change Links
+
+
+// CODE FOR IMAGE CAROUSEL
 
 const AutoPlaySwipeableViews = autoPlay(SwipeableViews);
 
@@ -63,53 +65,23 @@ export default function homeTemplate() {
   };
 
   return (
-          <Container>
-          <h1>NeoBay</h1>
-          <a href="www.login.com">Already a member? Sign In</a>
-      
-      
-          <Box component="form" sx={{'& > :not(style)': { m: 1, width: '50ch' },}} noValidate autoComplete="off">
-              <TextField id="searchbar" label="Search NeoBay" variant="standard" />
-          </Box>
+    
+    <Container>
+      <h1>NeoBay</h1>
+      <a href="www.login.com">Already a member? Sign In</a>
 
-          <Container>
-              <h2>Expand Your Technology!</h2>
-              <Button class="homeitem" variant="outlined" href="#contained-buttons">TECH 1</Button>
-              <Button class="homeitem" variant="outlined" href="#contained-buttons">TECH 2</Button>
-              <Button class="homeitem" variant="outlined" href="#contained-buttons">TECH 3</Button>
+      <Box component="form" sx={{'& > :not(style)': { m: 1, width: '50ch' },}} noValidate autoComplete="off">
+          <TextField id="searchbar" label="Search NeoBay" variant="standard" />
+      </Box>
 
-          </Container>
+      <Container>
+        <h2>Expand Your Technology!</h2>
+        <Button class="homeitem" variant="outlined" href="#contained-buttons">TECH 1</Button>
+        <Button class="homeitem" variant="outlined" href="#contained-buttons">TECH 2</Button>
+        <Button class="homeitem" variant="outlined" href="#contained-buttons">TECH 3</Button>
 
-          <Container>
-              <h2>Explore New Musical Tunes!</h2>
-              <Button class="homeitem" variant="outlined" href="#contained-buttons">INSTRUMENT 1</Button>
-              <Button class="homeitem" variant="outlined" href="#contained-buttons">INSTRUMENT 2</Button>
-              <Button class="homeitem" variant="outlined" href="#contained-buttons">INSTRUMENT 3</Button>
-
-          </Container>
-
-          <Container>
-              <h2>Choose a Memorable Collectible!</h2>
-              <Button class="homeitem" variant="outlined" href="#contained-buttons">MEMORABILIA 1</Button>
-              <Button class="homeitem" variant="outlined" href="#contained-buttons">MEMORABILIA 2</Button>
-              <Button class="homeitem" variant="outlined" href="#contained-buttons">MEMORABILIA 3</Button>
-
-          </Container>
-
-          <Container>
-              <h2>Find Your Style!</h2>
-              <Button class="homeitem" variant="outlined" href="#contained-buttons">FASHION 1</Button>
-              <Button class="homeitem" variant="outlined" href="#contained-buttons">FASHION 2</Button>
-              <Button class="homeitem" variant="outlined" href="#contained-buttons">FASHION 3</Button>
-
-          </Container>
-
-
-
-          <a href="www.aboutus.com">About Us</a>
-          <br/><a href="www.contact.com">Contact Us</a>
-
-          <Box sx={{ maxWidth: 400, flexGrow: 1 }}>
+        <Box sx={{ maxWidth: 400, flexGrow: 1 }}>
+          
           <Paper
             square
             elevation={0}
@@ -119,17 +91,21 @@ export default function homeTemplate() {
               height: 50,
               pl: 2,
               bgcolor: 'background.default',
-            }}
-          >
+            }}>
+
             <Typography>{images[activeStep].label}</Typography>
+
           </Paper>
+            
           <AutoPlaySwipeableViews
+            
             axis={theme.direction === 'rtl' ? 'x-reverse' : 'x'}
             index={activeStep}
             onChangeIndex={handleStepChange}
-            enableMouseEvents
-          >
+            enableMouseEvents>
+
             {images.map((step, index) => (
+              
               <div key={step.label}>
                 {Math.abs(activeStep - index) <= 2 ? (
                   <Box
@@ -142,22 +118,24 @@ export default function homeTemplate() {
                       width: '100%',
                     }}
                     src={step.imgPath}
-                    alt={step.label}
-                  />
+                    alt={step.label}/>
                 ) : null}
               </div>
+
             ))}
+
           </AutoPlaySwipeableViews>
+
           <MobileStepper
             steps={maxSteps}
             position="static"
             activeStep={activeStep}
+            
             nextButton={
               <Button
                 size="small"
                 onClick={handleNext}
-                disabled={activeStep === maxSteps - 1}
-              >
+                disabled={activeStep === maxSteps - 1}>
                 Next
                 {theme.direction === 'rtl' ? (
                   <KeyboardArrowLeft />
@@ -166,6 +144,7 @@ export default function homeTemplate() {
                 )}
               </Button>
             }
+            
             backButton={
               <Button size="small" onClick={handleBack} disabled={activeStep === 0}>
                 {theme.direction === 'rtl' ? (
@@ -176,12 +155,290 @@ export default function homeTemplate() {
                 Back
               </Button>
             }
+
           />
+
         </Box>
 
       </Container>
 
+            
+      <Container>
+        <h2>Explore New Musical Tunes!</h2>
+        <Button class="homeitem" variant="outlined" href="#contained-buttons">INSTRUMENT 1</Button>
+        <Button class="homeitem" variant="outlined" href="#contained-buttons">INSTRUMENT 2</Button>
+        <Button class="homeitem" variant="outlined" href="#contained-buttons">INSTRUMENT 3</Button>
+
+        <Box sx={{ maxWidth: 400, flexGrow: 1 }}>
+          
+          <Paper
+            square
+            elevation={0}
+            sx={{
+              display: 'flex',
+              alignItems: 'center',
+              height: 50,
+              pl: 2,
+              bgcolor: 'background.default',
+            }}>
+
+            <Typography>{images[activeStep].label}</Typography>
+
+          </Paper>
+            
+          <AutoPlaySwipeableViews
+            
+            axis={theme.direction === 'rtl' ? 'x-reverse' : 'x'}
+            index={activeStep}
+            onChangeIndex={handleStepChange}
+            enableMouseEvents>
+
+            {images.map((step, index) => (
+              
+              <div key={step.label}>
+                {Math.abs(activeStep - index) <= 2 ? (
+                  <Box
+                    component="img"
+                    sx={{
+                      height: 255,
+                      display: 'block',
+                      maxWidth: 400,
+                      overflow: 'hidden',
+                      width: '100%',
+                    }}
+                    src={step.imgPath}
+                    alt={step.label}/>
+                ) : null}
+              </div>
+
+            ))}
+
+          </AutoPlaySwipeableViews>
+
+          <MobileStepper
+            steps={maxSteps}
+            position="static"
+            activeStep={activeStep}
+            
+            nextButton={
+              <Button
+                size="small"
+                onClick={handleNext}
+                disabled={activeStep === maxSteps - 1}>
+                Next
+                {theme.direction === 'rtl' ? (
+                  <KeyboardArrowLeft />
+                ) : (
+                  <KeyboardArrowRight />
+                )}
+              </Button>
+            }
+            
+            backButton={
+              <Button size="small" onClick={handleBack} disabled={activeStep === 0}>
+                {theme.direction === 'rtl' ? (
+                  <KeyboardArrowRight />
+                ) : (
+                  <KeyboardArrowLeft />
+                )}
+                Back
+              </Button>
+            }
+
+          />
+
+        </Box>
+
+      </Container>
+
+      <Container>
+        <h2>Choose a Memorable Collectible!</h2>
+        <Button class="homeitem" variant="outlined" href="#contained-buttons">MEMORABILIA 1</Button>
+        <Button class="homeitem" variant="outlined" href="#contained-buttons">MEMORABILIA 2</Button>
+        <Button class="homeitem" variant="outlined" href="#contained-buttons">MEMORABILIA 3</Button>
+
+        <Box sx={{ maxWidth: 400, flexGrow: 1 }}>
+          
+          <Paper
+            square
+            elevation={0}
+            sx={{
+              display: 'flex',
+              alignItems: 'center',
+              height: 50,
+              pl: 2,
+              bgcolor: 'background.default',
+            }}>
+
+            <Typography>{images[activeStep].label}</Typography>
+
+          </Paper>
+            
+          <AutoPlaySwipeableViews
+            
+            axis={theme.direction === 'rtl' ? 'x-reverse' : 'x'}
+            index={activeStep}
+            onChangeIndex={handleStepChange}
+            enableMouseEvents>
+
+            {images.map((step, index) => (
+              
+              <div key={step.label}>
+                {Math.abs(activeStep - index) <= 2 ? (
+                  <Box
+                    component="img"
+                    sx={{
+                      height: 255,
+                      display: 'block',
+                      maxWidth: 400,
+                      overflow: 'hidden',
+                      width: '100%',
+                    }}
+                    src={step.imgPath}
+                    alt={step.label}/>
+                ) : null}
+              </div>
+
+            ))}
+
+          </AutoPlaySwipeableViews>
+
+          <MobileStepper
+            steps={maxSteps}
+            position="static"
+            activeStep={activeStep}
+            
+            nextButton={
+              <Button
+                size="small"
+                onClick={handleNext}
+                disabled={activeStep === maxSteps - 1}>
+                Next
+                {theme.direction === 'rtl' ? (
+                  <KeyboardArrowLeft />
+                ) : (
+                  <KeyboardArrowRight />
+                )}
+              </Button>
+            }
+            
+            backButton={
+              <Button size="small" onClick={handleBack} disabled={activeStep === 0}>
+                {theme.direction === 'rtl' ? (
+                  <KeyboardArrowRight />
+                ) : (
+                  <KeyboardArrowLeft />
+                )}
+                Back
+              </Button>
+            }
+
+          />
+
+        </Box>
+
+      </Container>
+
+      <Container>
+        <h2>Find Your Style!</h2>
+        <Button class="homeitem" variant="outlined" href="#contained-buttons">FASHION 1</Button>
+        <Button class="homeitem" variant="outlined" href="#contained-buttons">FASHION 2</Button>
+        <Button class="homeitem" variant="outlined" href="#contained-buttons">FASHION 3</Button>
+
+        <Box sx={{ maxWidth: 400, flexGrow: 1 }}>
+          
+          <Paper
+            square
+            elevation={0}
+            sx={{
+              display: 'flex',
+              alignItems: 'center',
+              height: 50,
+              pl: 2,
+              bgcolor: 'background.default',
+            }}>
+
+            <Typography>{images[activeStep].label}</Typography>
+
+          </Paper>
+            
+          <AutoPlaySwipeableViews
+            
+            axis={theme.direction === 'rtl' ? 'x-reverse' : 'x'}
+            index={activeStep}
+            onChangeIndex={handleStepChange}
+            enableMouseEvents>
+
+            {images.map((step, index) => (
+              
+              <div key={step.label}>
+                {Math.abs(activeStep - index) <= 2 ? (
+                  <Box
+                    component="img"
+                    sx={{
+                      height: 255,
+                      display: 'block',
+                      maxWidth: 400,
+                      overflow: 'hidden',
+                      width: '100%',
+                    }}
+                    src={step.imgPath}
+                    alt={step.label}/>
+                ) : null}
+              </div>
+
+            ))}
+
+          </AutoPlaySwipeableViews>
+
+          <MobileStepper
+            steps={maxSteps}
+            position="static"
+            activeStep={activeStep}
+            
+            nextButton={
+              <Button
+                size="small"
+                onClick={handleNext}
+                disabled={activeStep === maxSteps - 1}>
+                Next
+                {theme.direction === 'rtl' ? (
+                  <KeyboardArrowLeft />
+                ) : (
+                  <KeyboardArrowRight />
+                )}
+              </Button>
+            }
+            
+            backButton={
+              <Button size="small" onClick={handleBack} disabled={activeStep === 0}>
+                {theme.direction === 'rtl' ? (
+                  <KeyboardArrowRight />
+                ) : (
+                  <KeyboardArrowLeft />
+                )}
+                Back
+              </Button>
+            }
+
+          />
+
+        </Box>        
+
+      </Container>
+
+
+
+      <br/>
+      <br/><a href="www.aboutus.com">About Us</a>
+      <br/><a href="www.contact.com">Contact Us</a>
+
+      <br/>
+      <br/>
+
+    </Container>
       
   );
+  
 }
 
