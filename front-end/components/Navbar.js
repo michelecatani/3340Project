@@ -160,25 +160,13 @@ export default function navbar(props) {
 
           <Box sx={{ display: { xs: "none", sm: "block" } }}>
             {/* BUTTONS */}
-            <Button sx={({ mr: 2 }, { ml: 2 })} color="inherit" href="./">
+            <Button sx={({ mr: 2 }, { ml: 2 })} color="inherit" href="/">
               Home
             </Button>
-
             <Button sx={({ mr: 2 }, { ml: 2 })} color="inherit" href="/about">
               About
             </Button>
-
-            {/* There was an error here */}
-            {/* <Button
-              sx={({ mr: 2 }, { ml: 2 })}
-              color="inherit"
-              href="items/items"
-            ></Button> */}
-
-            <Button sx={({ mr: 2 }, { ml: 2 })} color="inherit" href="./about">
-              About
-            </Button>
-            <Button sx={({ mr: 2 }, { ml: 2 })} color="inherit" href="./items">
+            <Button sx={({ mr: 2 }, { ml: 2 })} color="inherit" href="/items/items">
               Items
             </Button>
             <Button
@@ -186,7 +174,7 @@ export default function navbar(props) {
               startIcon={<LoginIcon />}
               variant="contained"
               color="primary"
-              href="./login"
+              href="/login"
             >
               Login
             </Button>

@@ -61,14 +61,3 @@ def my_profile():
 
     return response_body
 
-@auth.route('/ourNames')
-def ourNames():
-    ourNames = {
-        "ourNames": [
-            "Khabib",
-            "Nurmagomedov's",
-            "Bear"
-        ]
-    }
-    
-    return ourNames
