@@ -57,7 +57,7 @@ const images = [
 ];
 
 
-export default function homeTemplate() {
+export default function home() {
 
   const theme = useTheme();
   const style = makeStyles();
@@ -79,12 +79,6 @@ export default function homeTemplate() {
   return (
     
     <Container>
-      <h1>NeoBay</h1>
-      <a href="www.login.com">Already a member? Sign In</a>
-
-      <Box component="form" sx={{'& > :not(style)': { m: 1, width: '50ch' },}} noValidate autoComplete="off">
-          <TextField id="searchbar" label="Search NeoBay" variant="standard" />
-      </Box>
 
       <Container align="center">
         <h2>Expand Your Technology!</h2>

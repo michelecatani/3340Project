@@ -83,7 +83,7 @@ export default function navbar(props) {
         style={{
           color: "#D5D5D5",
         }}
-        href="./"
+        href="./home"
         startIcon={<HomeIcon />}
       >
         Home
@@ -160,7 +160,7 @@ export default function navbar(props) {
 
           <Box sx={{ display: { xs: "none", sm: "block" } }}>
             {/* BUTTONS */}
-            <Button sx={({ mr: 2 }, { ml: 2 })} color="inherit" href="/">
+            <Button sx={({ mr: 2 }, { ml: 2 })} color="inherit" href="/home">
               Home
             </Button>
             <Button sx={({ mr: 2 }, { ml: 2 })} color="inherit" href="/about">
