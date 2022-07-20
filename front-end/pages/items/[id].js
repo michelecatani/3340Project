@@ -5,6 +5,7 @@ import Container from '@mui/material/Container';
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
+import Stack from '@mui/material/Stack';
 
 // STYLES
 import { display } from '@mui/system';
@@ -13,9 +14,9 @@ import { makeStyles } from "@material-ui/core/styles";
 
 const styles = {
    buttons: {
-    display: "block",
     align: "center",
-    size: "medium"
+    size: "medium",
+    margin: "auto",
    }
 }
 
@@ -23,7 +24,7 @@ const styles = {
 export default function Item({item}) {
     const router = useRouter();
     const { id } = router.query;
-    const style = useStyles();
+    const style = makeStyles();
 
     return (
         
@@ -47,27 +48,46 @@ export default function Item({item}) {
                 }}
             >
 
-                <Box sx={{ maxWidth: 600, width: "100%", alignItems: "center", border: 1, borderColor: 'error.main'}}>
+                <Box 
+                    sx={{ 
+                        maxWidth: 600, 
+                        width: "100%", 
+                        justifyContent: "center",
+                        alignItems: "center", 
+                        margin: "auto",
+                        border: 1, 
+                        borderColor: '#1D1B27'
+                    }}
+                >
                     <p>Photo of Item will go here</p>
                     <Typography variant="h4" align="center">
                         <img src="/neoBay-Logo.png" alt="NeoBay" width="500px"/>
                     </Typography>
                 </Box>
 
+                <br/>
+
                 <Box 
+                    spacing={2}
+                    direction="row"
+                    textAlign="center"
+                    display="flex"
+                    justifyContent="center"
                     sx={{
-                        justifyContent: "space-between",
-                        display: "block"
+                        maxWidth: 600,
+                        width: "100%",
+                        margin: "auto",
+                        p: 1,
+                        border: 1,
+                        borderColor: "#1D1B27"
                     }}
                 >
                     <Button   
                         variant="outlined"
                         href="#contained-buttons"
-                        className={style.buttons}                
+                        className={style.buttons}              
                     >BID NOW
                     </Button>
-
-                    <br/>
                     
                     <Button 
                         variant="outlined"
@@ -78,6 +98,27 @@ export default function Item({item}) {
                     </Button>
 
                 </Box>
+
+                <Stack
+                    spacing={2}
+                    direction="row"
+                    textAlign="center"
+                >
+                    <Button   
+                        variant="outlined"
+                        href="#contained-buttons"   
+                        align="center"            
+                    >BID NOW
+                    </Button>
+                    
+                    <Button 
+                        variant="outlined"
+                        href="#contained-buttons" 
+                        align="center"                   
+                    >WATCH
+                    </Button>
+
+                </Stack>
 
 
             </Box>

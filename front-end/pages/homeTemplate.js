@@ -95,7 +95,6 @@ export default function homeTemplate() {
         <Box sx={{ maxWidth: 400, flexGrow: 1 }}>
           
           <Paper
-            className={style.paper}
             square
             elevation={0}
             sx={{
