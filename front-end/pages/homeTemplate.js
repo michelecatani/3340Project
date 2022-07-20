@@ -60,7 +60,7 @@ const images = [
 export default function homeTemplate() {
 
   const theme = useTheme();
-  const style = useStyles();
+  //const style = useStyles();
   const [activeStep, setActiveStep] = React.useState(0);
   const maxSteps = images.length;
   
@@ -95,7 +95,6 @@ export default function homeTemplate() {
         <Box sx={{ maxWidth: 400, flexGrow: 1 }}>
           
           <Paper
-            className={style.paper}
             square
             elevation={0}
             sx={{
