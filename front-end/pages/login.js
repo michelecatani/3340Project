@@ -1,8 +1,12 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
 import { Box, Button, TextField, Typography } from "@mui/material";
+import useToken from "../src/hooks/useToken";
 
 export default function LoginPage() {
+
+  const { token, removeToken, setToken } = useToken();
+
   const [loginForm, setloginForm] = useState({
     email: "",
     password: "",
@@ -18,7 +22,8 @@ export default function LoginPage() {
       },
     })
       .then((response) => {
-        props.setToken(response.data.access_token);
+        const hello = setToken(response.data.access_token);
+        console.log(hello);
       })
       .catch((error) => {
         if (error.response) {

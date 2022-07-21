@@ -160,7 +160,7 @@ export default function navbar(props) {
 
           <Box sx={{ display: { xs: "none", sm: "block" } }}>
             {/* BUTTONS */}
-            <Button sx={({ mr: 2 }, { ml: 2 })} color="inherit" href="/home">
+            <Button sx={({ mr: 2 }, { ml: 2 })} color="inherit" href="/">
               Home
             </Button>
             <Button sx={({ mr: 2 }, { ml: 2 })} color="inherit" href="/about">
