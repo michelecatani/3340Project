@@ -16,15 +16,15 @@ const styles = {
    buttons: {
     align: "center",
     size: "medium",
-    margin: "auto",
    }
 }
+
+const useStyles = makeStyles(styles);
 
 
 export default function Item({item}) {
     const router = useRouter();
     const { id } = router.query;
-    const style = makeStyles();
 
     return (
         
@@ -40,8 +40,8 @@ export default function Item({item}) {
                     justifyContent: "center",
                     alignItems: "center",
                     flex: 1,
-                    border: 1,
-                    borderColor: 'error.main',
+                    //border: 1,
+                    //borderColor: 'error.main',
                     margin: "auto",
                     display: "block"
 
@@ -67,6 +67,27 @@ export default function Item({item}) {
 
                 <br/>
 
+                <Typography
+                    spacing={2}
+                    direction="row"
+                    textAlign="center"
+                    display="block"
+                    justifyContent="center"
+                    sx={{
+                        maxWidth: 600,
+                        width: "100%",
+                        margin: "auto",
+                        p: 1,
+                        //border: 1,
+                        //borderColor: "#1D1B27"
+                    }}
+                >
+                    
+                    <h3>Current Highest Bid: $0.00</h3>
+                    <h5 color="#c3c3c3">0 bids</h5>
+
+                </Typography>
+
                 <Box 
                     spacing={2}
                     direction="row"
@@ -78,48 +99,58 @@ export default function Item({item}) {
                         width: "100%",
                         margin: "auto",
                         p: 1,
-                        border: 1,
-                        borderColor: "#1D1B27"
+                        //border: 1,
+                        //borderColor: "#1D1B27"
                     }}
                 >
                     <Button   
                         variant="outlined"
                         href="#contained-buttons"
-                        className={style.buttons}              
+                        className={useStyles.buttons} 
+                        sx={({ mr: 2 }, { ml: 2 })}             
                     >BID NOW
                     </Button>
                     
                     <Button 
                         variant="outlined"
                         href="#contained-buttons"
-                        className={style.buttons}  
+                        className={useStyles.buttons}  
+                        sx={({ mr: 2 }, { ml: 2 })}
                     
                     >WATCH
                     </Button>
 
                 </Box>
 
-                <Stack
+                <h3>ITEM DESCRIPTION:</h3>
+
+                <Typography
                     spacing={2}
                     direction="row"
-                    textAlign="center"
+                    textAlign="left"
+                    display="block"
+                    justifyContent="center"
+                    sx={{
+                        maxWidth: 600,
+                        width: "100%",
+                        margin: "auto",
+                        p: 1,
+                        //border: 1,
+                        //borderColor: "#1D1B27"
+                    }}
                 >
-                    <Button   
-                        variant="outlined"
-                        href="#contained-buttons"   
-                        align="center"            
-                    >BID NOW
-                    </Button>
                     
-                    <Button 
-                        variant="outlined"
-                        href="#contained-buttons" 
-                        align="center"                   
-                    >WATCH
-                    </Button>
+                    <p>
+                        <i>Item description goes here. 
+                            <br/>Lorem ipsum lorem ipsum lorem ipsum.
+                            <br/>Lorem ipsum lorem ipsum lorem ipsum.
+                            <br/>Lorem ipsum lorem ipsum lorem ipsum.
+                            <br/>Lorem ipsum lorem ipsum lorem ipsum.
+                    
+                        </i>
+                    </p>
 
-                </Stack>
-
+                </Typography>
 
             </Box>
 
