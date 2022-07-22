@@ -9,7 +9,7 @@ export default function footer() {
       py={{ xs: 3, sm: 5 }}
       bgcolor="text.primary"
       color="black"
-      position="fixed"
+      position="relative"
       bottom="0"
       width="100%"
     >
