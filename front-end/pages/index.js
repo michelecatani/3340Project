@@ -125,18 +125,18 @@ const mem_images =[
 
 const fash_images =[
   {
-    label: '1. 2018 Ray Ban Wayfarer Sunglasses',
+    label: '1. Tom Cruise Worn Sunglasses',
     imgPath:
-      'https://images.unsplash.com/photo-1572635196237-14b3f281503f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1180&q=80'
+      'https://images.unsplash.com/photo-1577803645773-f96470509666?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80'
   },
   {
     label: '2. Stussy Distressed Dad Hat',
     imgPath:
       'https://images.unsplash.com/photo-1521369909029-2afed882baee?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80'
   },  {
-    label: '3. Aritzia Copper Bomber Jacket',
+    label: '3. Hugo Boss Suit and Dress shirt combo',
     imgPath:
-      'https://images.unsplash.com/photo-1591047139829-d91aecb6caea?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=872&q=80'
+      'https://images.unsplash.com/photo-1497339100210-9e87df79c218?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80'
   },  {
     label: '4. Air Jordan 12 Gym Red (2018) *left shoe not included*',
     imgPath:
