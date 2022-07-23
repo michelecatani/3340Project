@@ -8,7 +8,6 @@ import { CacheProvider } from "@emotion/react";
 import { createEmotionCache, theme } from "../src/utils";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
-import Sidebar from "../components/Sidebar";
 
 // Client-side cache, shared for the whole session of the user in the browser.
 const clientSideEmotionCache = createEmotionCache();
