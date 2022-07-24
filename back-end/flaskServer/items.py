@@ -35,7 +35,8 @@ def seeItem():
 def createItem():
     itemName = request.json.get("name", None)
     itemPrice = request.json.get("startingPrice", None)
-    newItem = Item(name=itemName, currHighestBid=itemPrice)
+    itemCategory = request.json.get("category", None)
+    newItem = Item(name=itemName, currHighestBid=itemPrice, category=itemCategory)
     db.session.add(newItem)
     db.session.commit()
     resp = jsonify(success=True)

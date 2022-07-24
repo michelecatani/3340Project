@@ -31,7 +31,7 @@ export default function Item({item}) {
         <Container>
 
             <h1>{item.name}</h1>
-            <h3><i>Item Category Goes Here - make this dynamic</i></h3>
+            <h3><i>{item.category}</i></h3>
             <h4>Uploaded by User: X</h4>
 
             <Box
@@ -106,8 +106,7 @@ export default function Item({item}) {
                         variant="outlined"
                         href="#contained-buttons"
                         className={useStyles.buttons} 
-                        sx={({ mr: 2 }, { ml: 2 })}
-                        onClick={() => setModalOpen(!modalOpen)}             
+                        sx={({ mr: 2 }, { ml: 2 })}           
                     >BID NOW
                     </Button>
                 </Box>

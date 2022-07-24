@@ -1,12 +1,19 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
-import { Box, Button, TextField, Typography } from "@mui/material";
+import { Box, Button, TextField, Typography, NativeSelect, InputLabel } from "@mui/material";
+
+const categories = [
+    "Sports", "Technology", "Music", "Whatever i don't know"
+]
 
 export default function CreateItem() {
 
+  const [category, setCategory] = useState('Sports');
+
   const [itemForm, setitemForm] = useState({
     name: " ",
-    startingPrice: " "
+    startingPrice: " ",
+    category: " "
   });
 
   function handleItemSubmission(event) {
@@ -16,6 +23,7 @@ export default function CreateItem() {
       data: {
         name: itemForm.name,
         startingPrice: itemForm.startingPrice,
+        category: itemForm.category
       },
     })
       .then((response) => {
@@ -32,6 +40,7 @@ export default function CreateItem() {
     setitemForm({
       name: " ",
       startingPrice: " ",
+      category: " "
     });
 
     event.preventDefault();
@@ -74,13 +83,28 @@ export default function CreateItem() {
             onChange={handleChange}
           />
           <TextField
-            label="startingPrice"
-            type="startingPrice"
+            label="Starting Price"
+            type="number"
             name="startingPrice"
             value={itemForm.startingPrice}
             margin="dense"
             onChange={handleChange}
           />
+          <InputLabel variant="standard" htmlFor="selectCategory">
+            Category
+          </InputLabel>
+          <NativeSelect
+            inputProps={{
+                name: 'age',
+                id: 'selectCategory',
+            }}
+            >
+            {categories.map((option) => (
+                <option key={option} value={option}>
+                    {option}
+                </option>
+            ))}
+            </NativeSelect>
           <Box display="flex" justifyContent="space-between" sx={{ mt: 2 }}>
             <Button
               variant="contained"

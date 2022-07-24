@@ -61,6 +61,7 @@ class Item(db.Model):
     currHighestBid = db.Column(db.Integer, default=0)
     numberOfBids = db.Column(db.Integer, default=0)
     endAuction = db.Column(db.Date, default=datetime.today() + timedelta(days=1))
+    category = db.Column(db.String(150))
     itemBids = db.relationship('User', secondary='bids')
 
     def as_dict(self):
@@ -79,3 +80,6 @@ class Bid(db.Model):
 
     user = db.relationship(User, backref=backref('bids', cascade="all, delete-orphan"))
     item = db.relationship(Item, backref=backref('bids', cascade="all, delete-orphan"))
+
+ 
+
