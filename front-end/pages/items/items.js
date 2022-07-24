@@ -55,7 +55,7 @@ export default function Items() {
                   borderColor: '#1D1B27'
               }}
             >
-              <p>Photo of Item will go here</p>
+              <h2>Photo of Item will go here</h2>
 
               <Typography variant="h4" align="center">
                   <img src="/neoBay-Logo.png" alt="NeoBay" width="500px"/>

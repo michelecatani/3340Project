@@ -29,7 +29,6 @@ export default function Item({item}) {
     return (
         
         <Container>
-            <p>This is a dynamic rendering, see the title. Need to make it fancier obvs.</p>
 
             <h1>{item.name} {id}</h1>
             <h3><i>Item Category Goes Here - make this dynamic</i></h3>
@@ -83,8 +82,8 @@ export default function Item({item}) {
                     }}
                 >
                     
-                    <h3>Current Highest Bid: $0.00</h3>
-                    <h5 color="#c3c3c3">0 bids</h5>
+                    Current Highest Bid: $0.00 <br></br>
+                    Number of bids: 0
 
                 </Typography>
 
@@ -140,15 +139,13 @@ export default function Item({item}) {
                     }}
                 >
                     
-                    <p>
-                        <i>Item description goes here. 
-                            <br/>Lorem ipsum lorem ipsum lorem ipsum.
-                            <br/>Lorem ipsum lorem ipsum lorem ipsum.
-                            <br/>Lorem ipsum lorem ipsum lorem ipsum.
-                            <br/>Lorem ipsum lorem ipsum lorem ipsum.
                     
-                        </i>
-                    </p>
+                    <i>Item description goes here. 
+                        <br/>Lorem ipsum lorem ipsum lorem ipsum.
+                        <br/>Lorem ipsum lorem ipsum lorem ipsum.
+                        <br/>Lorem ipsum lorem ipsum lorem ipsum.
+                        <br/>Lorem ipsum lorem ipsum lorem ipsum.
+                    </i>
 
                 </Typography>
 

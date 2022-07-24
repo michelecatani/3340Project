@@ -1,6 +1,7 @@
 /* This is our about page. Right now, it's simply a test to an api endpoint of our Flask back-end.  It returns our names.
 The JSON object with out names is accessible in ../../../back-end/flaskServer/auth.py */
 
+import { Container } from "@mui/material";
 import React from "react";
 
 function About() {
@@ -9,9 +10,10 @@ function About() {
   // how to get stuff from BE to FE
 
   return (
-    <div>
-      <p>This page used to return stuff but not really necessary. Needs to be converted into a legit about page.</p>
-    </div>
+    <Container>
+      <h1>About</h1>
+      <p>Neobay is an auction website created by students at the University of Windsor for our web development class. more stuff ...</p>
+    </Container>
   );
 }
 
