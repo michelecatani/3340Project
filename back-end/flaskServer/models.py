@@ -60,8 +60,9 @@ class Item(db.Model):
     name = db.Column(db.String(150), unique=True)
     currHighestBid = db.Column(db.Integer, default=0)
     numberOfBids = db.Column(db.Integer, default=0)
-    endAuction = db.Column(db.Date, default=datetime.today() + timedelta(days=1))
+    endAuction = db.Column(db.Date, default=datetime.now() + timedelta(days=1))
     category = db.Column(db.String(150))
+    description = db.Column(db.String(280))
     itemBids = db.relationship('User', secondary='bids')
 
     def as_dict(self):

@@ -3,17 +3,16 @@ import axios from "axios";
 import { Box, Button, TextField, Typography, NativeSelect, InputLabel } from "@mui/material";
 
 const categories = [
-    "Sports", "Technology", "Music", "Whatever i don't know"
+    "None", "Sports", "Technology", "Music", "Fitness"
 ]
 
 export default function CreateItem() {
 
-  const [category, setCategory] = useState('Sports');
-
   const [itemForm, setitemForm] = useState({
     name: " ",
     startingPrice: " ",
-    category: " "
+    category: " ",
+    description: " ",
   });
 
   function handleItemSubmission(event) {
@@ -23,7 +22,8 @@ export default function CreateItem() {
       data: {
         name: itemForm.name,
         startingPrice: itemForm.startingPrice,
-        category: itemForm.category
+        category: itemForm.category,
+        description: itemForm.description
       },
     })
       .then((response) => {
@@ -40,7 +40,8 @@ export default function CreateItem() {
     setitemForm({
       name: " ",
       startingPrice: " ",
-      category: " "
+      category: " ",
+      description: " "
     });
 
     event.preventDefault();
@@ -52,6 +53,7 @@ export default function CreateItem() {
       ...prevNote,
       [name]: value,
     }));
+    itemForm.category = document.getElementById("selectCategory").value;
   }
 
   return (
@@ -76,7 +78,6 @@ export default function CreateItem() {
         >
           <TextField
             label="Name"
-            type="name"
             name="name"
             value={itemForm.name}
             margin="dense"
@@ -94,6 +95,7 @@ export default function CreateItem() {
             Category
           </InputLabel>
           <NativeSelect
+            onChange={handleChange}
             inputProps={{
                 name: 'age',
                 id: 'selectCategory',
@@ -105,6 +107,15 @@ export default function CreateItem() {
                 </option>
             ))}
             </NativeSelect>
+            <TextField
+                label="Description"
+                name="description"
+                multiline
+                rows={4}
+                margin="dense"
+                value={itemForm.description}
+                onChange={handleChange}
+            />
           <Box display="flex" justifyContent="space-between" sx={{ mt: 2 }}>
             <Button
               variant="contained"

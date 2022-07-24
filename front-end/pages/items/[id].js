@@ -128,15 +128,7 @@ export default function Item({item}) {
                         //borderColor: "#1D1B27"
                     }}
                 >
-                    
-                    
-                    <i>Item description goes here. 
-                        <br/>Lorem ipsum lorem ipsum lorem ipsum.
-                        <br/>Lorem ipsum lorem ipsum lorem ipsum.
-                        <br/>Lorem ipsum lorem ipsum lorem ipsum.
-                        <br/>Lorem ipsum lorem ipsum lorem ipsum.
-                    </i>
-
+                    {item.description}
                 </Typography>
 
             </Box>
