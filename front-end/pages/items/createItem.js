@@ -2,25 +2,24 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import { Box, Button, TextField, Typography } from "@mui/material";
 
-export default function LoginPage() {
+export default function CreateItem() {
 
-  const [loginForm, setloginForm] = useState({
-    email: "",
-    password: "",
+  const [itemForm, setitemForm] = useState({
+    name: " ",
+    startingPrice: " "
   });
 
-  function handleLoginSubmission(event) {
+  function handleItemSubmission(event) {
     axios({
       method: "POST",
-      url: `${process.env.NEXT_PUBLIC_API_HOST}/auth/login`,
+      url: `${process.env.NEXT_PUBLIC_API_HOST}/items/createItem`,
       data: {
-        email: loginForm.email,
-        password: loginForm.password,
+        name: itemForm.name,
+        startingPrice: itemForm.startingPrice,
       },
     })
       .then((response) => {
-        const hello = setToken(response.data.access_token);
-        console.log(hello);
+        console.log(response);
       })
       .catch((error) => {
         if (error.response) {
@@ -30,9 +29,9 @@ export default function LoginPage() {
         }
       });
 
-    setloginForm({
-      email: "",
-      password: "",
+    setitemForm({
+      name: " ",
+      startingPrice: " ",
     });
 
     event.preventDefault();
@@ -40,7 +39,7 @@ export default function LoginPage() {
 
   function handleChange(event) {
     const { value, name } = event.target;
-    setloginForm((prevNote) => ({
+    setitemForm((prevNote) => ({
       ...prevNote,
       [name]: value,
     }));
@@ -67,39 +66,29 @@ export default function LoginPage() {
           }}
         >
           <TextField
-            label="Email"
-            type="email"
-            name="email"
-            value={loginForm.email}
+            label="Name"
+            type="name"
+            name="name"
+            value={itemForm.name}
             margin="dense"
             onChange={handleChange}
           />
           <TextField
-            label="Password"
-            type="password"
-            name="password"
-            placeholder="**********"
-            value={loginForm.password}
+            label="startingPrice"
+            type="startingPrice"
+            name="startingPrice"
+            value={itemForm.startingPrice}
             margin="dense"
             onChange={handleChange}
           />
           <Box display="flex" justifyContent="space-between" sx={{ mt: 2 }}>
             <Button
               variant="contained"
-              onClick={handleLoginSubmission}
+              onClick={handleItemSubmission}
               sx={{ mr: 1 }}
               fullWidth
             >
-              Login
-            </Button>
-
-            <Button
-              variant="contained"
-              href="register"
-              sx={{ ml: 1 }}
-              fullWidth
-            >
-              Register
+              Create Item
             </Button>
           </Box>
         </Box>

@@ -30,7 +30,7 @@ export default function Item({item}) {
         
         <Container>
 
-            <h1>{item.name} {id}</h1>
+            <h1>{item.name}</h1>
             <h3><i>Item Category Goes Here - make this dynamic</i></h3>
             <h4>Uploaded by User: X</h4>
 
@@ -82,7 +82,7 @@ export default function Item({item}) {
                     }}
                 >
                     
-                    Current Highest Bid: $0.00 <br></br>
+                    Current Highest Bid: ${item.currHighestBid} <br></br>
                     Number of bids: 0
 
                 </Typography>
@@ -106,19 +106,10 @@ export default function Item({item}) {
                         variant="outlined"
                         href="#contained-buttons"
                         className={useStyles.buttons} 
-                        sx={({ mr: 2 }, { ml: 2 })}             
+                        sx={({ mr: 2 }, { ml: 2 })}
+                        onClick={() => setModalOpen(!modalOpen)}             
                     >BID NOW
                     </Button>
-                    
-                    <Button 
-                        variant="outlined"
-                        href="#contained-buttons"
-                        className={useStyles.buttons}  
-                        sx={({ mr: 2 }, { ml: 2 })}
-                    
-                    >WATCH
-                    </Button>
-
                 </Box>
 
                 <h3>ITEM DESCRIPTION:</h3>
@@ -150,7 +141,6 @@ export default function Item({item}) {
                 </Typography>
 
             </Box>
-
         </Container>
 
     )

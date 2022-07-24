@@ -38,6 +38,11 @@ export default function Items() {
         borderColor: '#1D1B27'
       }}
     >
+
+      <Button href="/items/createItem">
+        Create an Item
+      </Button>
+
       <h1><i>NEOBAY CATALOGUE</i></h1>
 
       {
@@ -111,8 +116,8 @@ export default function Items() {
       ))}
     </ImageList>
 
-
     </Container>
+
 
   );
 
