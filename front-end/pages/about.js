@@ -1,6 +1,7 @@
 /* This is our about page. Right now, it's simply a test to an api endpoint of our Flask back-end.  It returns our names.
 The JSON object with out names is accessible in ../../../back-end/flaskServer/auth.py */
 
+import { Container } from "@mui/material";
 import React from "react";
 import Accordion from "@mui/material/Accordion";
 import AccordionSummary from "@mui/material/AccordionSummary";

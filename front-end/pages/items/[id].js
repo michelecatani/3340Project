@@ -29,10 +29,9 @@ export default function Item({item}) {
     return (
         
         <Container>
-            <p>This is a dynamic rendering, see the title. Need to make it fancier obvs.</p>
 
-            <h1>{item.name} {id}</h1>
-            <h3><i>Item Category Goes Here - make this dynamic</i></h3>
+            <h1>{item.name}</h1>
+            <h3><i>{item.category}</i></h3>
             <h4>Uploaded by User: X</h4>
 
             <Box
@@ -82,10 +81,8 @@ export default function Item({item}) {
                         //borderColor: "#1D1B27"
                     }}
                 >
-                    
-                    <h3>Current Highest Bid: $0.00</h3>
-                    <h5 color="#c3c3c3">0 bids</h5>
-
+                    Current Highest Bid: ${item.currHighestBid} <br></br>
+                    Number of bids: 0
                 </Typography>
 
                 <Box 
@@ -107,19 +104,9 @@ export default function Item({item}) {
                         variant="outlined"
                         href="#contained-buttons"
                         className={useStyles.buttons} 
-                        sx={({ mr: 2 }, { ml: 2 })}             
+                        sx={({ mr: 2 }, { ml: 2 })}           
                     >BID NOW
                     </Button>
-                    
-                    <Button 
-                        variant="outlined"
-                        href="#contained-buttons"
-                        className={useStyles.buttons}  
-                        sx={({ mr: 2 }, { ml: 2 })}
-                    
-                    >WATCH
-                    </Button>
-
                 </Box>
 
                 <h3>ITEM DESCRIPTION:</h3>
@@ -139,21 +126,10 @@ export default function Item({item}) {
                         //borderColor: "#1D1B27"
                     }}
                 >
-                    
-                    <p>
-                        <i>Item description goes here. 
-                            <br/>Lorem ipsum lorem ipsum lorem ipsum.
-                            <br/>Lorem ipsum lorem ipsum lorem ipsum.
-                            <br/>Lorem ipsum lorem ipsum lorem ipsum.
-                            <br/>Lorem ipsum lorem ipsum lorem ipsum.
-                    
-                        </i>
-                    </p>
-
+                    {item.description}
                 </Typography>
 
             </Box>
-
         </Container>
 
     )

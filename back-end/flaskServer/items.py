@@ -1,5 +1,6 @@
 ## all routes related to items will go in here
 
+from http.client import OK
 from flask import Flask, Blueprint, request, jsonify
 from .models import Item
 from . import db
@@ -28,4 +29,27 @@ def seeItem():
     item = Item.query.filter_by(id=itemID).first()
     return jsonify(item.as_dict())
 
-## create more item related routes/functions here
+## This functiong gets a request from the front-end and creates an item
+
+@items.route('/createItem', methods=["POST"])
+def createItem():
+    itemName = request.json.get("name", None)
+    itemPrice = request.json.get("startingPrice", None)
+    itemCategory = request.json.get("category", None)
+    itemDescription = request.json.get("description", None)
+    newItem = Item(name=itemName, currHighestBid=itemPrice, category=itemCategory, description=itemDescription)
+    db.session.add(newItem)
+    db.session.commit()
+    resp = jsonify(success=True)
+    return resp
+
+## This updates a bid for an item 
+
+@items.route('/newBid', methods=["POST"])
+def newBid():
+    itemID = request.json.get('itemID')
+    newPrice = request.json.get('newPrice')
+
+    item = db.session.query(Item).filter_by(id=itemID).first()
+    item.currHighestBid = newPrice
+    db.session.commit()

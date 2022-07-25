@@ -2,23 +2,25 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import { Box, Button, TextField, Typography } from "@mui/material";
 
-export default function AdminPage() {
-  const [adminForm, setAdminForm] = useState({
+export default function LoginPage() {
+
+  const [loginForm, setloginForm] = useState({
     email: "",
     password: "",
   });
 
-  function handleAdminSubmission(event) {
+  function handleLoginSubmission(event) {
     axios({
       method: "POST",
-      url: `${process.env.NEXT_PUBLIC_API_HOST}/admin`,
+      url: `${process.env.NEXT_PUBLIC_API_HOST}/auth/login`,
       data: {
-        email: adminForm.email,
-        password: adminForm.password,
+        email: loginForm.email,
+        password: loginForm.password,
       },
     })
       .then((response) => {
-        props.setToken(response.data.access_token);
+        const hello = setToken(response.data.access_token);
+        console.log(hello);
       })
       .catch((error) => {
         if (error.response) {
@@ -28,7 +30,7 @@ export default function AdminPage() {
         }
       });
 
-    setAdminForm({
+    setloginForm({
       email: "",
       password: "",
     });
@@ -38,7 +40,7 @@ export default function AdminPage() {
 
   function handleChange(event) {
     const { value, name } = event.target;
-    setAdminForm((prevNote) => ({
+    setloginForm((prevNote) => ({
       ...prevNote,
       [name]: value,
     }));
@@ -51,12 +53,12 @@ export default function AdminPage() {
         justifyContent: "center",
         alignItems: "center",
         flex: 1,
-        height: "50vh",
+        height: "75vh",
       }}
     >
       <Box sx={{ maxWidth: 500, width: "100%" }}>
         <Typography variant="h4" align="center">
-          NeoBay Admin
+          <img src="/neoBay-Logo.png" alt="NeoBay" width="500px"/>
         </Typography>
         <Box
           sx={{
@@ -68,7 +70,7 @@ export default function AdminPage() {
             label="Email"
             type="email"
             name="email"
-            value={adminForm.email}
+            value={loginForm.email}
             margin="dense"
             onChange={handleChange}
           />
@@ -77,21 +79,28 @@ export default function AdminPage() {
             type="password"
             name="password"
             placeholder="**********"
-            value={adminForm.password}
+            value={loginForm.password}
             margin="dense"
             onChange={handleChange}
           />
           <Box display="flex" justifyContent="space-between" sx={{ mt: 2 }}>
             <Button
               variant="contained"
-              onClick={handleAdminSubmission}
+              onClick={handleLoginSubmission}
               sx={{ mr: 1 }}
               fullWidth
             >
               Login
             </Button>
 
-           
+            <Button
+              variant="contained"
+              href="/auth/register"
+              sx={{ ml: 1 }}
+              fullWidth
+            >
+              Register
+            </Button>
           </Box>
         </Box>
       </Box>

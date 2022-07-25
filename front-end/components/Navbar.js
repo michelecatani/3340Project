@@ -178,7 +178,7 @@ export default function navbar(props) {
               startIcon={<LoginIcon />}
               variant="contained"
               color="primary"
-              href="/login"
+              href="/auth/login"
             >
               Login
             </Button>

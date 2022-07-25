@@ -38,6 +38,13 @@ export default function Items() {
         borderColor: '#1D1B27'
       }}
     >
+
+      <Button 
+        href="/items/createItem"
+        >
+        Create an Item
+      </Button>
+
       <h1><i>NEOBAY CATALOGUE</i></h1>
 
       {
@@ -55,7 +62,7 @@ export default function Items() {
                   borderColor: '#1D1B27'
               }}
             >
-              <p>Photo of Item will go here</p>
+              <h2>Photo of Item will go here</h2>
 
               <Typography variant="h4" align="center">
                   <img src="/neoBay-Logo.png" alt="NeoBay" width="500px"/>
@@ -111,8 +118,8 @@ export default function Items() {
       ))}
     </ImageList>
 
-
     </Container>
+
 
   );
 

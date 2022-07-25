@@ -1,29 +1,24 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
 import { Box, Button, TextField, Typography } from "@mui/material";
-import useToken from "../src/hooks/useToken";
 
-export default function LoginPage() {
-
-  const { token, removeToken, setToken } = useToken();
-
-  const [loginForm, setloginForm] = useState({
+export default function AdminPage() {
+  const [adminForm, setAdminForm] = useState({
     email: "",
     password: "",
   });
 
-  function handleLoginSubmission(event) {
+  function handleAdminSubmission(event) {
     axios({
       method: "POST",
-      url: `${process.env.NEXT_PUBLIC_API_HOST}/auth/login`,
+      url: `${process.env.NEXT_PUBLIC_API_HOST}/admin`,
       data: {
-        email: loginForm.email,
-        password: loginForm.password,
+        email: adminForm.email,
+        password: adminForm.password,
       },
     })
       .then((response) => {
-        const hello = setToken(response.data.access_token);
-        console.log(hello);
+        props.setToken(response.data.access_token);
       })
       .catch((error) => {
         if (error.response) {
@@ -33,7 +28,7 @@ export default function LoginPage() {
         }
       });
 
-    setloginForm({
+    setAdminForm({
       email: "",
       password: "",
     });
@@ -43,7 +38,7 @@ export default function LoginPage() {
 
   function handleChange(event) {
     const { value, name } = event.target;
-    setloginForm((prevNote) => ({
+    setAdminForm((prevNote) => ({
       ...prevNote,
       [name]: value,
     }));
@@ -56,12 +51,12 @@ export default function LoginPage() {
         justifyContent: "center",
         alignItems: "center",
         flex: 1,
-        height: "75vh",
+        height: "50vh",
       }}
     >
       <Box sx={{ maxWidth: 500, width: "100%" }}>
         <Typography variant="h4" align="center">
-          <img src="/neoBay-Logo.png" alt="NeoBay" width="500px"/>
+          NeoBay Admin
         </Typography>
         <Box
           sx={{
@@ -73,7 +68,7 @@ export default function LoginPage() {
             label="Email"
             type="email"
             name="email"
-            value={loginForm.email}
+            value={adminForm.email}
             margin="dense"
             onChange={handleChange}
           />
@@ -82,31 +77,50 @@ export default function LoginPage() {
             type="password"
             name="password"
             placeholder="**********"
-            value={loginForm.password}
+            value={adminForm.password}
             margin="dense"
             onChange={handleChange}
           />
           <Box display="flex" justifyContent="space-between" sx={{ mt: 2 }}>
             <Button
               variant="contained"
-              onClick={handleLoginSubmission}
+              onClick={handleAdminSubmission}
               sx={{ mr: 1 }}
               fullWidth
             >
               Login
             </Button>
 
-            <Button
-              variant="contained"
-              href="register"
-              sx={{ ml: 1 }}
-              fullWidth
-            >
-              Register
-            </Button>
+           
           </Box>
         </Box>
       </Box>
     </Box>
   );
 }
+
+
+import * as React from 'react';
+import Box from '@mui/material/Box';
+import TextField from '@mui/material/TextField';
+import MenuItem from '@mui/material/MenuItem';
+
+const currencies = [
+  {
+    value: 'USD',
+    label: '$',
+  },
+  {
+    value: 'EUR',
+    label: '€',
+  },
+  {
+    value: 'BTC',
+    label: '฿',
+  },
+  {
+    value: 'JPY',
+    label: '¥',
+  },
+];
+
