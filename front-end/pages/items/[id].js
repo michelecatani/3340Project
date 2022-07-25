@@ -81,10 +81,8 @@ export default function Item({item}) {
                         //borderColor: "#1D1B27"
                     }}
                 >
-                    
                     Current Highest Bid: ${item.currHighestBid} <br></br>
                     Number of bids: 0
-
                 </Typography>
 
                 <Box 

@@ -49,11 +49,11 @@ export default function CreateItem() {
 
   function handleChange(event) {
     const { value, name } = event.target;
+    itemForm.category = document.getElementById("selectCategory").value;
     setitemForm((prevNote) => ({
       ...prevNote,
       [name]: value,
     }));
-    itemForm.category = document.getElementById("selectCategory").value;
   }
 
   return (
