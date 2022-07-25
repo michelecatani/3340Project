@@ -19,17 +19,8 @@ function About() {
         About Us
       </Typography>
       <Typography sx={{ pb: 3 }}>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
-        malesuada lacus ex, sit amet blandit leo lobortis eget.Lorem ipsum dolor
-        sit amet, consectetur adipiscing elit. Suspendisse malesuada lacus ex,
-        sit amet blandit leo lobortis eget. Lorem ipsum dolor sit amet,
-        consectetur adipiscing elit. Suspendisse malesuada lacus ex, sit amet
-        blandit leo lobortis eget.Lorem ipsum dolor sit amet, consectetur
-        adipiscing elit. Suspendisse malesuada lacus ex, sit amet blandit leo
-        lobortis eget.Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-        Suspendisse malesuada lacus ex, sit amet blandit leo lobortis eget.Lorem
-        ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse malesuada
-        lacus ex, sit amet blandit leo lobortis eget.
+        Neobay is an auction website created by students at the University of
+        Windsor for our web development class. more stuff ...
       </Typography>
       {/* Divider to seperate content */}
       <Divider dark />
