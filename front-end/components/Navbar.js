@@ -55,7 +55,7 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
     transition: theme.transitions.create("width"),
     width: "100%",
     [theme.breakpoints.up("md")]: {
-      width: "20ch",
+      width: "23ch",
     },
   },
 }));
@@ -129,10 +129,6 @@ export default function navbar(props) {
       <Divider />
     </Box>
   );
-  const container =
-    window !== undefined ? () => window().document.body : undefined;
-
-  //
 
   return (
     <Box sx={{ flexGrow: 1 }}>
@@ -143,7 +139,7 @@ export default function navbar(props) {
             aria-label="open drawer"
             edge="start"
             onClick={handleDrawerToggle}
-            sx={{ mr: 2, display: { sm: "none" } }}
+            sx={{ mr: 2, display: { md: "none" } }}
           >
             <MenuIcon />
           </IconButton>
@@ -151,9 +147,16 @@ export default function navbar(props) {
             variant="h5"
             noWrap
             component="div"
-            sx={{ display: { xs: "none", sm: "block", fontWeight: "bold" } }}
+            sx={{
+              display: {
+                xs: "none",
+                sm: "block",
+                md: "block",
+                fontWeight: "bold",
+              },
+            }}
           >
-            <img src="/tpLogo.png" alt="NeoBay" width="200px"/>
+            <img src="/tpLogo.png" alt="NeoBay" width="190px" />
           </Typography>
           <Search>
             <SearchIconWrapper>
@@ -166,7 +169,7 @@ export default function navbar(props) {
           </Search>
           <Box sx={{ flexGrow: 1 }} />
 
-          <Box sx={{ display: { xs: "none", sm: "block" } }}>
+          <Box sx={{ display: { xs: "none", sm: "none", md: "block" } }}>
             {/* BUTTONS */}
             <Button sx={({ mr: 2 }, { ml: 2 })} color="inherit" href="/">
               Home
@@ -174,7 +177,11 @@ export default function navbar(props) {
             <Button sx={({ mr: 2 }, { ml: 2 })} color="inherit" href="/about">
               About
             </Button>
-            <Button sx={({ mr: 2 }, { ml: 2 })} color="inherit" href="/items/items">
+            <Button
+              sx={({ mr: 2 }, { ml: 2 })}
+              color="inherit"
+              href="/items/items"
+            >
               Items
             </Button>
             
@@ -213,7 +220,6 @@ export default function navbar(props) {
       {/* new */}
       <Box component="nav">
         <Drawer
-          container={container}
           variant="temporary"
           open={mobileOpen}
           onClose={handleDrawerToggle}
@@ -221,10 +227,10 @@ export default function navbar(props) {
             keepMounted: true,
           }}
           sx={{
-            display: { xs: "block", sm: "none" },
+            display: { xs: "block", sm: "block" },
             "& .MuiDrawer-paper": {
               boxSizing: "border-box",
-              width: drawerWidth,
+              width: "35%",
             },
           }}
         >
