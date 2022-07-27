@@ -6,6 +6,7 @@ import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
 import Stack from '@mui/material/Stack';
+import convertToImage from '../../src/utils/base64';
 
 // STYLES
 import { display } from '@mui/system';
@@ -20,7 +21,6 @@ const styles = {
 }
 
 const useStyles = makeStyles(styles);
-
 
 export default function Item({item}) {
     const router = useRouter();
@@ -58,9 +58,8 @@ export default function Item({item}) {
                         borderColor: '#1D1B27'
                     }}
                 >
-                    <p>Photo of Item will go here</p>
                     <Typography variant="h4" align="center">
-                        <img src="/neoBay-Logo.png" alt="NeoBay" width="500px"/>
+                        <img src={convertToImage(item.image_file)} alt="NeoBay" width="500px"/>
                     </Typography>
                 </Box>
 

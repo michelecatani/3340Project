@@ -6,6 +6,7 @@ from sqlalchemy.orm import backref
 from datetime import datetime, timedelta
 
 import json
+import os
 
 """class Item (db.Model):
     id = db.Column(db.Integer, primary_key=True)
@@ -63,6 +64,7 @@ class Item(db.Model):
     endAuction = db.Column(db.Date, default=datetime.now() + timedelta(days=1))
     category = db.Column(db.String(150))
     description = db.Column(db.String(280))
+    image_file = db.Column(db.String(20), nullable=False, default=('./static/default.jpeg'))
     itemBids = db.relationship('User', secondary='bids')
 
     def as_dict(self):
