@@ -198,6 +198,7 @@ export default function navbar(props) {
                 if(loginStatus==="Logout"){
                   //alert("click")
                   localStorage.removeItem("token")
+                  localStorage.removeItem("User")
                   setLoginStatus("Login")
                   }
 
