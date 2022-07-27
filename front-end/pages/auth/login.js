@@ -2,12 +2,14 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import { Box, Button, TextField, Typography } from "@mui/material";
 
-export default function LoginPage() {
+export default function LoginPage(props) {
 
   const [loginForm, setloginForm] = useState({
     email: "",
     password: "",
   });
+
+
 
   function handleLoginSubmission(event) {
     axios({
@@ -19,8 +21,11 @@ export default function LoginPage() {
       },
     })
       .then((response) => {
-        const hello = setToken(response.data.access_token);
-        console.log(hello);
+        localStorage.setItem("token", response.data.access_token);
+      
+        console.log("login");
+        window.open("/")
+        //props.setUser("success****************")
       })
       .catch((error) => {
         if (error.response) {

@@ -3,12 +3,18 @@
 import { useState } from "react";
 
 function useToken() {
+
+  
   function getToken() {
     const userToken = localStorage.getItem("token");
+    console.log(userToken)
+    console.log("get token called")
     return userToken && userToken;
   }
-
+  
   const [token, setToken] = useState(getToken());
+  
+  
 
   function saveToken(userToken) {
     localStorage.setItem("token", userToken);
