@@ -196,7 +196,7 @@ export default function navbar(props) {
               onClick={() => {
                 //alert('clicked');
                 if(loginStatus==="Logout"){
-                  alert("click")
+                  //alert("click")
                   localStorage.removeItem("token")
                   setLoginStatus("Login")
                   }

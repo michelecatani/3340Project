@@ -24,7 +24,7 @@ export default function LoginPage(props) {
         localStorage.setItem("token", response.data.access_token);
       
         console.log("login");
-        window.open("/")
+        window.location.replace("/");
         //props.setUser("success****************")
       })
       .catch((error) => {
