@@ -6,6 +6,7 @@ from .models import Item
 from . import db
 
 import json
+import base64
 
 ## create the items Blueprint. This is registered with out app in our __init.py__ file
 
@@ -26,8 +27,11 @@ def getItems():
 @items.route('/seeItem', methods=["GET"])
 def seeItem():
     itemID = request.args.get('id')
-    item = Item.query.filter_by(id=itemID).first()
-    return jsonify(item.as_dict())
+    item = (Item.query.filter_by(id=itemID).first()).as_dict()
+    with open(item["image_file"], "rb") as img_file:
+        item["image_file"] = (base64.b64encode(img_file.read())).decode('utf-8')
+    print(item["image_file"])
+    return jsonify(item)
 
 ## This functiong gets a request from the front-end and creates an item
 
