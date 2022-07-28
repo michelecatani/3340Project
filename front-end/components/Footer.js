@@ -51,7 +51,7 @@ export default function footer() {
                     color: "#D5D5D5",
                     fontSize: "0.9rem",
                   }}
-                  href="/"
+                  href="/faq"
                 >
                   FAQ
                 </Link>

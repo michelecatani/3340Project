@@ -13,8 +13,8 @@ import Divider from "@mui/material/Divider";
 function Faq() {
   return (
     // added some padding around whole page
-    <div style={{ padding: "3%" }}>
-      <Typography color="black" variant="h5" sx={{ py: 4, fontWeight: "bold" }}>
+    <div style={{ padding: "3%", height: "80vh" }}>
+      <Typography color="black" variant="h5" style={{ fontWeight: "bold" }}>
         Frequently Asked Question
       </Typography>
       <Typography sx={{ pb: 3 }}>
@@ -66,7 +66,9 @@ function Faq() {
         >
           <Typography>
             {" "}
-            You can purchase a product by having the winning bid on an item. Products are sold to customers with the highest bid. It is important to note that typically some auctions start with a minimum bid.
+            You can purchase a product by having the winning bid on an item.
+            Products are sold to customers with the highest bid. It is important
+            to note that typically some auctions start with a minimum bid.
           </Typography>
         </AccordionDetails>
       </Accordion>
