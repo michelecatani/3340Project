@@ -88,6 +88,38 @@ export default function Items() {
             ))
           )}
         </Box>
+
+        <Box>
+          <Grid item>
+            {data.map((item, i) => (
+              <ImageListItem
+                sx={{ m: 2, border: 1, borderColor: "#1D1B27" }}
+                key={i}
+              >
+                <img
+                  src={convertToImage(item.image_file)}
+                  srcSet={`${item.img}?w=248&fit=crop&auto=format&dpr=2 2x`}
+                  alt={item.title}
+                  loading="lazy"
+                />
+
+                <ImageListItemBar
+                  title={item.name}
+                  subtitle={<span>User: {item.author}</span>}
+                  position="below"
+                />
+
+                <Button href={`/items/${item.id}`}>See Details</Button>
+
+                <br />
+                <br />
+              </ImageListItem>
+            ))}
+          </Grid>
+        </Box>
+
+
+    
         <Box>
           <Grid item>
             {itemData.map((item) => (
