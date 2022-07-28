@@ -28,9 +28,6 @@ def getItems():
 def seeItem():
     itemID = request.args.get('id')
     item = (Item.query.filter_by(id=itemID).first()).as_dict()
-    with open(item["image_file"], "rb") as img_file:
-        item["image_file"] = (base64.b64encode(img_file.read())).decode('utf-8')
-    print(item["image_file"])
     return jsonify(item)
 
 ## This functiong gets a request from the front-end and creates an item
@@ -41,19 +38,20 @@ def createItem():
     itemPrice = request.json.get("startingPrice", None)
     itemCategory = request.json.get("category", None)
     itemDescription = request.json.get("description", None)
-    newItem = Item(name=itemName, currHighestBid=itemPrice, category=itemCategory, description=itemDescription)
+    image_file = request.json.get("image_file", None)
+    print(image_file)
+    newItem = Item(name=itemName, currHighestBid=itemPrice, category=itemCategory, description=itemDescription, image_file=image_file)
     db.session.add(newItem)
     db.session.commit()
     resp = jsonify(success=True)
     return resp
 
-## This updates a bid for an item 
+## This updates a bid for an item (incomplete) 
 
 @items.route('/newBid', methods=["POST"])
 def newBid():
     itemID = request.json.get('itemID')
     newPrice = request.json.get('newPrice')
-
     item = db.session.query(Item).filter_by(id=itemID).first()
     item.currHighestBid = newPrice
     db.session.commit()

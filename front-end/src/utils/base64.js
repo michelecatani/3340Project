@@ -1,6 +1,6 @@
 function convertToImage(str) {
-    var image = str.toString('base64');
-    return 'data:image/png;base64,' + image;
+    var imageString = String(str).toString('base64');
+    return imageString;
 }
 
 export default convertToImage;

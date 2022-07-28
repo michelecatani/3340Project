@@ -64,14 +64,14 @@ class Item(db.Model):
     endAuction = db.Column(db.Date, default=datetime.now() + timedelta(days=1))
     category = db.Column(db.String(150))
     description = db.Column(db.String(280))
-    image_file = db.Column(db.String(20), nullable=False, default=('./static/default.jpeg'))
+    image_file = db.Column(db.UnicodeText, default=None)
     itemBids = db.relationship('User', secondary='bids')
 
     def as_dict(self):
         return {c.name: getattr(self, c.name) for c in self.__table__.columns}
 
     def __repr__(self):
-        return self.name
+        return self.name + "Image file:" + self.image_file
 
 @dataclass
 class Bid(db.Model):
@@ -83,6 +83,5 @@ class Bid(db.Model):
 
     user = db.relationship(User, backref=backref('bids', cascade="all, delete-orphan"))
     item = db.relationship(Item, backref=backref('bids', cascade="all, delete-orphan"))
-
  
 

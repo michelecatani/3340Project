@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
 import { Box, Button, TextField, Typography, NativeSelect, InputLabel } from "@mui/material";
+import imageToString from '../../src/utils/imageToString';
 
 const categories = [
     "None", "Sports", "Technology", "Music", "Fitness"
@@ -13,6 +14,7 @@ export default function CreateItem() {
     startingPrice: " ",
     category: " ",
     description: " ",
+    image_file: " "
   });
 
   function handleItemSubmission(event) {
@@ -23,7 +25,8 @@ export default function CreateItem() {
         name: itemForm.name,
         startingPrice: itemForm.startingPrice,
         category: itemForm.category,
-        description: itemForm.description
+        description: itemForm.description,
+        image_file: itemForm.image_file
       },
     })
       .then((response) => {
@@ -41,7 +44,8 @@ export default function CreateItem() {
       name: " ",
       startingPrice: " ",
       category: " ",
-      description: " "
+      description: " ",
+      image_file: " "
     });
 
     event.preventDefault();
@@ -50,6 +54,11 @@ export default function CreateItem() {
   function handleChange(event) {
     const { value, name } = event.target;
     itemForm.category = document.getElementById("selectCategory").value;
+    if(document.getElementById("image_file").value != '') {
+      imageToString(document.getElementById("image_file"));
+      itemForm.image_file = document.getElementById("image_file").fileName;
+      console.log(itemForm.image_file);
+    }
     setitemForm((prevNote) => ({
       ...prevNote,
       [name]: value,
@@ -116,6 +125,21 @@ export default function CreateItem() {
                 value={itemForm.description}
                 onChange={handleChange}
             />
+            <Button
+              variant="contained"
+              component="label"
+            >
+              Upload Image
+              <input
+                type="file"
+                accept="image/*"
+                name="imageFile"
+                value=""
+                id="image_file"
+                onChange={handleChange}
+                hidden
+              />
+            </Button>
           <Box display="flex" justifyContent="space-between" sx={{ mt: 2 }}>
             <Button
               variant="contained"

@@ -1,8 +1,6 @@
-import json
-from urllib import response
-from flask import Flask, Blueprint, request, jsonify
+from flask import Flask, Blueprint, request
 from .models import User, Admin
-from flask_jwt_extended import create_access_token, get_jwt, get_jwt_identity, unset_jwt_cookies, jwt_required, JWTManager
+from flask_jwt_extended import create_access_token
 from . import db
 
 auth = Blueprint('auth', __name__)
@@ -22,7 +20,6 @@ def create_token():
     return response
 
 # login for admin
-
 
 @auth.route('/admin', methods=["POST"])
 def create_Admin_token():
