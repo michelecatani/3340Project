@@ -5,9 +5,6 @@ from flask import Flask, Blueprint, request, jsonify
 from .models import Item
 from . import db
 
-import json
-import base64
-
 ## create the items Blueprint. This is registered with out app in our __init.py__ file
 
 items = Blueprint('items', __name__)
@@ -30,7 +27,7 @@ def seeItem():
     item = (Item.query.filter_by(id=itemID).first()).as_dict()
     return jsonify(item)
 
-## This functiong gets a request from the front-end and creates an item
+## This function gets a request from the front-end and creates an item
 
 @items.route('/createItem', methods=["POST"])
 def createItem():
@@ -39,7 +36,10 @@ def createItem():
     itemCategory = request.json.get("category", None)
     itemDescription = request.json.get("description", None)
     image_file = request.json.get("image_file", None)
-    print(image_file)
+    if image_file:
+        print("Image received")
+    else:
+        print("No image received")
     newItem = Item(name=itemName, currHighestBid=itemPrice, category=itemCategory, description=itemDescription, image_file=image_file)
     db.session.add(newItem)
     db.session.commit()

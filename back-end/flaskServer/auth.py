@@ -14,7 +14,6 @@ def create_token():
     user = User.query.filter_by(email=email).first()
     if not user or user.password != password:
         return 401
-
     access_token = create_access_token(identity=email)
     response = {"access_token": access_token}
     return response
@@ -28,7 +27,6 @@ def create_Admin_token():
     admin = Admin.query.filter_by(email=email).first()
     if not admin or admin.password != password:
         return 401
-
     access_token = create_access_token(identity=email)
     response = {"access_token": access_token}
     return response
