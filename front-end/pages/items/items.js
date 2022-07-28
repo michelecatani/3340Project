@@ -7,11 +7,8 @@ import Container from "@mui/material/Container";
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
-import ImageList from "@mui/material/ImageList";
-import ImageListItem from "@mui/material/ImageListItem";
-import ImageListItemBar from "@mui/material/ImageListItemBar";
-import convertToImage from "../../src/utils/base64";
 import Grid from "@mui/material/Grid";
+import Divider from "@mui/material/Divider";
 
 export default function Items() {
   const [data, setData] = useState([{}]);
@@ -25,36 +22,32 @@ export default function Items() {
     );
   }, []);
 
+  const [catagories, setCatagory] = React.useState("");
+  const handleChange = (event, SelectChangeEvent) => {
+    setCatagory(event.target.value, String);
+  };
+
   /* below, right now we're just returning all the items in our database.  This needs to be
   clickable... material ui components can be used, basically just better looking and increased functionality.
   */
   return (
     <div style={{ padding: "3%" }}>
-      <Container
-        sx={{
-          maxWidth: 200,
-          width: "100%",
-          justifyContent: "center",
-          alignItems: "center",
-          margin: "auto",
-        }}
-        container
-      >
-        <Box>
-          <Grid container justifyContent="space-between" sx={{ mb: 10 }}>
-            <Typography
-              color="black"
-              variant="h4"
-              style={{ fontWeight: "bold" }}
-            >
-              NeoBay Catalogue
-            </Typography>
-            <Button variant="outlined" href="/items/createItem">
-              Create an Item
-            </Button>
-          </Grid>
-        </Box>
-        <Box>
+      <Box>
+        <Grid container justifyContent="space-between">
+          <Typography color="black" variant="h4" style={{ fontWeight: "bold" }}>
+            NeoBay Catalogue
+          </Typography>
+          <Button variant="outlined" href="/items/createItem">
+            Create an Item
+          </Button>
+        </Grid>
+        {/* divider */}
+        <Divider
+          sx={{ bgcolor: "grey", mb: 5, mt: 2, borderBottomWidth: "2px" }}
+        />
+      </Box>
+
+      {/* <Box>
           {typeof data === "undefined" ? (
             <p>
               <i>Loading...</i>
@@ -87,6 +80,7 @@ export default function Items() {
               </Container>
             ))
           )}
+<<<<<<< HEAD
         </Box>
 
         <Box>
@@ -133,22 +127,70 @@ export default function Items() {
                   alt={item.title}
                   loading="lazy"
                 />
+=======
+        </Box> */}
+>>>>>>> 91cc6bba3b448c55bf24dc548da770450a02a9d5
 
-                <ImageListItemBar
-                  title={item.title}
-                  subtitle={<span>User: {item.author}</span>}
-                  position="below"
-                />
+      <Grid
+        container
+        spacing={2}
+        sx={{
+          justifyContent: "center",
+          alignItems: "center",
+          margin: "auto",
+        }}
+      >
+        {itemData.map((item) => (
+          <Grid item>
+            <Box
+              sx={{
+                width: 300,
+                height: 330,
+                backgroundColor: "#F7F7F7",
+                "&:hover": {
+                  backgroundColor: "#BABABA",
+                  opacity: [0.9, 0.8, 0.9],
+                },
+                borderRadius: 1,
+              }}
+              textAlign="center"
+            >
+              <Box
+                sx={{
+                  width: 300,
+                  height: 200,
+                  borderRadius: 1,
+                }}
+                maxwidth="lg"
+                component="img"
+                alt={item.title}
+                src={`${item.img}?w=248&fit=crop&auto=format`}
+                srcSet={`${item.img}?w=248&fit=crop&auto=format&dpr=2 2x`}
+                loading="lazy"
+              ></Box>
+              <Typography variant="h6" align="center">
+                {item.title}
+              </Typography>
+              <Typography variant="subtitle2" align="center">
+                {item.author}
+              </Typography>
+              <Typography variant="body2" align="center">
+                Price:{" "}
+              </Typography>
 
-                <Button href={`/items/${item.id}`}>See Details</Button>
-
-                <br />
-                <br />
-              </ImageListItem>
-            ))}
+              <Button
+                sx={{ mt: 1 }}
+                variant="contained"
+                align="center"
+                href={`/items/${item.id}`}
+                size="small"
+              >
+                See Details
+              </Button>
+            </Box>
           </Grid>
-        </Box>
-      </Container>
+        ))}
+      </Grid>
     </div>
   );
 }

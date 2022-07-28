@@ -10,8 +10,6 @@ export default function LoginPage() {
     password: "",
   });
 
-
-
   function handleLoginSubmission(event) {
     axios({
       method: "POST",
@@ -23,14 +21,8 @@ export default function LoginPage() {
     })
       .then((response) => {
         localStorage.setItem("token", response.data.access_token);
-        localStorage.setItem("User",loginForm.email)
-        
-        
-    
-        
-        window.location.replace("/");
-        
-        
+        localStorage.setItem("User",loginForm.email);
+        window.location.replace("/");        
       })
       .catch((error) => {
         if (error.response) {

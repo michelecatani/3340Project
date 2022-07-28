@@ -13,11 +13,18 @@ import Divider from "@mui/material/Divider";
 function Faq() {
   return (
     // added some padding around whole page
-    <div style={{ padding: "3%", height: "80vh" }}>
-      <Typography color="black" variant="h5" style={{ fontWeight: "bold" }} align="center">
-        FREQUENTLY ASKED QUESTIONS
+    <div style={{ padding: "3%", height: "100%" }}>
+      <Typography
+        color="black"
+        variant="h4"
+        sx={{ pb: 1.5 }}
+        style={{ fontWeight: "bold" }}
+      >
+        Frequently Asked Question
       </Typography>
-      <Typography sx={{ pb: 3 }} align="center">
+      {/* Divider to seperate content */}
+      <Divider dark sx={{ borderBottomWidth: "2px", bgcolor: "grey" }} />
+      <Typography sx={{ pb: 3, pt: 1.5 }}>
         Some common questions about the functionality of our website.
       </Typography>
       {/* First Accordion */}

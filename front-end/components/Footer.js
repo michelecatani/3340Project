@@ -132,7 +132,7 @@ export default function footer() {
           </Grid>
         </Container>
         {/* divider */}
-        <Divider sx={{ bgcolor: "gray" }} />
+        <Divider sx={{ background: "grey" }} />
         {/* container */}
         <Container maxwidth="lg" sx={{ pt: 3 }}>
           <Grid item xs={12} sm={4}>
