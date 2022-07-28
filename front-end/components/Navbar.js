@@ -12,7 +12,6 @@ import Button from "@mui/material/Button";
 import Divider from "@mui/material/Divider";
 import Drawer from "@mui/material/Drawer";
 
-
 // Icons
 import HomeIcon from "@mui/icons-material/Home";
 import StoreIcon from "@mui/icons-material/Store";
@@ -60,8 +59,6 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
   },
 }));
 
-
-
 // SideMenu
 const drawerWidth = 240;
 
@@ -69,11 +66,13 @@ export default function navbar(props) {
   // New
   const { window } = props;
   const [mobileOpen, setMobileOpen] = React.useState(false);
-  const [loginStatus,setLoginStatus] = React.useState()
+  const [loginStatus, setLoginStatus] = React.useState();
 
-  React.useEffect(()=> {
-    localStorage.getItem('token')?setLoginStatus("Logout"):setLoginStatus("Login")
-}, [])
+  React.useEffect(() => {
+    localStorage.getItem("token")
+      ? setLoginStatus("Logout")
+      : setLoginStatus("Login");
+  }, []);
 
   const handleDrawerToggle = () => {
     setMobileOpen(!mobileOpen);
@@ -116,19 +115,7 @@ export default function navbar(props) {
       >
         Items
       </Button>
-
       <Divider />
-      <Button
-        style={{
-          color: "#D5D5D5",
-        }}
-        href="./faq"
-        startIcon={<StoreIcon />}
-      >
-        FAQ
-      </Button>
-      <Divider />
-      
       <Button
         style={{
           color: "#D5D5D5",
@@ -136,7 +123,7 @@ export default function navbar(props) {
         startIcon={<LoginIcon />}
         href="./login"
       >
-       {loginStatus}
+        {loginStatus}
       </Button>
       <Divider />
     </Box>
@@ -196,12 +183,6 @@ export default function navbar(props) {
             >
               Items
             </Button>
-            <Button sx={({ mr: 2 }, { ml: 2 })} color="inherit" href="/faq">
-              FAQ
-            </Button>
-            
-           
-            
             <Button
               sx={({ mr: 2 }, { ml: 2 })}
               startIcon={<LoginIcon />}
@@ -210,26 +191,16 @@ export default function navbar(props) {
               href="/auth/login"
               onClick={() => {
                 //alert('clicked');
-                if(loginStatus==="Logout"){
+                if (loginStatus === "Logout") {
                   //alert("click")
-                  localStorage.removeItem("token")
-                  localStorage.removeItem("User")
-                  setLoginStatus("Login")
-                  }
-
-}} 
-              
+                  localStorage.removeItem("token");
+                  localStorage.removeItem("User");
+                  setLoginStatus("Login");
+                }
+              }}
             >
               {loginStatus}
             </Button>
-
-            
-
-
-
-
-
-
           </Box>
         </Toolbar>
       </AppBar>

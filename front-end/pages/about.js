@@ -15,7 +15,12 @@ function About() {
     // added some padding around whole page
     <div style={{ padding: "3%" }}>
       {/* Header for About Us */}
-      <Typography color="black" variant="h5" sx={{ pb: 4, fontWeight: "bold" }}>
+      <Typography
+        color="black"
+        variant="h5"
+        sx={{ pb: 4 }}
+        style={{ fontWeight: "bold" }}
+      >
         About Us
       </Typography>
       <Typography sx={{ pb: 3 }}>
@@ -25,7 +30,12 @@ function About() {
       {/* Divider to seperate content */}
       <Divider dark />
       {/* Header for FAQ */}
-      <Typography color="black" variant="h5" sx={{ py: 4, fontWeight: "bold" }}>
+      <Typography
+        color="black"
+        variant="h5"
+        sx={{ py: 4 }}
+        style={{ fontWeight: "bold" }}
+      >
         Frequently Asked Question
       </Typography>
       <Typography sx={{ pb: 3 }}>

@@ -10,6 +10,7 @@ import Button from "@mui/material/Button";
 import ImageList from '@mui/material/ImageList';
 import ImageListItem from '@mui/material/ImageListItem';
 import ImageListItemBar from '@mui/material/ImageListItemBar';
+import convertToImage from '../../src/utils/base64';
 
 export default function Items() {
   const [data, setData] = useState([{}]);
@@ -64,7 +65,7 @@ export default function Items() {
             >
 
               <Typography variant="h4" align="center">
-                  <img src="/neoBay-Logo.png" alt="NeoBay" width="500px"/>
+                  <img src={convertToImage(item.image_file)} alt="NeoBay" width="500px"/>
               </Typography>
 
             </Box>
