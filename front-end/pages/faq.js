@@ -14,10 +14,10 @@ function Faq() {
   return (
     // added some padding around whole page
     <div style={{ padding: "3%", height: "80vh" }}>
-      <Typography color="black" variant="h5" style={{ fontWeight: "bold" }}>
-        Frequently Asked Question
+      <Typography color="black" variant="h5" style={{ fontWeight: "bold" }} align="center">
+        FREQUENTLY ASKED QUESTIONS
       </Typography>
-      <Typography sx={{ pb: 3 }}>
+      <Typography sx={{ pb: 3 }} align="center">
         Some common questions about the functionality of our website.
       </Typography>
       {/* First Accordion */}
