@@ -11,14 +11,15 @@ export default function AdminPage() {
   function handleAdminSubmission(event) {
     axios({
       method: "POST",
-      url: `${process.env.NEXT_PUBLIC_API_HOST}/admin`,
+      url: `${process.env.NEXT_PUBLIC_API_HOST}/auth/admin`,
       data: {
         email: adminForm.email,
         password: adminForm.password,
       },
     })
       .then((response) => {
-        props.setToken(response.data.access_token);
+        localStorage.setItem("Atoken", response.data.access_token);
+        localStorage.setItem("Admin",adminForm.email)
       })
       .catch((error) => {
         if (error.response) {
@@ -101,8 +102,8 @@ export default function AdminPage() {
 
 
 import * as React from 'react';
-import Box from '@mui/material/Box';
-import TextField from '@mui/material/TextField';
+
+
 import MenuItem from '@mui/material/MenuItem';
 
 const currencies = [
