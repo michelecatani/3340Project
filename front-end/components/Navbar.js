@@ -116,7 +116,19 @@ export default function navbar(props) {
       >
         Items
       </Button>
+
       <Divider />
+      <Button
+        style={{
+          color: "#D5D5D5",
+        }}
+        href="./faq"
+        startIcon={<StoreIcon />}
+      >
+        FAQ
+      </Button>
+      <Divider />
+      
       <Button
         style={{
           color: "#D5D5D5",
@@ -183,6 +195,9 @@ export default function navbar(props) {
               href="/items/items"
             >
               Items
+            </Button>
+            <Button sx={({ mr: 2 }, { ml: 2 })} color="inherit" href="/faq">
+              FAQ
             </Button>
             
            
