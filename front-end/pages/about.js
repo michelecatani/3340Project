@@ -20,156 +20,37 @@ function About() {
         variant="h5"
         sx={{ pb: 4 }}
         style={{ fontWeight: "bold" }}
+        align="center"
       >
-        About Us
+        ABOUT US
       </Typography>
-      <Typography sx={{ pb: 3 }}>
-        Neobay is an auction website created by students at the University of
-        Windsor for our web development class. more stuff ...
-      </Typography>
+
       {/* Divider to seperate content */}
       <Divider dark />
-      {/* Header for FAQ */}
-      <Typography
-        color="black"
-        variant="h5"
-        sx={{ py: 4 }}
-        style={{ fontWeight: "bold" }}
-      >
-        Frequently Asked Question
-      </Typography>
+
       <Typography sx={{ pb: 3 }}>
-        Some common questions about the functionality of our website.
+        Neobay is an auction website created by students at the University of
+        Windsor for our COMP3340 web development class.
+
+        <br></br><br></br>Thanks to Dylan, Michele, Deepali, Danielle, Jason, and Najia, the world now has acceess to a fake auctioning site that is mostly functional.
+
+        <br></br><br></br>These 6 amazing students banded together early in the summer of 2022 and after a 30 minute brainstorming session, 
+        came up with the idea to create an Auction Site for their E-commerce project (right?! an E-commerce site? In computer science?).
+        Little did they know how much of a feat they were about to take on. But they were ambitious. Apparently, their professor was also ambitious.
+
+        <br></br><br></br>So after a lot of blood, sweat, and tears, we have prevailed and alas, what you see in front of you is the product of hard work after a matter of weeks. 
+        All it took was a lot of coffee of sleepless nights learning about all the extra programs that went into this project, and figuring out how to tie it all together.
+
+        <Typography variant="h6">
+        YOURS TRULY,
+        <br></br><br></br>
+        The 3340 Squad
+        </Typography>
       </Typography>
-      {/* First Accordion */}
-      <Accordion>
-        <AccordionSummary
-          expandIcon={<ExpandMoreIcon style={{ color: "white" }} />}
-          aria-controls="panel1a-content"
-          id="panel1a-header"
-          sx={{
-            backgroundColor: "#1D1B27",
-          }}
-        >
-          <Typography color="white">Q1: What is an auction site?</Typography>
-        </AccordionSummary>
-        <AccordionDetails
-          sx={{
-            backgroundColor: "#F3F3F3",
-          }}
-        >
-          <Typography>
-            {" "}
-            Customer are able to post and purchase items. This will be an
-            auction style website where users can participate in a bidding
-            process to buy and sell items.
-          </Typography>
-        </AccordionDetails>
-      </Accordion>
-      {/* Second Accordion */}
-      <Accordion>
-        <AccordionSummary
-          expandIcon={<ExpandMoreIcon style={{ color: "white" }} />}
-          aria-controls="panel1a-content"
-          id="panel1a-header"
-          sx={{
-            backgroundColor: "#1D1B27",
-          }}
-        >
-          <Typography color="white">
-            Q2: How do you purchase a product?
-          </Typography>
-        </AccordionSummary>
-        <AccordionDetails
-          sx={{
-            backgroundColor: "#F3F3F3",
-          }}
-        >
-          <Typography>
-            {" "}
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
-            malesuada lacus ex, sit amet blandit leo lobortis eget.Lorem ipsum
-            dolor sit amet, consectetur adipiscing elit.
-          </Typography>
-        </AccordionDetails>
-      </Accordion>
-      {/* Third Accordion */}
-      <Accordion>
-        <AccordionSummary
-          expandIcon={<ExpandMoreIcon style={{ color: "white" }} />}
-          aria-controls="panel1a-content"
-          id="panel1a-header"
-          sx={{
-            backgroundColor: "#1D1B27",
-          }}
-        >
-          <Typography color="white">Q3: How do you add items?</Typography>
-        </AccordionSummary>
-        <AccordionDetails
-          sx={{
-            backgroundColor: "#F3F3F3",
-          }}
-        >
-          <Typography>
-            {" "}
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
-            malesuada lacus ex, sit amet blandit leo lobortis eget.Lorem ipsum
-            dolor sit amet, consectetur adipiscing elit.
-          </Typography>
-        </AccordionDetails>
-      </Accordion>
-      {/* Fourth Accordion */}
-      <Accordion>
-        <AccordionSummary
-          expandIcon={<ExpandMoreIcon style={{ color: "white" }} />}
-          aria-controls="panel1a-content"
-          id="panel1a-header"
-          sx={{
-            backgroundColor: "#1D1B27",
-          }}
-        >
-          <Typography color="white">
-            Q4: How do you access Admin side?
-          </Typography>
-        </AccordionSummary>
-        <AccordionDetails
-          sx={{
-            backgroundColor: "#F3F3F3",
-          }}
-        >
-          <Typography>
-            {" "}
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
-            malesuada lacus ex, sit amet blandit leo lobortis eget.Lorem ipsum
-            dolor sit amet, consectetur adipiscing elit.
-          </Typography>
-        </AccordionDetails>
-      </Accordion>
-      {/* Fifth Accordion */}
-      <Accordion>
-        <AccordionSummary
-          expandIcon={<ExpandMoreIcon style={{ color: "white" }} />}
-          aria-controls="panel1a-content"
-          id="panel1a-header"
-          sx={{
-            backgroundColor: "#1D1B27",
-          }}
-        >
-          <Typography color="white">Q5: How does login work?</Typography>
-        </AccordionSummary>
-        <AccordionDetails
-          sx={{
-            backgroundColor: "#F3F3F3",
-          }}
-        >
-          <Typography>
-            {" "}
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
-            malesuada lacus ex, sit amet blandit leo lobortis eget.Lorem ipsum
-            dolor sit amet, consectetur adipiscing elit.
-          </Typography>
-        </AccordionDetails>
-      </Accordion>
+
+      
+      <Divider dark />
+      
     </div>
   );
 }
