@@ -128,6 +128,31 @@ export default function footer() {
                   Add links
                 </Link>
               </Box>
+
+              <Box>
+                <Link
+                  style={{
+                    color: "#D5D5D5",
+                    fontSize: "0.9rem",
+                  }}
+                  href="/"
+                >
+                  User Tutorial
+                </Link>
+              </Box>
+
+              <Box>
+                <Link
+                  style={{
+                    color: "#D5D5D5",
+                    fontSize: "0.9rem",
+                  }}
+                  href="https://www.youtube.com/watch?v=dQw4w9WgXcQ&ab_channel=RickAstley"
+                >
+                  User Information
+                </Link>
+              </Box>
+
             </Grid>
           </Grid>
         </Container>
