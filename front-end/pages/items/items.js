@@ -168,10 +168,6 @@ export default function Items() {
                 maxwidth="lg"
                 component="img"
                 src={convertToImage(item.image_file)}
-<<<<<<< HEAD
-=======
-                // srcSet={`${item.img}?w=248&fit=crop&auto=format&dpr=2 2x`}
->>>>>>> 3653d3fabb1490312bb87e633cd1712db8c73c35
                 alt={item.title}
                 loading="lazy"
               ></Box>
