@@ -28,7 +28,7 @@ export default function Items() {
   }, []);
 
   function directToItem(){
-    localStorage.getItem("token")?window.location.replace("items/createItem"):window.alert("Please log in to post an item")
+    localStorage.getItem("token")?window.location.replace("../items/createItem"):window.alert("Please log in to post an item")
 
   }
 
