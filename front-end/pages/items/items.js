@@ -168,7 +168,6 @@ export default function Items() {
                 maxwidth="lg"
                 component="img"
                 src={convertToImage(item.image_file)}
-                srcSet={`${item.img}?w=248&fit=crop&auto=format&dpr=2 2x`}
                 alt={item.title}
                 loading="lazy"
               ></Box>
@@ -179,7 +178,7 @@ export default function Items() {
                 {item.author}
               </Typography>
               <Typography variant="body2" align="center">
-                Price:{" "}
+                Current bid:{' $' + item.currHighestBid}
               </Typography>
 
               <Button

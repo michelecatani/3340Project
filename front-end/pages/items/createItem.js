@@ -14,7 +14,6 @@ export default function CreateItem() {
     startingPrice: " ",
     category: " ",
     description: " ",
-    image_file: " "
   });
 
   function handleItemSubmission(event) {
@@ -26,7 +25,7 @@ export default function CreateItem() {
         startingPrice: itemForm.startingPrice,
         category: itemForm.category,
         description: itemForm.description,
-        image_file: itemForm.image_file
+        image_file: document.getElementById("image_file").fileName
       },
     })
       .then((response) => {
@@ -44,8 +43,7 @@ export default function CreateItem() {
       name: " ",
       startingPrice: " ",
       category: " ",
-      description: " ",
-      image_file: " "
+      description: " "
     });
 
     event.preventDefault();
@@ -56,8 +54,6 @@ export default function CreateItem() {
     itemForm.category = document.getElementById("selectCategory").value;
     if(document.getElementById("image_file").value != '') {
       imageToString(document.getElementById("image_file"));
-      itemForm.image_file = document.getElementById("image_file").fileName;
-      console.log(itemForm.image_file);
     }
     setitemForm((prevNote) => ({
       ...prevNote,
