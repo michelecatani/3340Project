@@ -52,6 +52,7 @@ function About() {
         sleepless nights full of learning about all the extra programs that went
         into this project, and figuring out how to tie it all together.
       </Typography>
+
       <Box sx={{ pl: 2 }}>
         <Typography style={{ fontWeight: "bold" }}>YOURS TRULY,</Typography>
         <Typography
