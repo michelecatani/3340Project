@@ -27,6 +27,11 @@ export default function Items() {
     );
   }, []);
 
+  function directToItem(){
+    localStorage.getItem("token")?window.location.replace("items/createItem"):window.alert("Please log in to post an item")
+
+  }
+
   const [catagories, setCatagory] = React.useState("");
   const handleChange = (event, SelectChangeEvent) => {
     setCatagory(event.target.value, String);
@@ -42,7 +47,7 @@ export default function Items() {
           <Typography color="black" variant="h4" style={{ fontWeight: "bold" }}>
             NeoBay Catalogue
           </Typography>
-          <Button variant="outlined" href="/items/createItem">
+          <Button variant="outlined" onClick= {directToItem}>
             Create an Item
           </Button>
         </Grid>
