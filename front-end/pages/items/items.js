@@ -168,7 +168,7 @@ export default function Items() {
                 alt={item.title}
                 loading="lazy"
               ></Box>
-              <Typography variant="h6" align="center">
+              <Typography key={i} variant="h6" align="center">
                 {item.name}
               </Typography>
               <Typography variant="subtitle2" align="center">
