@@ -92,7 +92,7 @@ export default function Items() {
                 <img
                   src={convertToImage(item.image_file)}
                   srcSet={`${item.img}?w=248&fit=crop&auto=format&dpr=2 2x`}
-                  alt={item.title}
+                  alt={item.name}
                   loading="lazy"
                 />
 
