@@ -46,74 +46,69 @@ export default function Items() {
           sx={{ bgcolor: "grey", mb: 5, mt: 2, borderBottomWidth: "2px" }}
         />
       </Box>
-
       <Box>
-          {typeof data === "undefined" ? (
-            <p>
-              <i>Loading...</i>
-            </p>
-          ) : (
-            data.map((item, i) => (
-              <Container>
-                <Box
-                  sx={{
-                    maxWidth: 600,
-                    width: "100%",
-                    justifyContent: "center",
-                    alignItems: "center",
-                    margin: "auto",
-                    border: 1,
-                    borderColor: "#1D1B27",
-                  }}
-                >
-                  <Typography variant="h4" align="center">
-                    <img
-                      src={convertToImage(item.image_file)}
-                      alt="NeoBay"
-                      width="500px"
-                    />
-                  </Typography>
-                </Box>
-
-                <h3 key={i}> {item.name} </h3>
-                <Button href={`/items/${item.id}`}>See Details</Button>
-              </Container>
-            ))
-          )}
-        </Box>
-
-        <Box>
-          <Grid item>
-            {data.map((item, i) => (
-              <ImageListItem
-                sx={{ m: 2, border: 1, borderColor: "#1D1B27" }}
-                key={i}
+        {typeof data === "undefined" ? (
+          <p>
+            <i>Loading...</i>
+          </p>
+        ) : (
+          data.map((item, i) => (
+            <Container>
+              <Box
+                sx={{
+                  maxWidth: 600,
+                  width: "100%",
+                  justifyContent: "center",
+                  alignItems: "center",
+                  margin: "auto",
+                  border: 1,
+                  borderColor: "#1D1B27",
+                }}
               >
-                <img
-                  src={convertToImage(item.image_file)}
-                  srcSet={`${item.img}?w=248&fit=crop&auto=format&dpr=2 2x`}
-                  alt={item.title}
-                  loading="lazy"
-                />
+                <Typography variant="h4" align="center">
+                  <img
+                    src={convertToImage(item.image_file)}
+                    alt="NeoBay"
+                    width="500px"
+                  />
+                </Typography>
+              </Box>
 
-                <ImageListItemBar
-                  title={item.name}
-                  subtitle={<span>User: {item.author}</span>}
-                  position="below"
-                />
+              <h3 key={i}> {item.name} </h3>
+              <Button href={`/items/${item.id}`}>See Details</Button>
+            </Container>
+          ))
+        )}
+      </Box>
+      <Box>
+        <Grid item>
+          {data.map((item, i) => (
+            <ImageListItem
+              sx={{ m: 2, border: 1, borderColor: "#1D1B27" }}
+              key={i}
+            >
+              <img
+                src={convertToImage(item.image_file)}
+                srcSet={`${item.img}?w=248&fit=crop&auto=format&dpr=2 2x`}
+                alt={item.title}
+                loading="lazy"
+              />
 
-                <Button href={`/items/${item.id}`}>See Details</Button>
+              <ImageListItemBar
+                title={item.name}
+                subtitle={<span>User: {item.author}</span>}
+                position="below"
+              />
 
-                <br />
-                <br />
-              </ImageListItem>
-            ))}
-          </Grid>
-        </Box>
+              <Button href={`/items/${item.id}`}>See Details</Button>
 
-
-    
-        {/* <Box>
+              <br />
+              <br />
+            </ImageListItem>
+          ))}
+        </Grid>
+      </Box>
+      {/* <Box>
           <Grid item>
             {itemData.map((item) => (
               <ImageListItem
@@ -126,7 +121,10 @@ export default function Items() {
                   alt={item.title}
                   loading="lazy"
                 />
+
           </Box>
+
+        </Box> */}
 
       <Grid
         container
@@ -137,7 +135,7 @@ export default function Items() {
           margin: "auto",
         }}
       >
-        {itemData.map((item) => (
+        {data.map((item, i) => (
           <Grid item>
             <Box
               sx={{
@@ -160,13 +158,13 @@ export default function Items() {
                 }}
                 maxwidth="lg"
                 component="img"
-                alt={item.title}
-                src={`${item.img}?w=248&fit=crop&auto=format`}
+                src={convertToImage(item.image_file)}
                 srcSet={`${item.img}?w=248&fit=crop&auto=format&dpr=2 2x`}
+                alt={item.title}
                 loading="lazy"
               ></Box>
               <Typography variant="h6" align="center">
-                {item.title}
+                {item.name}
               </Typography>
               <Typography variant="subtitle2" align="center">
                 {item.author}
@@ -187,7 +185,7 @@ export default function Items() {
             </Box>
           </Grid>
         ))}
-      </Grid> */}
+      </Grid>
     </div>
   );
 }
