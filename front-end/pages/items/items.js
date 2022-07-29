@@ -57,7 +57,7 @@ export default function Items() {
           sx={{ bgcolor: "grey", mb: 5, mt: 2, borderBottomWidth: "2px" }}
         />
       </Box>
-      
+
       {/* <Box>
         {typeof data === "undefined" ? (
           <p>
@@ -173,7 +173,7 @@ export default function Items() {
                 maxwidth="lg"
                 component="img"
                 src={convertToImage(item.image_file)}
-                srcSet={`${item.img}?w=248&fit=crop&auto=format&dpr=2 2x`}
+                // srcSet={`${item.img}?w=248&fit=crop&auto=format&dpr=2 2x`}
                 alt={item.title}
                 loading="lazy"
               ></Box>
