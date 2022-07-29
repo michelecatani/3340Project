@@ -27,9 +27,10 @@ export default function Items() {
     );
   }, []);
 
-  function directToItem(){
-    localStorage.getItem("token")?window.location.replace("../items/createItem"):window.alert("Please log in to post an item")
-
+  function directToItem() {
+    localStorage.getItem("token")
+      ? window.location.replace("../items/createItem")
+      : window.alert("Please log in to post an item");
   }
 
   const [catagories, setCatagory] = React.useState("");
@@ -42,13 +43,12 @@ export default function Items() {
   */
   return (
     <div style={{ padding: "3%" }}>
-
       <Box>
         <Grid container justifyContent="space-between">
           <Typography color="black" variant="h4" style={{ fontWeight: "bold" }}>
             NeoBay Catalogue
           </Typography>
-          <Button variant="outlined" onClick= {directToItem}>
+          <Button variant="outlined" onClick={directToItem}>
             Create an Item
           </Button>
         </Grid>
@@ -121,7 +121,6 @@ export default function Items() {
         </Grid>
       </Box> */}
 
-
       {/* <Box>
           <Grid item>
             {itemData.map((item) => (
@@ -142,7 +141,6 @@ export default function Items() {
 
       <Grid
         container
-        spacing={2}
         sx={{
           justifyContent: "center",
           alignItems: "center",
@@ -155,6 +153,7 @@ export default function Items() {
               sx={{
                 width: 300,
                 height: 330,
+                m: 1,
                 backgroundColor: "#F7F7F7",
                 "&:hover": {
                   backgroundColor: "#BABABA",
@@ -183,7 +182,7 @@ export default function Items() {
                 {item.author}
               </Typography>
               <Typography variant="body2" align="center">
-                Current bid:{' $' + item.currHighestBid}
+                Current bid:{" $" + item.currHighestBid}
               </Typography>
 
               <Button
