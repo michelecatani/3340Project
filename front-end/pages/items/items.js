@@ -47,7 +47,7 @@ export default function Items() {
         />
       </Box>
 
-      {/* <Box>
+      <Box>
           {typeof data === "undefined" ? (
             <p>
               <i>Loading...</i>
@@ -80,7 +80,6 @@ export default function Items() {
               </Container>
             ))
           )}
-<<<<<<< HEAD
         </Box>
 
         <Box>
@@ -114,7 +113,7 @@ export default function Items() {
 
 
     
-        <Box>
+        {/* <Box>
           <Grid item>
             {itemData.map((item) => (
               <ImageListItem
@@ -127,9 +126,7 @@ export default function Items() {
                   alt={item.title}
                   loading="lazy"
                 />
-=======
-        </Box> */}
->>>>>>> 91cc6bba3b448c55bf24dc548da770450a02a9d5
+          </Box>
 
       <Grid
         container
@@ -190,7 +187,7 @@ export default function Items() {
             </Box>
           </Grid>
         ))}
-      </Grid>
+      </Grid> */}
     </div>
   );
 }
