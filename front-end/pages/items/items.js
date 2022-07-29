@@ -42,6 +42,7 @@ export default function Items() {
   */
   return (
     <div style={{ padding: "3%" }}>
+
       <Box>
         <Grid container justifyContent="space-between">
           <Typography color="black" variant="h4" style={{ fontWeight: "bold" }}>
@@ -56,7 +57,8 @@ export default function Items() {
           sx={{ bgcolor: "grey", mb: 5, mt: 2, borderBottomWidth: "2px" }}
         />
       </Box>
-      <Box>
+      
+      {/* <Box>
         {typeof data === "undefined" ? (
           <p>
             <i>Loading...</i>
@@ -117,7 +119,9 @@ export default function Items() {
             </ImageListItem>
           ))}
         </Grid>
-      </Box>
+      </Box> */}
+
+
       {/* <Box>
           <Grid item>
             {itemData.map((item) => (
