@@ -90,7 +90,7 @@ export default function navbar(props) {
         style={{
           color: "#D5D5D5",
         }}
-        href="./home"
+        href="/"
         startIcon={<HomeIcon />}
       >
         Home
@@ -101,7 +101,7 @@ export default function navbar(props) {
           color: "#D5D5D5",
         }}
         startIcon={<InfoIcon />}
-        href="./about"
+        href="/about"
       >
         About
       </Button>
@@ -110,7 +110,7 @@ export default function navbar(props) {
         style={{
           color: "#D5D5D5",
         }}
-        href="./items"
+        href="/items/items"
         startIcon={<StoreIcon />}
       >
         Items
@@ -121,7 +121,7 @@ export default function navbar(props) {
           color: "#D5D5D5",
         }}
         startIcon={<LoginIcon />}
-        href="./login"
+        href="/auth/login"
       >
         {loginStatus}
       </Button>

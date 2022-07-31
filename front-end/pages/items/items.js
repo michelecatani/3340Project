@@ -19,7 +19,7 @@ import InputLabel from '@mui/material/InputLabel';
 import FormControl from '@mui/material/FormControl';
 import NativeSelect from '@mui/material/NativeSelect';
 
-export default function Items() {
+export default function Items({ category = "all"}) {
   const [data, setData] = useState([{}]);
 
   useEffect(() => {
@@ -37,9 +37,10 @@ export default function Items() {
       : window.alert("Please log in to post an item");
   }
 
-  const [catagories, setCatagory] = React.useState("");
+  const [categories, setCategory] = React.useState("");
   const handleChange = (event, SelectChangeEvent) => {
-    setCatagory(event.target.value, String);
+    const category = document.getElementById("categorySelect").value;
+    Items(category=category);
   };
 
   /* below, right now we're just returning all the items in our database.  This needs to be
@@ -166,9 +167,10 @@ export default function Items() {
                   
                   <NativeSelect
                     defaultValue={1}
+                    onChange={handleChange}
                     inputProps={{
                       name: 'ItemCategory',
-                      id: 'uncontrolled-native',
+                      id: 'categorySelect',
                     }}
                   >
                     <option value={1}>All</option>
