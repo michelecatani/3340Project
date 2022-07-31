@@ -15,6 +15,10 @@ import convertToImage from "../../src/utils/base64";
 import ImageListItem from "@mui/material/ImageListItem";
 import ImageListItemBar from "@mui/material/ImageListItemBar";
 
+import InputLabel from '@mui/material/InputLabel';
+import FormControl from '@mui/material/FormControl';
+import NativeSelect from '@mui/material/NativeSelect';
+
 export default function Items() {
   const [data, setData] = useState([{}]);
 
@@ -147,6 +151,43 @@ export default function Items() {
           margin: "auto",
         }}
       >
+
+        <Grid container justifyContent="center" textAlign="center">
+              
+              <Box 
+                sx={{ minWidth: 200  }}
+                textAlign="center">
+
+                <FormControl fullWidth>
+                  
+                  <InputLabel variant="standard" htmlFor="uncontrolled-native">
+                    Category
+                  </InputLabel>
+                  
+                  <NativeSelect
+                    defaultValue={1}
+                    inputProps={{
+                      name: 'ItemCategory',
+                      id: 'uncontrolled-native',
+                    }}
+                  >
+                    <option value={1}>All</option>
+                    <option value={2}>Sports</option>
+                    <option value={3}>Technology</option>
+                    <option value={4}>Music</option>
+                    <option value={5}>Fitness</option>
+                    <option value={6}>Other</option>
+                  </NativeSelect>
+                
+                </FormControl>
+              
+              </Box>
+
+              <Divider
+                sx={{ bgcolor: "grey", mb: 5, mt: 2, borderBottomWidth: "2px" }}/>
+
+        </Grid>
+
         {data.map((item, i) => (
           <Grid item>
             <Box
