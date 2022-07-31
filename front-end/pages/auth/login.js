@@ -26,6 +26,7 @@ export default function LoginPage() {
       })
       .catch((error) => {
         if (error.response) {
+          window.alert("Please enter a valid email and password!\n\nPlease register if you are a new user.");
           console.log(error.response);
           console.log(error.response.status);
           console.log(error.response.headers);
