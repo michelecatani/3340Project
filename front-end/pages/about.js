@@ -59,7 +59,7 @@ function About() {
           style={{ fontWeight: "bold", fontStyle: "italic" }}
           sx={{ pl: 2 }}
         >
-          The 3340 Squad :)
+          The 3340 Squad :
         </Typography>
       </Box>
     </div>

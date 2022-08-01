@@ -1,6 +1,6 @@
-import * as React from "react";
 import { useRouter } from "next/router";
-
+import { useState } from "react";
+import axios from "axios";
 import Container from "@mui/material/Container";
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
@@ -9,10 +9,9 @@ import Stack from "@mui/material/Stack";
 import convertToImage from "../../src/utils/base64";
 import KeyboardReturnIcon from "@mui/icons-material/KeyboardReturn";
 import Grid from "@mui/material/Grid";
+import { TextField } from "@mui/material";
 
 // STYLES
-import { display } from "@mui/system";
-import { borders } from "@mui/system";
 import { makeStyles } from "@material-ui/core/styles";
 
 const styles = {
@@ -27,6 +26,39 @@ const useStyles = makeStyles(styles);
 export default function Item({ item }) {
   const router = useRouter();
   const { id } = router.query;
+  const [bid, setBid] = useState({
+    bid: 0
+  });
+
+  function submitBid(id, bid) {
+    axios({
+      method: "POST",
+      url: `${process.env.NEXT_PUBLIC_API_HOST}/items/newBid`,
+      data: {
+        newPrice: bid,
+        username: "Bob",
+        itemID: id
+      },
+    })
+    .then((response) => {
+      console.log(response);
+    })
+    .catch((error) => {
+      if (error.response) {
+        console.log(error.response);
+        console.log(error.response.status);
+        console.log(error.response.headers);
+      }
+    });
+  }
+
+  const handleChange = event => {
+    const { value, name } = event.target;
+    setBid((prevNote) => ({
+      ...prevNote,
+      [name]: value,
+    }));
+  };
 
   return (
     <div style={{ padding: "3%" }}>
@@ -58,17 +90,28 @@ export default function Item({ item }) {
               <Typography sx={{ pb: 2 }}>
                 <b>Highest Bid:</b> {" $" + item.currHighestBid}
               </Typography>
+              <Typography sx={{ pb: 2 }}>
+                <b>Current winner: </b> {item.currWinner}
+              </Typography>
               <Typography align="left" sx={{ pb: 2 }}>
                 <b>Item Description:</b> {item.description}
               </Typography>
-              <Button
-                variant="contained"
-                href="#contained-buttons"
-                className={useStyles.buttons}
-                sx={({ mr: 2 }, { ml: 2 }, { mb: 2 })}
-              >
-                BID NOW
-              </Button>
+              <TextField
+                label="Enter bid"
+                type="number"
+                name="bid"
+                value={bid}
+                onChange={handleChange}
+              />
+              <Box display="flex" justifyContent="space-between" sx={{ mt: 2 }}>
+                <Button
+                  variant="contained"
+                  sx={({ mr: 2 }, { ml: 2 }, { mb: 2 })}
+                  onClick={submitBid(id)}
+                >
+                  BID NOW
+                </Button> 
+              </Box>
             </Box>
           </Grid>
           <Grid item>

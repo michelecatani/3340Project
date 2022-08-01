@@ -25,7 +25,8 @@ export default function CreateItem() {
         startingPrice: itemForm.startingPrice,
         category: itemForm.category,
         description: itemForm.description,
-        image_file: document.getElementById("image_file").fileName
+        image_file: document.getElementById("image_file").fileName,
+        author: localStorage.getItem("User")
       },
     })
       .then((response) => {

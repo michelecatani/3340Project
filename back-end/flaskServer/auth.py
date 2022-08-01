@@ -6,7 +6,6 @@ from . import db
 auth = Blueprint('auth', __name__)
 
 # this is our login route.  If the login is successful, it returns a token. Else, throws 401 error.
-
 @auth.route('/login', methods=["POST"])
 def create_token():
     email = request.json.get("email", None)
@@ -19,7 +18,6 @@ def create_token():
     return response
 
 # login for admin
-
 @auth.route('/admin', methods=["POST"])
 def create_Admin_token():
     email = request.json.get("email", None)
@@ -32,27 +30,15 @@ def create_Admin_token():
     return response
 
 # this is our register route
-
 @auth.route('/register', methods=["POST"])
 def register():
     aDict = request.get_json()
-    #aDict = json.loads(jsonString)
     print(type(request))
-    #password = request.json.get("password", None)
-    #regDict = json.loads(response.text)
     # check to ensure that email is not already taken by somebody
-    user = User(email=aDict["email"], password=aDict["password"])
+    user = User(email=aDict["email"], password=aDict["password"], username=aDict["username"])
     db.session.add(user)
     db.session.commit()
     response = {"registered": "yes"}
     return response, 200
 
-@auth.route('/profile')
-def my_profile():
-    response_body = {
-        "name": "Nagato",
-        "about": "idk bro idek"
-    }
-
-    return response_body
 

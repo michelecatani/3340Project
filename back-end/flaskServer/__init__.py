@@ -11,7 +11,6 @@ DB_NAME = "database.db"
 
 # this function creates our app, and it is called in run.py in the parent directory
 
-
 def create_app():
     app = Flask(__name__)
     # make sure we configure this to use enviornment variables
@@ -29,6 +28,8 @@ def create_app():
 
     app.register_blueprint(auth, url_prefix='/auth/')
     app.register_blueprint(items, url_prefix='/items/')
+    CORS(items)
+    CORS(auth)
 
     create_database(app)
 
