@@ -34,11 +34,11 @@ export default function Items() {
       : window.alert("Please log in to post an item");
   }
 
-  const [categories, setCategory] = React.useState("");
+  /*const [categories, setCategory] = React.useState("");
   const handleChange = (event, SelectChangeEvent) => {
     const category = document.getElementById("categorySelect").value;
     Items(category=category);
-  };
+  };*/
 
   /* below, right now we're just returning all the items in our database.  This needs to be
   clickable... material ui components can be used, basically just better looking and increased functionality.
@@ -83,7 +83,7 @@ export default function Items() {
                   
                   <NativeSelect
                     defaultValue={1}
-                    onChange={handleChange}
+                    //onChange={handleChange}
                     inputProps={{
                       name: 'ItemCategory',
                       id: 'categorySelect',

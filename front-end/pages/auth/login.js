@@ -1,10 +1,10 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
 import { Box, Button, TextField, Typography } from "@mui/material";
-import {user,setUser} from "../_app.js"
+import { user, setUser } from "../_app.js";
+import Head from "next/head";
 
 export default function LoginPage() {
-
   const [loginForm, setloginForm] = useState({
     email: "",
     password: "",
@@ -20,17 +20,19 @@ export default function LoginPage() {
       },
     })
       .then((response) => {
-        if(localStorage.getItem("Atoken")){
-          localStorage.removeItem("Atoken")
-          localStorage.removeItem("Admin")
+        if (localStorage.getItem("Atoken")) {
+          localStorage.removeItem("Atoken");
+          localStorage.removeItem("Admin");
         }
         localStorage.setItem("token", response.data.access_token);
-        localStorage.setItem("User",loginForm.email);
-        window.location.replace("/");        
+        localStorage.setItem("User", loginForm.email);
+        window.location.replace("/");
       })
       .catch((error) => {
         if (error.response) {
-          window.alert("Please enter a valid email and password!\n\nPlease register if you are a new user.");
+          window.alert(
+            "Please enter a valid email and password!\n\nPlease register if you are a new user."
+          );
           console.log(error.response);
           console.log(error.response.status);
           console.log(error.response.headers);
@@ -63,9 +65,20 @@ export default function LoginPage() {
         height: "75vh",
       }}
     >
+      <Head>
+        <title>Login</title>
+        <meta charset="UTF-8" />
+        <meta
+          name="keywords"
+          content="user, login, information, team, react, nextjs, NeoBay, Auction, Comp3340, 3340"
+        />
+        <meta name="author" content="The Squad 2022" />
+        <meta name="description" content="This is our user login page" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      </Head>
       <Box sx={{ maxWidth: 500, width: "100%" }}>
         <Typography variant="h4" align="center">
-          <img src="/neoBay-Logo.png" alt="NeoBay" width="500px"/>
+          <img src="/neoBay-Logo.png" alt="NeoBay" width="500px" />
         </Typography>
         <Box
           sx={{

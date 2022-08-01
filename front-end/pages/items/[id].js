@@ -10,6 +10,7 @@ import convertToImage from "../../src/utils/base64";
 import KeyboardReturnIcon from "@mui/icons-material/KeyboardReturn";
 import Grid from "@mui/material/Grid";
 import { TextField } from "@mui/material";
+import Head from "next/head";
 
 // STYLES
 import { makeStyles } from "@material-ui/core/styles";
@@ -26,8 +27,8 @@ const useStyles = makeStyles(styles);
 export default function Item({ item }) {
   const router = useRouter();
   const { id } = router.query;
-  const [bid, setBid] = useState({
-    bid: 0
+  const [bid, setBidForm] = useState({
+    bid: " "
   });
 
   const [admin, setAdmin]=useState(false);
@@ -42,21 +43,21 @@ export default function Item({ item }) {
       method: "POST",
       url: `${process.env.NEXT_PUBLIC_API_HOST}/items/newBid`,
       data: {
-        newPrice: bid,
-        username: "Bob",
+        newPrice: Number(bid.bid),
+        email: localStorage.getItem("User"),
         itemID: id
       },
     })
-    .then((response) => {
-      console.log(response);
-    })
-    .catch((error) => {
-      if (error.response) {
-        console.log(error.response);
-        console.log(error.response.status);
-        console.log(error.response.headers);
-      }
-    });
+      .then((response) => {
+        console.log(response);
+      })
+      .catch((error) => {
+        if (error.response) {
+          console.log(error.response);
+          console.log(error.response.status);
+          console.log(error.response.headers);
+        }
+      });
   }
 
   function deleteItem(id) {
@@ -84,14 +85,31 @@ export default function Item({ item }) {
 
   const handleChange = event => {
     const { value, name } = event.target;
-    setBid((prevNote) => ({
-      ...prevNote,
+    bid.bid = document.getElementById("bid").value;
+    setBidForm((prevnote) => ({
+      ...prevnote,
       [name]: value,
     }));
-  };
+  }
 
   return (
     <div style={{ padding: "3%" }}>
+      {/* some Meta tags */}
+      <Head>
+        {/* set title to the name of the item */}
+        <title>{item.name}</title>
+        <meta charset="UTF-8" />
+        <meta
+          name="keywords"
+          content="items, create, post, products, bid, information, team, react, nextjs, NeoBay, Auction, Comp3340, 3340"
+        />
+        <meta name="author" content="The Squad 2022" />
+        <meta
+          name="description"
+          content="This is our dynamic page for items "
+        />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      </Head>
       <Container fixed>
         <Button
           startIcon={<KeyboardReturnIcon />}
@@ -130,8 +148,9 @@ export default function Item({ item }) {
                 label="Enter bid"
                 type="number"
                 name="bid"
-                value={bid}
+                id="bid"
                 onChange={handleChange}
+                value={bid.bid}
               />
               <Box display="flex" justifyContent="space-between" sx={{ mt: 2 }}>
                 {admin?

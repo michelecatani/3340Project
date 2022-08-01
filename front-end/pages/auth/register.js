@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
 import { Box, Button, TextField, Typography } from "@mui/material";
+import Head from "next/head";
 
 export default function RegisterPage() {
   const [registrationForm, setRegistrationForm] = useState({
@@ -37,7 +38,7 @@ export default function RegisterPage() {
     })
       .then((response) => {
         //props.setToken(response.data.access_token);
-        window.location.replace("/auth/login"); 
+        window.location.replace("/auth/login");
       })
       .catch((error) => {
         if (error.response) {
@@ -83,9 +84,20 @@ export default function RegisterPage() {
         height: "120vh",
       }}
     >
+      <Head>
+        <title>Register</title>
+        <meta charset="UTF-8" />
+        <meta
+          name="keywords"
+          content="user, register, sign up, information, team, react, nextjs, NeoBay, Auction, Comp3340, 3340"
+        />
+        <meta name="author" content="The Squad 2022" />
+        <meta name="description" content="This is our user signup page" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      </Head>
       <Box sx={{ maxWidth: 500, width: "100%" }}>
         <Typography variant="h4" align="center">
-          <img src="/neoBay-Logo.png" alt="NeoBay" width="500px"/>
+          <img src="/neoBay-Logo.png" alt="NeoBay" width="500px" />
         </Typography>
         <Box
           sx={{
@@ -101,7 +113,6 @@ export default function RegisterPage() {
             value={registrationForm.email}
             margin="dense"
             onChange={handleChange}
-            
           />
           <TextField
             required
