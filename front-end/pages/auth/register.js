@@ -36,10 +36,12 @@ export default function RegisterPage() {
       },
     })
       .then((response) => {
-        props.setToken(response.data.access_token);
+        //props.setToken(response.data.access_token);
+        window.location.replace("/auth/login"); 
       })
       .catch((error) => {
         if (error.response) {
+          window.alert("Please ensure all fields are filled");
           console.log(error.response);
           console.log(error.response.status);
           console.log(error.response.headers);
@@ -92,14 +94,17 @@ export default function RegisterPage() {
           }}
         >
           <TextField
+            required
             label="Email"
             type="email"
             name="email"
             value={registrationForm.email}
             margin="dense"
             onChange={handleChange}
+            
           />
           <TextField
+            required
             label="Password"
             type="password"
             name="password"
@@ -109,6 +114,7 @@ export default function RegisterPage() {
             onChange={handleChange}
           />
           <TextField
+            required
             label="Username"
             name="username"
             value={registrationForm.username}
@@ -117,6 +123,7 @@ export default function RegisterPage() {
           />
 
           <TextField
+            required
             label="First Name"
             name="firstName"
             value={registrationForm.firstName}
@@ -124,6 +131,7 @@ export default function RegisterPage() {
             onChange={handleChange}
           />
           <TextField
+            required
             label="Last Name"
             name="lastName"
             value={registrationForm.lastName}
@@ -131,6 +139,7 @@ export default function RegisterPage() {
             onChange={handleChange}
           />
           <TextField
+            required
             label="Address"
             name="address"
             value={registrationForm.address}
@@ -138,6 +147,7 @@ export default function RegisterPage() {
             onChange={handleChange}
           />
           <TextField
+            required
             label="Phone"
             type="tel"
             name="phone"
@@ -146,6 +156,7 @@ export default function RegisterPage() {
             onChange={handleChange}
           />
           <TextField
+            required
             label="State"
             name="state"
             value={registrationForm.state}
@@ -153,6 +164,7 @@ export default function RegisterPage() {
             onChange={handleChange}
           />
           <TextField
+            required
             label="Country"
             name="country"
             value={registrationForm.country}
@@ -160,6 +172,7 @@ export default function RegisterPage() {
             onChange={handleChange}
           />
           <TextField
+            required
             label="Credit"
             type="number"
             name="credit"
@@ -168,6 +181,7 @@ export default function RegisterPage() {
             onChange={handleChange}
           />
           <TextField
+            required
             label="Expiry"
             type="date"
             name="expiry"
