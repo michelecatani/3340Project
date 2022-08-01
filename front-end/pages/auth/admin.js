@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
 import { Box, Button, TextField, Typography } from "@mui/material";
+import Head from "next/head";
 
 export default function AdminPage() {
   const [adminForm, setAdminForm] = useState({
@@ -18,14 +19,13 @@ export default function AdminPage() {
       },
     })
       .then((response) => {
-        if(localStorage.getItem("token")){
-          localStorage.removeItem("token")
-          localStorage.removeItem("User")
+        if (localStorage.getItem("token")) {
+          localStorage.removeItem("token");
+          localStorage.removeItem("User");
         }
         localStorage.setItem("Atoken", response.data.access_token);
-        localStorage.setItem("Admin",adminForm.email)
+        localStorage.setItem("Admin", adminForm.email);
         window.location.replace("/");
-
       })
       .catch((error) => {
         if (error.response) {
@@ -61,6 +61,17 @@ export default function AdminPage() {
         height: "50vh",
       }}
     >
+      <Head>
+        <title>Admin Login</title>
+        <meta charset="UTF-8" />
+        <meta
+          name="keywords"
+          content="Admin, login, information, team, react, nextjs, NeoBay, Auction, Comp3340, 3340"
+        />
+        <meta name="author" content="The Squad 2022" />
+        <meta name="description" content="This is our Admin login page" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      </Head>
       <Box sx={{ maxWidth: 500, width: "100%" }}>
         <Typography variant="h4" align="center">
           NeoBay Admin
@@ -97,8 +108,6 @@ export default function AdminPage() {
             >
               Login
             </Button>
-
-           
           </Box>
         </Box>
       </Box>
@@ -106,28 +115,25 @@ export default function AdminPage() {
   );
 }
 
+import * as React from "react";
 
-import * as React from 'react';
-
-
-import MenuItem from '@mui/material/MenuItem';
+import MenuItem from "@mui/material/MenuItem";
 
 const currencies = [
   {
-    value: 'USD',
-    label: '$',
+    value: "USD",
+    label: "$",
   },
   {
-    value: 'EUR',
-    label: '€',
+    value: "EUR",
+    label: "€",
   },
   {
-    value: 'BTC',
-    label: '฿',
+    value: "BTC",
+    label: "฿",
   },
   {
-    value: 'JPY',
-    label: '¥',
+    value: "JPY",
+    label: "¥",
   },
 ];
-

@@ -1,7 +1,7 @@
-/* This is our about page. Right now, it's simply a test to an api endpoint of our Flask back-end.  It returns our names.
-The JSON object with out names is accessible in ../../../back-end/flaskServer/auth.py */
+/**
+ * FAQ page for NeoBay based on documentation criteria
+ */
 
-import { Container } from "@mui/material";
 import React from "react";
 import Accordion from "@mui/material/Accordion";
 import AccordionSummary from "@mui/material/AccordionSummary";
@@ -9,18 +9,35 @@ import AccordionDetails from "@mui/material/AccordionDetails";
 import Typography from "@mui/material/Typography";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import Divider from "@mui/material/Divider";
+import Head from "next/head";
 
 function Faq() {
   return (
     // added some padding around whole page
     <div style={{ padding: "3%", height: "100%" }}>
+      {/* Meta Tags */}
+      <Head>
+        <title>FAQ</title>
+        <meta charset="UTF-8" />
+        <meta
+          name="keywords"
+          content="faq, Frequently Asked Questions, tutorial, react, nextjs, NeoBay, Auction, Comp3340, 3340"
+        />
+        <meta name="author" content="The Squad 2022" />
+        <meta
+          name="description"
+          content="This is the FAQ page for answering some common questions and functionality of our site"
+        />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      </Head>
+      {/* title as Typography type */}
       <Typography
         color="black"
         variant="h4"
         sx={{ pb: 1.5 }}
         style={{ fontWeight: "bold" }}
       >
-        Frequently Asked Question
+        Frequently Asked Questions
       </Typography>
       {/* Divider to seperate content */}
       <Divider dark sx={{ borderBottomWidth: "2px", bgcolor: "grey" }} />
@@ -29,7 +46,9 @@ function Faq() {
       </Typography>
       {/* First Accordion */}
       <Accordion>
+        {/* summary provides visible questions */}
         <AccordionSummary
+          // used icon for expansion
           expandIcon={<ExpandMoreIcon style={{ color: "white" }} />}
           aria-controls="panel1a-content"
           id="panel1a-header"
@@ -39,6 +58,7 @@ function Faq() {
         >
           <Typography color="white">Q1: What is an auction site?</Typography>
         </AccordionSummary>
+        {/* AccordionDetails are the content or "answers" */}
         <AccordionDetails
           sx={{
             backgroundColor: "#F3F3F3",
