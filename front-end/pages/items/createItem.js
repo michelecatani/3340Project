@@ -22,23 +22,23 @@ export default function CreateItem() {
       url: `${process.env.NEXT_PUBLIC_API_HOST}/items/createItem`,
       data: {
         name: itemForm.name,
-        startingPrice: itemForm.startingPrice,
+        startingPrice: Number(itemForm.startingPrice),
         category: itemForm.category,
         description: itemForm.description,
         image_file: document.getElementById("image_file").fileName,
         author: localStorage.getItem("User")
       },
     })
-      .then((response) => {
-        console.log(response);
-      })
-      .catch((error) => {
-        if (error.response) {
-          console.log(error.response);
-          console.log(error.response.status);
-          console.log(error.response.headers);
-        }
-      });
+    .then((response) => {
+      console.log(response);
+    })
+    .catch((error) => {
+      if (error.response) {
+        console.log(error.response);
+        console.log(error.response.status);
+        console.log(error.response.headers);
+      }
+    });
 
     setitemForm({
       name: " ",

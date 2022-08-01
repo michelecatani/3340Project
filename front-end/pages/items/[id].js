@@ -26,17 +26,17 @@ const useStyles = makeStyles(styles);
 export default function Item({ item }) {
   const router = useRouter();
   const { id } = router.query;
-  const [bid, setBid] = useState({
-    bid: 0
+  const [bid, setBidForm] = useState({
+    bid: " "
   });
 
-  function submitBid(id, bid) {
+  function submitBid() {
     axios({
       method: "POST",
       url: `${process.env.NEXT_PUBLIC_API_HOST}/items/newBid`,
       data: {
-        newPrice: bid,
-        username: "Bob",
+        newPrice: Number(bid.bid),
+        email: localStorage.getItem("User"),
         itemID: id
       },
     })
@@ -52,13 +52,14 @@ export default function Item({ item }) {
     });
   }
 
-  const handleChange = event => {
+  function handleChange(event) {
     const { value, name } = event.target;
-    setBid((prevNote) => ({
-      ...prevNote,
+    bid.bid = document.getElementById("bid").value;
+    setBidForm((prevnote) => ({
+      ...prevnote,
       [name]: value,
     }));
-  };
+  }
 
   return (
     <div style={{ padding: "3%" }}>
@@ -100,14 +101,15 @@ export default function Item({ item }) {
                 label="Enter bid"
                 type="number"
                 name="bid"
-                value={bid}
+                id="bid"
                 onChange={handleChange}
+                value={bid.bid}
               />
               <Box display="flex" justifyContent="space-between" sx={{ mt: 2 }}>
                 <Button
                   variant="contained"
                   sx={({ mr: 2 }, { ml: 2 }, { mb: 2 })}
-                  onClick={submitBid(id)}
+                  onClick={() => { submitBid(); }}
                 >
                   BID NOW
                 </Button> 

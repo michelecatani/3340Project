@@ -9,8 +9,6 @@ from . import db
 items = Blueprint('items', __name__)
 
 # create the route with the function getItems. This will return all items.
-
-
 @items.route('/items', methods=["GET"])
 def getItems():
     items = Item.query.all()
@@ -29,8 +27,6 @@ def seeItem():
     return jsonify(item)
 
 # This function gets a request from the front-end and creates an item
-
-
 @items.route('/createItem', methods=["POST"])
 def createItem():
     itemName = request.json.get("name", None)
@@ -45,25 +41,25 @@ def createItem():
     else:
         print("No image received")
     newItem = Item(name=itemName, currHighestBid=itemPrice, category=itemCategory,
-                   description=itemDescription, image_file=image_file, author=author)
+                   description=itemDescription, image_file=image_file, author=author.username)
     db.session.add(newItem)
     db.session.commit()
     resp = jsonify(success=True)
     return resp
 
 # This updates a bid for an item (incomplete)
-
-
 @items.route('/newBid', methods=["POST"])
 def newBid():
     itemID = request.json.get('itemID')
     newPrice = request.json.get('newPrice')
-    username = request.json.get('username')
+    print("This is the new price: " + str(newPrice))
+    email = request.json.get('email')
     item = db.session.query(Item).filter_by(id=itemID).first()
+    username = User.query.filter_by(email=email).first()
     if(newPrice <= item.currHighestBid):
         resp = jsonify(success=False)
     else:
-        item.currWinner = username
+        item.currWinner = username.username
         item.currHighestBid = newPrice
         item.currHighestBid = newPrice
         db.session.commit()
