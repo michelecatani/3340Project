@@ -10,6 +10,7 @@ import convertToImage from "../../src/utils/base64";
 import KeyboardReturnIcon from "@mui/icons-material/KeyboardReturn";
 import Grid from "@mui/material/Grid";
 import { TextField } from "@mui/material";
+import Head from "next/head";
 
 // STYLES
 import { makeStyles } from "@material-ui/core/styles";
@@ -40,16 +41,16 @@ export default function Item({ item }) {
         itemID: id
       },
     })
-    .then((response) => {
-      console.log(response);
-    })
-    .catch((error) => {
-      if (error.response) {
-        console.log(error.response);
-        console.log(error.response.status);
-        console.log(error.response.headers);
-      }
-    });
+      .then((response) => {
+        console.log(response);
+      })
+      .catch((error) => {
+        if (error.response) {
+          console.log(error.response);
+          console.log(error.response.status);
+          console.log(error.response.headers);
+        }
+      });
   }
 
   function handleChange(event) {
@@ -63,6 +64,22 @@ export default function Item({ item }) {
 
   return (
     <div style={{ padding: "3%" }}>
+      {/* some Meta tags */}
+      <Head>
+        {/* set title to the name of the item */}
+        <title>{item.name}</title>
+        <meta charset="UTF-8" />
+        <meta
+          name="keywords"
+          content="items, create, post, products, bid, information, team, react, nextjs, NeoBay, Auction, Comp3340, 3340"
+        />
+        <meta name="author" content="The Squad 2022" />
+        <meta
+          name="description"
+          content="This is our dynamic page for items "
+        />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      </Head>
       <Container fixed>
         <Button
           startIcon={<KeyboardReturnIcon />}
@@ -112,7 +129,7 @@ export default function Item({ item }) {
                   onClick={() => { submitBid(); }}
                 >
                   BID NOW
-                </Button> 
+                </Button>
               </Box>
             </Box>
           </Grid>

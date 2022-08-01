@@ -1,15 +1,32 @@
-/* This is our about page. Right now, it's simply a test to an api endpoint of our Flask back-end.  It returns our names.
-The JSON object with out names is accessible in ../../../back-end/flaskServer/auth.py */
+/**
+ * This page is the main entry point of Neobay Website
+ */
 
 import React from "react";
 import Typography from "@mui/material/Typography";
 import Divider from "@mui/material/Divider";
 import Box from "@mui/material/Box";
+import Head from "next/head";
 
 function About() {
   return (
     // added some padding around whole page
     <div style={{ padding: "3%", height: "70vh" }}>
+      {/* Meta Tags */}
+      <Head>
+        <title>About</title>
+        <meta charset="UTF-8" />
+        <meta
+          name="keywords"
+          content="about, about us, team, react, nextjs, NeoBay, Auction, Comp3340, 3340"
+        />
+        <meta name="author" content="The Squad 2022" />
+        <meta
+          name="description"
+          content="This is the about page for our NeoBay auction site for COMP3340 World Wide Web Info System Dev. Explains our missions and goals for this auction site <3"
+        />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      </Head>
       {/* Header for About Us */}
       <Typography
         color="black"
