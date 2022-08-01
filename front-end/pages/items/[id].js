@@ -50,14 +50,19 @@ export default function Item({ item }) {
     })
       .then((response) => {
         console.log(response);
-        window.alert("Bid submitted!");
+        if(response.success == false) {
+          window.alert("Your bid must be higher than the previous bid!");
+        }
+        else {
+          window.alert("Bid submitted!");
+        }
       })
       .catch((error) => {
         if (error.response) {
           console.log(error.response);
           console.log(error.response.status);
           console.log(error.response.headers);
-          window.alert("Something went wrong (ensure your bid is higher than the previous bid)");
+          window.alert("Something went wrong");
         }
       });
   }
