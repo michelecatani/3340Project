@@ -20,6 +20,10 @@ export default function LoginPage() {
       },
     })
       .then((response) => {
+        if(localStorage.getItem("Atoken")){
+          localStorage.removeItem("Atoken")
+          localStorage.removeItem("Admin")
+        }
         localStorage.setItem("token", response.data.access_token);
         localStorage.setItem("User",loginForm.email);
         window.location.replace("/");        

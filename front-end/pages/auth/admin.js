@@ -18,8 +18,14 @@ export default function AdminPage() {
       },
     })
       .then((response) => {
+        if(localStorage.getItem("token")){
+          localStorage.removeItem("token")
+          localStorage.removeItem("User")
+        }
         localStorage.setItem("Atoken", response.data.access_token);
         localStorage.setItem("Admin",adminForm.email)
+        window.location.replace("/");
+
       })
       .catch((error) => {
         if (error.response) {

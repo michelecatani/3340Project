@@ -69,8 +69,7 @@ export default function navbar(props) {
   const [loginStatus, setLoginStatus] = React.useState();
 
   React.useEffect(() => {
-    localStorage.getItem("token")
-      ? setLoginStatus("Logout")
+    (localStorage.getItem("token") || localStorage.getItem("Atoken"))? setLoginStatus("Logout")
       : setLoginStatus("Login");
   }, []);
 
@@ -195,6 +194,8 @@ export default function navbar(props) {
                   //alert("click")
                   localStorage.removeItem("token");
                   localStorage.removeItem("User");
+                  localStorage.removeItem("Atoken");
+                  localStorage.removeItem("Admin");
                   setLoginStatus("Login");
                 }
               }}
