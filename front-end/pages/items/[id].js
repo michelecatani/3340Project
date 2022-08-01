@@ -43,19 +43,21 @@ export default function Item({ item }) {
       method: "POST",
       url: `${process.env.NEXT_PUBLIC_API_HOST}/items/newBid`,
       data: {
-        newPrice: Number(bid.bid),
+        newPrice: Number(bid),
         email: localStorage.getItem("User"),
         itemID: id
       },
     })
       .then((response) => {
         console.log(response);
+        window.alert("Bid submitted!");
       })
       .catch((error) => {
         if (error.response) {
           console.log(error.response);
           console.log(error.response.status);
           console.log(error.response.headers);
+          window.alert("Something went wrong (ensure your bid is higher than the previous bid)");
         }
       });
   }
@@ -165,7 +167,7 @@ export default function Item({ item }) {
                 <Button
                   variant="contained"
                   sx={({ mr: 2 }, { ml: 2 }, { mb: 2 })}
-                onClick= {() => {submitBid(id)}}
+                onClick= {() => {submitBid(id, bid.bid)}}
                 >
                   BID NOW
                 </Button> }

@@ -36,12 +36,16 @@ export default function CreateItem() {
     })
     .then((response) => {
       console.log(response);
+      window.alert(
+        "Item created and posted!"
+      );
     })
     .catch((error) => {
       if (error.response) {
         console.log(error.response);
         console.log(error.response.status);
         console.log(error.response.headers);
+        window.alert("Something went wrong.");
       }
     });
 
