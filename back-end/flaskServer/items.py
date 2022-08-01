@@ -69,3 +69,12 @@ def newBid():
         db.session.commit()
         resp = jsonify(success=True)
     return resp
+
+
+@items.route('/deleteItem', methods=["DELETE"])
+def delete():
+    itemID = request.json.get("itemID", None)
+    Item.query.filter_by(id=itemID).delete()
+    db.session.commit()
+    resp = jsonify(success=True)
+    return resp

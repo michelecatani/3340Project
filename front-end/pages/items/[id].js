@@ -1,5 +1,5 @@
 import { useRouter } from "next/router";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import axios from "axios";
 import Container from "@mui/material/Container";
 import Box from "@mui/material/Box";
@@ -30,6 +30,13 @@ export default function Item({ item }) {
     bid: 0
   });
 
+  const [admin, setAdmin]=useState(false);
+
+  useEffect(() => {
+    (localStorage.getItem("Atoken"))?setAdmin(true)
+      : setAdmin(false);
+  }, []);
+
   function submitBid(id, bid) {
     axios({
       method: "POST",
@@ -51,6 +58,29 @@ export default function Item({ item }) {
       }
     });
   }
+
+  function deleteItem(id) {
+    axios({
+      method: "DELETE",
+      url: `${process.env.NEXT_PUBLIC_API_HOST}/items/deleteItem`,
+      data: {
+        
+        itemID: id
+      },
+    })
+    .then((response) => {
+      console.log(response);
+      window.location.replace("items/items/"); 
+    })
+    .catch((error) => {
+      if (error.response) {
+        console.log(error.response);
+        console.log(error.response.status);
+        console.log(error.response.headers);
+      }
+    });
+  }
+
 
   const handleChange = event => {
     const { value, name } = event.target;
@@ -104,13 +134,22 @@ export default function Item({ item }) {
                 onChange={handleChange}
               />
               <Box display="flex" justifyContent="space-between" sx={{ mt: 2 }}>
+                {admin?
+                  <Button
+                  variant="contained"
+                  sx={({ mr: 2 }, { ml: 2 }, { mb: 2 })}
+                  onClick={() => {deleteItem(id)}}
+                >
+                  Delete Item
+                </Button>
+                :
                 <Button
                   variant="contained"
                   sx={({ mr: 2 }, { ml: 2 }, { mb: 2 })}
-                  onClick={submitBid(id)}
+                onClick= {() => {submitBid(id)}}
                 >
                   BID NOW
-                </Button> 
+                </Button> }
               </Box>
             </Box>
           </Grid>
