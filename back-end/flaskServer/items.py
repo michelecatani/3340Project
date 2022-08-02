@@ -18,8 +18,6 @@ def getItems():
 
 # This function will return all the info on one item.
 # We parse the url parameter and query and find
-
-
 @items.route('/seeItem', methods=["GET"])
 def seeItem():
     itemID = request.args.get('id')

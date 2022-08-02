@@ -50,7 +50,7 @@ export default function Item({ item }) {
     })
       .then((response) => {
         console.log(response);
-        if(response.success == false) {
+        if(response.data.success == false) {
           window.alert("Your bid must be higher than the previous bid!");
         }
         else {
