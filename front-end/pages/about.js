@@ -39,7 +39,7 @@ function About() {
 
       {/* Divider to seperate content */}
       <Divider dark sx={{ borderBottomWidth: "2px", bgcolor: "grey" }} />
-
+      {/* Typography used to present text */}
       <Typography sx={{ pb: 4, pt: 3 }}>
         Neobay is an auction website created by students at the University of
         Windsor for our COMP3340 web development class.

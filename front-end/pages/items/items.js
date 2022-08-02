@@ -3,7 +3,7 @@ Right now it's attached to an endpoint that just returns basic items, but that o
 
 import React from "react";
 import { useState, useEffect } from "react";
-import { useRouter } from 'next/router';
+import { useRouter } from "next/router";
 import Container from "@mui/material/Container";
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
@@ -13,9 +13,9 @@ import Divider from "@mui/material/Divider";
 
 import convertToImage from "../../src/utils/base64";
 
-import InputLabel from '@mui/material/InputLabel';
-import FormControl from '@mui/material/FormControl';
-import NativeSelect from '@mui/material/NativeSelect';
+import InputLabel from "@mui/material/InputLabel";
+import FormControl from "@mui/material/FormControl";
+import NativeSelect from "@mui/material/NativeSelect";
 
 export default function Items() {
   const [data, setData] = useState([{}]);
@@ -40,12 +40,11 @@ export default function Items() {
     Items(category=category);
   };*/
 
-  /* below, right now we're just returning all the items in our database.  This needs to be
-  clickable... material ui components can be used, basically just better looking and increased functionality.
-  */
   return (
+    // contained in div for optional styling
     <div style={{ padding: "3%" }}>
       <Box>
+        {/* used for responsive layout as grids adapts to screen size and orientation */}
         <Grid container justifyContent="space-between">
           <Typography color="black" variant="h4" style={{ fontWeight: "bold" }}>
             NeoBay Catalogue
@@ -60,102 +59,101 @@ export default function Items() {
         />
       </Box>
 
+      {/* items */}
       <Grid
         container
         sx={{
+          // center item stuff
           justifyContent: "center",
           alignItems: "center",
           margin: "auto",
         }}
       >
-
         <Grid container justifyContent="center" textAlign="center">
-              
-              <Box 
-                sx={{ minWidth: 200  }}
-                textAlign="center">
+          <Box sx={{ minWidth: 200 }} textAlign="center">
+            <FormControl fullWidth>
+              <InputLabel variant="standard" htmlFor="uncontrolled-native">
+                Category
+              </InputLabel>
 
-                <FormControl fullWidth>
-                  
-                  <InputLabel variant="standard" htmlFor="uncontrolled-native">
-                    Category
-                  </InputLabel>
-                  
-                  <NativeSelect
-                    defaultValue={1}
-                    //onChange={handleChange}
-                    inputProps={{
-                      name: 'ItemCategory',
-                      id: 'categorySelect',
-                    }}
-                  >
-                    <option value={1}>All</option>
-                    <option value={2}>Sports</option>
-                    <option value={3}>Technology</option>
-                    <option value={4}>Music</option>
-                    <option value={5}>Fitness</option>
-                    <option value={6}>Other</option>
-                  </NativeSelect>
-                
-                </FormControl>
-              
-              </Box>
+              <NativeSelect
+                defaultValue={1}
+                //onChange={handleChange}
+                inputProps={{
+                  name: "ItemCategory",
+                  id: "categorySelect",
+                }}
+              >
+                <option value={1}>All</option>
+                <option value={2}>Sports</option>
+                <option value={3}>Technology</option>
+                <option value={4}>Music</option>
+                <option value={5}>Fitness</option>
+                <option value={6}>Other</option>
+              </NativeSelect>
+            </FormControl>
+          </Box>
 
-              <Divider
-                sx={{ bgcolor: "grey", mb: 5, mt: 2, borderBottomWidth: "2px" }}/>
-
+          <Divider
+            sx={{ bgcolor: "grey", mb: 5, mt: 2, borderBottomWidth: "2px" }}
+          />
         </Grid>
+        {/* items from database */}
         {data.map((item, i) => (
-            <Grid item key={i}>
+          // create an item in grid
+          <Grid item key={i}>
+            <Box
+              sx={{
+                width: 300,
+                height: 330,
+                m: 1,
+                backgroundColor: "#F7F7F7",
+                "&:hover": {
+                  backgroundColor: "#BABABA",
+                  opacity: [0.9, 0.8, 0.9],
+                },
+                borderRadius: 1,
+              }}
+              textAlign="center"
+            >
               <Box
                 sx={{
                   width: 300,
-                  height: 330,
-                  m: 1,
-                  backgroundColor: "#F7F7F7",
-                  "&:hover": {
-                    backgroundColor: "#BABABA",
-                    opacity: [0.9, 0.8, 0.9],
-                  },
+                  height: 200,
                   borderRadius: 1,
                 }}
-                textAlign="center"
+                maxwidth="lg"
+                component="img"
+                // show image
+                src={convertToImage(item.image_file)}
+                alt={item.title}
+                loading="lazy"
+              ></Box>
+              <Typography key={i} variant="h6" align="center">
+                {/* item name */}
+                {item.name}
+              </Typography>
+              <Typography variant="subtitle2" align="center">
+                {/* author */}
+                {item.author}
+              </Typography>
+              <Typography variant="body2" align="center">
+                Current bid:{" $" + item.currHighestBid}
+              </Typography>
+
+              {/* button that allows you to view individual item on another page */}
+              <Button
+                sx={{ mt: 1 }}
+                variant="contained"
+                align="center"
+                href={`/items/${item.id}`}
+                size="small"
               >
-                <Box
-                  sx={{
-                    width: 300,
-                    height: 200,
-                    borderRadius: 1,
-                  }}
-                  maxwidth="lg"
-                  component="img"
-                  src={convertToImage(item.image_file)}
-                  alt={item.title}
-                  loading="lazy"
-                ></Box>
-                <Typography key={i} variant="h6" align="center">
-                  {item.name}
-                </Typography>
-                <Typography variant="subtitle2" align="center">
-                  {item.author}
-                </Typography>
-                <Typography variant="body2" align="center">
-                  Current bid:{" $" + item.currHighestBid}
-                </Typography>
-
-                <Button
-                  sx={{ mt: 1 }}
-                  variant="contained"
-                  align="center"
-                  href={`/items/${item.id}`}
-                  size="small"
-                >
-                  See Details
-                </Button>
-              </Box>
-            </Grid>
+                See Details
+              </Button>
+            </Box>
+          </Grid>
         ))}
-
       </Grid>
     </div>
   );

@@ -118,7 +118,8 @@ function Faq() {
         >
           <Typography>
             {" "}
-            You can add items by creating an ad via your account
+            You can add items by creating an ad via your account and acessing
+            the 'create an item' page located in the items page.
           </Typography>
         </AccordionDetails>
       </Accordion>
@@ -143,9 +144,8 @@ function Faq() {
         >
           <Typography>
             {" "}
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
-            malesuada lacus ex, sit amet blandit leo lobortis eget.Lorem ipsum
-            dolor sit amet, consectetur adipiscing elit.
+            Admin can access the 'Admin Login' page by adding the path
+            '/auth/admin' to homepage link. Admin will be prompted to login.
           </Typography>
         </AccordionDetails>
       </Accordion>
@@ -159,7 +159,9 @@ function Faq() {
             backgroundColor: "#1D1B27",
           }}
         >
-          <Typography color="white">Q5: How does login work?</Typography>
+          <Typography color="white">
+            Q5: Where is all the account and items information stored?
+          </Typography>
         </AccordionSummary>
         <AccordionDetails
           sx={{
@@ -168,9 +170,12 @@ function Faq() {
         >
           <Typography>
             {" "}
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
-            malesuada lacus ex, sit amet blandit leo lobortis eget.Lorem ipsum
-            dolor sit amet, consectetur adipiscing elit.
+            Account and items information is stored in our SQLite database in a
+            database.db file located in our backend directory. Our database
+            contains an admins table to store all admin username and passwords,
+            a bids table for bids, an items table to store all information on
+            products up for bid and their picture saved as a text file, and a
+            users table to store all customer information.
           </Typography>
         </AccordionDetails>
       </Accordion>
