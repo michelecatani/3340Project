@@ -13,7 +13,9 @@ import InfoIcon from "@mui/icons-material/Info";
 
 export default function footer() {
   return (
+    // footer contained in footer tag
     <footer>
+      {/* footer shape */}
       <Box
         px={{ xs: 2, sm: 5 }}
         py={{ xs: 3, sm: 3 }}
@@ -21,8 +23,11 @@ export default function footer() {
         color="black"
       >
         <Container maxwidth="lg" sx={{ pb: 2.5 }}>
+          {/* use grid for mobile responsivness and centering elements*/}
+          {/* grid container type */}
           <Grid container justifyContent="center" spacing={5}>
             {/* For About Section */}
+            {/* grid item */}
             <Grid item xs={10} sm={3}>
               {/* About header */}
               <Box
@@ -35,6 +40,7 @@ export default function footer() {
                 </Typography>
               </Box>
               <Box>
+                {/* link 1 */}
                 <Link
                   style={{
                     color: "#D5D5D5",
@@ -46,6 +52,7 @@ export default function footer() {
                 </Link>
               </Box>
               <Box>
+                {/* link 2 */}
                 <Link
                   style={{
                     color: "#D5D5D5",
@@ -57,6 +64,7 @@ export default function footer() {
                 </Link>
               </Box>
               <Box>
+                {/* link 3 */}
                 <Link
                   style={{
                     color: "#D5D5D5",
@@ -69,6 +77,7 @@ export default function footer() {
               </Box>
             </Grid>
             {/* For Account Section */}
+            {/* grid item */}
             <Grid item xs={10} sm={3}>
               {/* About header */}
               <Box
@@ -81,6 +90,7 @@ export default function footer() {
                 </Typography>
               </Box>
               <Box>
+                {/* link 1 */}
                 <Link
                   style={{
                     color: "#D5D5D5",
@@ -92,6 +102,7 @@ export default function footer() {
                 </Link>
               </Box>
               <Box>
+                {/* link 2 */}
                 <Link
                   style={{
                     color: "#D5D5D5",
@@ -116,20 +127,20 @@ export default function footer() {
                   Resources
                 </Typography>
               </Box>
-
               <Box>
+                {/* link 1 */}
                 <Link
                   style={{
                     color: "#D5D5D5",
                     fontSize: "0.9rem",
                   }}
-                  href="/"
+                  href="/guide"
                 >
-                  Add links
+                  Price Guidesheet
                 </Link>
               </Box>
-
               <Box>
+                {/* link 2 */}
                 <Link
                   style={{
                     color: "#D5D5D5",
@@ -140,8 +151,8 @@ export default function footer() {
                   User Tutorial
                 </Link>
               </Box>
-
               <Box>
+                {/* link 3 */}
                 <Link
                   style={{
                     color: "#D5D5D5",
@@ -152,7 +163,6 @@ export default function footer() {
                   User Information
                 </Link>
               </Box>
-
             </Grid>
           </Grid>
         </Container>
