@@ -69,7 +69,8 @@ export default function navbar(props) {
   const [loginStatus, setLoginStatus] = React.useState();
 
   React.useEffect(() => {
-    (localStorage.getItem("token") || localStorage.getItem("Atoken"))? setLoginStatus("Logout")
+    localStorage.getItem("token") || localStorage.getItem("Atoken")
+      ? setLoginStatus("Logout")
       : setLoginStatus("Login");
   }, []);
 
@@ -141,19 +142,7 @@ export default function navbar(props) {
           >
             <MenuIcon />
           </IconButton>
-          <Typography
-            variant="h5"
-            noWrap
-            component="div"
-            sx={{
-              display: {
-                xs: "none",
-                sm: "block",
-                md: "block",
-                fontWeight: "bold",
-              },
-            }}
-          >
+          <Typography>
             <img src="/tpLogo.png" alt="NeoBay" width="190px" />
           </Typography>
           <Search>

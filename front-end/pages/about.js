@@ -11,7 +11,7 @@ import Head from "next/head";
 function About() {
   return (
     // added some padding around whole page
-    <div style={{ padding: "3%", height: "70vh" }}>
+    <div style={{ padding: "3%" }}>
       {/* Meta Tags */}
       <Head>
         <title>About</title>
