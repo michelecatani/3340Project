@@ -11,7 +11,7 @@ import {
 import imageToString from "../../src/utils/imageToString";
 import Head from "next/head";
 
-const categories = ["None", "Sports", "Technology", "Music", "Fitness"];
+const categories = ["None", "Sports", "Technology", "Music", "Fitness", "Automobiles", "Other"];
 
 export default function CreateItem() {
   const [itemForm, setitemForm] = useState({

@@ -89,7 +89,8 @@ export default function Items() {
                 <option value={3}>Technology</option>
                 <option value={4}>Music</option>
                 <option value={5}>Fitness</option>
-                <option value={6}>Other</option>
+                <option value={6}>Automobile</option>
+                <option value={7}>Other</option>
               </NativeSelect>
             </FormControl>
           </Box>
